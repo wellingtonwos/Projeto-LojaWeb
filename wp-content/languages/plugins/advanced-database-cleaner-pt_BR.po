@@ -1,0 +1,108 @@
+# Translation of Plugins - Advanced Database Cleaner – Optimize &amp; Clean Database to Speed Up Site Performance - Stable (latest release) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - Advanced Database Cleaner – Optimize &amp; Clean Database to Speed Up Site Performance - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-10-04 18:26:41+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Plugins - Advanced Database Cleaner – Optimize &amp; Clean Database to Speed Up Site Performance - Stable (latest release)\n"
+
+#: includes/classes/class-adbc-hardcoded-items.php:1086
+#: includes/classes/class-adbc-hardcoded-items.php:1133
+msgid "WordPress core"
+msgstr "Arquivos básicos do WordPress"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:43 assets/js/app.js:2
+#: assets/js/translations.js:977
+msgid "WordPress"
+msgstr "WordPress"
+
+#: includes/classes/class-adbc-admin-init.php:510
+#: includes/classes/class-adbc-admin-init.php:562 assets/js/app.js:2
+#: assets/js/translations.js:374
+msgid "Dismiss"
+msgstr "Dispensar"
+
+#: includes/classes/class-adbc-admin-init.php:508
+msgid "No, not good enough"
+msgstr "Não suficientemente bom"
+
+#: includes/classes/class-adbc-admin-init.php:507
+msgid "I already did"
+msgstr "Já fiz"
+
+#: includes/classes/class-adbc-admin-init.php:506
+msgid "Ok, you deserved it"
+msgstr "Ok, você mereceu"
+
+#: includes/classes/class-adbc-admin-init.php:503
+msgid "Awesome!"
+msgstr "Incrível!"
+
+#: includes/models/class-adbc-cron-jobs.php:217 assets/js/app.js:2
+#: assets/js/translations.js:479
+msgid "Once"
+msgstr "Uma vez"
+
+#. Plugin URI of the plugin
+#: advanced-db-cleaner.php
+msgid "https://sigmaplugin.com/downloads/wordpress-advanced-database-cleaner"
+msgstr "https://sigmaplugin.com/downloads/wordpress-advanced-database-cleaner"
+
+#. Plugin Name of the plugin
+#: advanced-db-cleaner.php
+msgid "Advanced Database Cleaner"
+msgstr "Advanced Database Cleaner"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:81 assets/js/app.js:2
+#: assets/js/translations.js:48
+msgid "Settings"
+msgstr "Configurações"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:63
+msgid "Total options"
+msgstr "Opções totais"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:62 assets/js/app.js:2
+#: assets/js/translations.js:428
+msgid "Total tables"
+msgstr "Tabelas no total"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:61 assets/js/app.js:2
+#: assets/js/translations.js:427
+msgid "Database size"
+msgstr "Tamanho do banco de dados"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:49
+#: includes/endpoints/class-adbc-info-endpoints.php:85
+#: includes/endpoints/class-adbc-info-endpoints.php:91
+#: includes/endpoints/class-adbc-info-endpoints.php:92
+#: includes/endpoints/class-adbc-info-endpoints.php:93
+#: includes/endpoints/class-adbc-info-endpoints.php:106 assets/js/app.js:2
+#: assets/js/translations.js:305
+msgid "No"
+msgstr "Não"
+
+#: includes/endpoints/class-adbc-info-endpoints.php:49
+#: includes/endpoints/class-adbc-info-endpoints.php:85
+#: includes/endpoints/class-adbc-info-endpoints.php:91
+#: includes/endpoints/class-adbc-info-endpoints.php:92
+#: includes/endpoints/class-adbc-info-endpoints.php:93
+#: includes/endpoints/class-adbc-info-endpoints.php:106 assets/js/app.js:2
+#: assets/js/translations.js:300
+msgid "Yes"
+msgstr "Sim"
+
+#: includes/classes/class-adbc-admin-init.php:430 assets/js/app.js:2
+#: assets/js/translations.js:484
+msgid "Once monthly"
+msgstr "Uma vez ao mês"
+
+#: includes/classes/class-adbc-admin-init.php:424 assets/js/app.js:2
+#: assets/js/translations.js:483
+msgid "Once weekly"
+msgstr "Uma vez por semana"

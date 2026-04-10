@@ -1,0 +1,472 @@
+
+[23:45:46 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:46 UTC] [SUCCESS] Widget imported successfully: block-9 | Context: {"widget_type":"block","new_instance_id":"block-9","sidebar_id":"astra-woo-shop-sidebar","widget_title":"No Title"}
+[23:45:46 UTC] [INFO] Processing widget: woocommerce_price_filter-5 | Context: {"widget_type":"woocommerce_price_filter","instance_id":"5","sidebar_id":"astra-woo-shop-sidebar"}
+[23:45:46 UTC] [INFO] Widget data formatted and saved: woocommerce_price_filter | Context: {"widget_type":"woocommerce_price_filter","instance_count":3,"update_result":true}
+[23:45:46 UTC] [SUCCESS] Widget imported successfully: woocommerce_price_filter-2 | Context: {"widget_type":"woocommerce_price_filter","new_instance_id":"woocommerce_price_filter-2","sidebar_id":"astra-woo-shop-sidebar","widget_title":"Filter by Price"}
+[23:45:46 UTC] [INFO] Processing widget: woocommerce_product_categories-5 | Context: {"widget_type":"woocommerce_product_categories","instance_id":"5","sidebar_id":"astra-woo-shop-sidebar"}
+[23:45:46 UTC] [INFO] Widget data formatted and saved: woocommerce_product_categories | Context: {"widget_type":"woocommerce_product_categories","instance_count":3,"update_result":true}
+[23:45:46 UTC] [SUCCESS] Widget imported successfully: woocommerce_product_categories-2 | Context: {"widget_type":"woocommerce_product_categories","new_instance_id":"woocommerce_product_categories-2","sidebar_id":"astra-woo-shop-sidebar","widget_title":"Categories"}
+[23:45:46 UTC] [INFO] Processing widget: woocommerce_top_rated_products-3 | Context: {"widget_type":"woocommerce_top_rated_products","instance_id":"3","sidebar_id":"astra-woo-shop-sidebar"}
+[23:45:46 UTC] [INFO] Widget data formatted and saved: woocommerce_top_rated_products | Context: {"widget_type":"woocommerce_top_rated_products","instance_count":2,"update_result":true}
+[23:45:46 UTC] [SUCCESS] Widget imported successfully: woocommerce_top_rated_products-1 | Context: {"widget_type":"woocommerce_top_rated_products","new_instance_id":"woocommerce_top_rated_products-1","sidebar_id":"astra-woo-shop-sidebar","widget_title":"Our Best Sellers"}
+[23:45:46 UTC] [INFO] Widget import process completed | Context: {"total_sidebars_processed":5,"successful_imports":13,"warnings":0,"errors":0,"total_widgets_processed":13}
+[23:45:46 UTC] [INFO] Retrieving current sidebars and widgets
+[23:45:46 UTC] [INFO] Backing up old widgets data | Context: {"sidebars_count":12}
+[23:45:46 UTC] [SUCCESS] Widgets import completed successfully
+[23:45:46 UTC] [SUCCESS] Widget Imported!
+[23:45:47 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:47 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:48 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:48 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:50 UTC] [INFO] Image subsizes deferral enabled for import
+[23:45:52 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:10 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:11 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:11 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:12 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:13 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:13 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:13 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:14 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:14 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:14 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:15 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:16 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:16 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:17 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:18 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:19 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:20 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:20 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:21 UTC] [INFO] ---
+
+[23:46:21 UTC] [INFO] Setting site data: site-colors
+[23:46:21 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:22 UTC] [INFO] ---
+
+[23:46:22 UTC] [INFO] Setting site data: site-typography
+[23:46:22 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:23 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:23 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:24 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:25 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:25 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:26 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:36 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:46 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:48 UTC] [INFO] Image subsizes deferral enabled for import
+[23:46:49 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:09 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:09 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:10 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:10 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:10 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:11 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:11 UTC] [INFO] ---
+
+[23:47:11 UTC] [INFO] Starting import end process
+[23:47:11 UTC] [INFO] Finalizing import process
+[23:47:11 UTC] [INFO] Setting permalink structure to post name
+[23:47:11 UTC] [INFO] Executing import complete actions
+[23:47:11 UTC] [INFO] Batch processing started
+[23:47:11 UTC] [INFO] Batch processing queue created | Context: {"total_classes":13,"attachment_count":76,"has_images":true}
+[23:47:12 UTC] [INFO] Image subsizes deferral enabled for import
+[23:47:12 UTC] [INFO] Batch processing queue dispatched to background
+[23:47:12 UTC] [INFO] Batch Process Started..
+[23:47:12 UTC] [INFO] Starter Templates - Importing Images for Blog name 'LojaWeb' (1)
+[23:47:13 UTC] [SUCCESS] Import completed successfully!
+[23:47:16 UTC] [INFO] Gutenberg batch processing started
+[23:47:16 UTC] [INFO] Gutenberg posts retrieved for processing | Context: {"post_count":8,"post_types":"page, post, wp_block, wp_template, wp_navigation, wp_template_part, wp_global_styles, sc_form, spectra-popup, sfwd-courses, sfwd-lessons, sfwd-topic, sfwd-quiz, sfwd-certificates, sfwd-assignment"}
+[23:47:16 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":3922}
+[23:47:16 UTC] [INFO] Updating post content (first pass) | Context: {"post_id":3922}
+[23:47:17 UTC] [INFO] Starting link extraction and replacement process
+[23:47:17 UTC] [INFO] Links discovered in content | Context: {"total_links":0}
+[23:47:17 UTC] [INFO] No links found in content, skipping replacement
+[23:47:17 UTC] [INFO] Updating post content (second pass with link replacements) | Context: {"post_id":3922}
+[23:47:17 UTC] [SUCCESS] Successfully completed processing Gutenberg post | Context: {"post_id":3922}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":414}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":414,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":4387}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":4387,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":38}
+[23:47:17 UTC] [INFO] Updating post content (first pass) | Context: {"post_id":38}
+[23:47:17 UTC] [INFO] Starting link extraction and replacement process
+[23:47:17 UTC] [INFO] Links discovered in content | Context: {"total_links":0}
+[23:47:17 UTC] [INFO] No links found in content, skipping replacement
+[23:47:17 UTC] [INFO] Updating post content (second pass with link replacements) | Context: {"post_id":38}
+[23:47:17 UTC] [SUCCESS] Successfully completed processing Gutenberg post | Context: {"post_id":38}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":39}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":39,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":40}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":40,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":41}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":41,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [INFO] Processing Gutenberg post | Context: {"post_id":43}
+[23:47:17 UTC] [INFO] Skipping post - uses other page builder | Context: {"post_id":43,"elementor":true,"beaver":false,"brizy":false}
+[23:47:17 UTC] [SUCCESS] Gutenberg batch processing completed successfully | Context: {"posts_processed":8}
+[23:47:17 UTC] [INFO] Elementor batch processing started
+[23:47:17 UTC] [INFO] Elementor posts retrieved for processing | Context: {"post_count":8,"post_types":"page, post, wp_block, wp_template, wp_navigation, wp_template_part, wp_global_styles, sc_form"}
+[23:47:17 UTC] [INFO] Processing Elementor post | Context: {"post_id":3922}
+[23:47:17 UTC] [INFO] Skipping post - not an Elementor page or missing data | Context: {"post_id":3922,"has_version":false,"has_data":false}
+[23:47:17 UTC] [INFO] Processing Elementor post | Context: {"post_id":414}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":4}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":4}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":4}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":4}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:17 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":414}
+[23:47:17 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":414}
+[23:47:17 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":414}
+[23:47:17 UTC] [INFO] Processing Elementor post | Context: {"post_id":4387}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:17 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:17 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":5}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":4}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":4}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":4}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":4}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":5}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:18 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":4387}
+[23:47:18 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":4387}
+[23:47:18 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":4387}
+[23:47:18 UTC] [INFO] Processing Elementor post | Context: {"post_id":38}
+[23:47:18 UTC] [INFO] Skipping post - not an Elementor page or missing data | Context: {"post_id":38,"has_version":false,"has_data":false}
+[23:47:18 UTC] [INFO] Processing Elementor post | Context: {"post_id":39}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":39}
+[23:47:18 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":39}
+[23:47:18 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":39}
+[23:47:18 UTC] [INFO] Processing Elementor post | Context: {"post_id":40}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":40}
+[23:47:18 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":40}
+[23:47:18 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":40}
+[23:47:18 UTC] [INFO] Processing Elementor post | Context: {"post_id":41}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":41}
+[23:47:18 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":41}
+[23:47:18 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":41}
+[23:47:18 UTC] [INFO] Processing Elementor post | Context: {"post_id":43}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":5}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":2}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":5}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:18 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:18 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":5}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":3}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":3}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":4}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":1}
+[23:47:19 UTC] [INFO] Processing Elementor widgets | Context: {"widget_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":0}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":1}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":4}
+[23:47:19 UTC] [INFO] Completed processing Elementor widgets | Context: {"processed_count":5}
+[23:47:19 UTC] [SUCCESS] Updated Elementor data successfully | Context: {"post_id":43}
+[23:47:19 UTC] [INFO] Cleared Elementor cache | Context: {"post_id":43}
+[23:47:19 UTC] [SUCCESS] Completed processing Elementor post | Context: {"post_id":43}
+[23:47:19 UTC] [SUCCESS] Elementor batch processing completed successfully | Context: {"posts_processed":8}
+[23:47:19 UTC] [INFO] Misc batch processing started
+[23:47:19 UTC] [INFO] Misc batch processing skipped (not AI template)
+[23:47:19 UTC] [INFO] Customizer image download batch processing started
+[23:47:19 UTC] [INFO] Starting customizer image processing | Context: {"customizer_options_count":2730}
+[23:47:19 UTC] [INFO] Processing customizer image | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo@2x-free-img.png"}
+[23:47:19 UTC] [INFO] Starting image import for URL: https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png
+[23:47:19 UTC] [INFO] Image already exists in media library (ID: 760), skipping download
+[23:47:19 UTC] [SUCCESS] Customizer image processed successfully | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo@2x-free-img.png","downloaded_url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo@2x-free-img.png","image_data":{"id":"760","url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo@2x-free-img.png"}}
+[23:47:19 UTC] [INFO] Processing customizer image | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo@2x-free-img.png"}
+[23:47:19 UTC] [INFO] Starting image import for URL: https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png
+[23:47:19 UTC] [INFO] Image already exists in media library (ID: 760), skipping download
+[23:47:19 UTC] [SUCCESS] Customizer image processed successfully | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo@2x-free-img.png","downloaded_url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo@2x-free-img.png","image_data":{"id":"760","url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo@2x-free-img.png"}}
+[23:47:19 UTC] [INFO] Processing customizer image | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo1-free-img.png"}
+[23:47:19 UTC] [INFO] Starting image import for URL: https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png
+[23:47:19 UTC] [INFO] Image already exists in media library (ID: 762), skipping download
+[23:47:19 UTC] [SUCCESS] Customizer image processed successfully | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo1-free-img.png","downloaded_url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo1-free-img.png","image_data":{"id":"762","url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo1-free-img.png"}}
+[23:47:19 UTC] [INFO] Processing customizer image | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo1@2x-free-img.png"}
+[23:47:19 UTC] [INFO] Starting image import for URL: https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1@2x-free-img.png
+[23:47:19 UTC] [INFO] Image already exists in media library (ID: 761), skipping download
+[23:47:19 UTC] [SUCCESS] Customizer image processed successfully | Context: {"original_url":"https:\/\/websitedemos.net\/brandstore-02\/wp-content\/uploads\/sites\/150\/2018\/12\/logo1@2x-free-img.png","downloaded_url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo1@2x-free-img.png","image_data":{"id":"761","url":"http:\/\/lojaweb.local\/wp-content\/uploads\/2018\/12\/logo1@2x-free-img.png"}}
+[23:47:19 UTC] [SUCCESS] Customizer image download completed | Context: {"options_processed":2730,"images_processed_successfully":4,"images_failed":0,"total_images_attempted":4}
+[23:47:19 UTC] [SUCCESS] Customizer batch import method completed
+[23:47:19 UTC] [INFO] Starting CE image metadata processing | Context: {"total_attachments":76,"offset":10,"chunk_size":10}
+[23:47:19 UTC] [INFO] Processing CE image batch | Context: {"batch_size":10,"offset":10}
+[23:47:19 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":736,"file":"team3-free-img.png"}
+[23:47:19 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":737,"file":"team4free-img.png"}
+[23:47:19 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":738,"file":"team5-free-img.png"}
+[23:47:19 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":739,"file":"team6-free-img.png"}
+[23:47:19 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":740,"file":"slide-image-free-img.jpg"}
+[23:47:20 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":760,"file":"logo@2x-free-img.png"}
+[23:47:20 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":761,"file":"logo1@2x-free-img.png"}
+[23:47:21 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":762,"file":"logo1-free-img.png"}
+[23:47:21 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":767,"file":"favicon-free-img.png"}
+[23:47:22 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":919,"file":"woocommerce-placeholder.png"}
+[23:47:23 UTC] [SUCCESS] CE image batch processing completed | Context: {"successful":10,"errors":0,"new_offset":20}
+[23:47:23 UTC] [INFO] Starting CE image metadata processing | Context: {"total_attachments":76,"offset":20,"chunk_size":10}
+[23:47:23 UTC] [INFO] Processing CE image batch | Context: {"batch_size":10,"offset":20}
+[23:47:23 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1196,"file":"banner-03.jpg"}
+[23:47:24 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1198,"file":"home-new-bg-free-img.jpg"}
+[23:47:25 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1205,"file":"banner-05.jpg"}
+[23:47:26 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1206,"file":"banner-04.jpg"}
+[23:47:27 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1209,"file":"banner-06.jpg"}
+[23:47:28 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1308,"file":"product-accessory1.jpg"}
+[23:47:29 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1309,"file":"product-accessory2.jpg"}
+[23:47:30 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1310,"file":"product-accessory3.jpg"}
+[23:47:31 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1314,"file":"product-bag1.jpg"}
+[23:47:31 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1315,"file":"product-bag2.jpg"}
+[23:47:32 UTC] [SUCCESS] CE image batch processing completed | Context: {"successful":10,"errors":0,"new_offset":30}
+[23:47:32 UTC] [INFO] Starting CE image metadata processing | Context: {"total_attachments":76,"offset":30,"chunk_size":10}
+[23:47:32 UTC] [INFO] Processing CE image batch | Context: {"batch_size":10,"offset":30}
+[23:47:32 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1316,"file":"product-bag3.jpg"}
+[23:47:34 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1317,"file":"product-bag4.jpg"}
+[23:47:36 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1337,"file":"product-w-jeans1.jpg"}
+[23:47:38 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1338,"file":"product-w-jeans2.jpg"}
+[23:47:40 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1339,"file":"product-w-jeans3.jpg"}
+[23:47:41 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1340,"file":"product-w-jeans4.jpg"}
+[23:47:43 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1345,"file":"product-m-jeans1.jpg"}
+[23:47:45 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1346,"file":"product-m-jeans2.jpg"}
+[23:47:47 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1347,"file":"product-m-jeans3.jpg"}
+[23:47:49 UTC] [INFO] Generating attachment metadata | Context: {"attachment_id":1348,"file":"product-m-jeans4.jpg"}
+[23:47:50 UTC] [SUCCESS] CE image batch processing completed | Context: {"successful":10,"errors":0,"new_offset":40}
+[23:47:54 UTC] [INFO] Import process completed. Cleaning up log file option.
