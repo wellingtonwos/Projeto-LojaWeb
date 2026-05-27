@@ -258,6 +258,11 @@ class CustomGateway extends AbstractGateway
             'wc_mercadopago_supertoken_payment_methods',
             $this->mercadopago->helpers->url->getCssAsset('checkouts/super-token/super-token-payment-methods'),
         );
+
+        $this->mercadopago->hooks->scripts->registerCheckoutStyle(
+            'wc_mercadopago_supertoken_payment_method_details_skeleton',
+            $this->mercadopago->helpers->url->getCssAsset('checkouts/super-token/super-token-method-details-skeleton'),
+        );
     }
 
     /**
@@ -540,6 +545,10 @@ class CustomGateway extends AbstractGateway
                 'path' => 'checkouts/super-token/entities/super-token-authenticator',
             ],
             [
+                'handle' => 'wc_mercadopago_supertoken_checkout_form_validator',
+                'path' => 'checkouts/super-token/validators/checkout-form-validator',
+            ],
+            [
                 'handle' => 'wc_mercadopago_supertoken',
                 'path' => 'checkouts/super-token/mp-super-token',
             ]
@@ -559,6 +568,7 @@ class CustomGateway extends AbstractGateway
                 'platform_version' => $this->mercadopago->woocommerce->version,
                 'site_id' => $this->countryConfigs['site_id'],
                 'location' => '/checkout',
+                'plugin_js_base_url' => $this->mercadopago->helpers->url->getPluginFileUrl('assets/js/'),
                 'theme' => get_stylesheet(),
                 'cust_id' => $this->mercadopago->sellerConfig->getCustIdFromAT(),
                 'current_user_email' => $this->getCheckoutEmailIfAvailable(),
@@ -732,15 +742,16 @@ class CustomGateway extends AbstractGateway
             case 'super_token':
                 $this->paymentMethodName = 'woo-mercado-pago-super-token';
                 $this->mercadopago->logs->file->info('Preparing to get response of custom super token checkout', self::LOG_SOURCE);
-                if (
-                    !Arrays::anyEmpty($checkout, [
-                        'authorized_pseudotoken',
-                        'amount',
-                        'payment_method_id',
-                        'payment_type_id',
-                    ])
-                    && ($checkout['payment_type_id'] != 'credit_card' || (!empty($checkout['installments']) && $checkout['installments'] > 0))
-                ) {
+
+                $requiredFields = ['authorized_pseudotoken', 'amount', 'payment_method_id', 'payment_type_id'];
+                $missingFields = array_filter($requiredFields, fn($field) => empty($checkout[$field] ?? null));
+
+                $isCreditCard = ($checkout['payment_type_id'] ?? '') === 'credit_card';
+                if ($isCreditCard && (empty($checkout['installments']) || $checkout['installments'] <= 0)) {
+                    $missingFields[] = 'installments_required_for_credit';
+                }
+
+                if (empty($missingFields)) {
                     $checkout['super_token_validation'] = $checkout['super_token_validation'] ?? false;
 
                     $this->transaction = new SupertokenTransaction($this, $order, $checkout);
@@ -784,19 +795,23 @@ class CustomGateway extends AbstractGateway
                     return $this->handleResponseStatus($order, $response);
                 }
 
-                throw new InvalidCheckoutDataException('exception : Unable to process payment on ' . __METHOD__);
+                throw new InvalidCheckoutDataException(
+                    'exception : Unable to process payment on ' . __METHOD__,
+                    0,
+                    null,
+                    [
+                        'missing_fields'  => implode(',', array_values($missingFields)),
+                        'payment_type_id' => $checkout['payment_type_id'] ?? 'unknown',
+                    ]
+                );
 
             default:
                 $this->mercadopago->logs->file->info('Preparing to get response of custom checkout', self::LOG_SOURCE);
 
-                if (
-                    !Arrays::anyEmpty($checkout, [
-                        'token',
-                        'amount',
-                        'payment_method_id',
-                        'installments',
-                    ]) && $checkout['installments'] !== -1
-                ) {
+                $requiredFields = ['token', 'amount', 'payment_method_id', 'installments'];
+                $missingFields = array_filter($requiredFields, fn($field) => empty($checkout[$field] ?? null));
+
+                if (empty($missingFields)) {
                     $this->transaction = new CustomTransaction($this, $order, $checkout);
                     $response = $this->transaction->createPayment();
 
@@ -804,7 +819,14 @@ class CustomGateway extends AbstractGateway
                     return $this->handleResponseStatus($order, $response);
                 }
 
-                throw new InvalidCheckoutDataException('exception : Unable to process payment on ' . __METHOD__);
+                throw new InvalidCheckoutDataException(
+                    'exception : Unable to process payment on ' . __METHOD__,
+                    0,
+                    null,
+                    [
+                        'missing_fields' => implode(',', array_values($missingFields)),
+                    ]
+                );
         }
     }
 

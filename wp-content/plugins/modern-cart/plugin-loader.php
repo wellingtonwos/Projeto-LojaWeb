@@ -10,6 +10,7 @@ namespace ModernCart;
 
 use ModernCart\Admin_Core\Admin_Menu;
 use ModernCart\Inc\Abilities\Register_Abilities;
+use ModernCart\Inc\Admin_Notices;
 use ModernCart\Inc\Floating;
 use ModernCart\Inc\Floating_Ajax;
 use ModernCart\Inc\Helper;
@@ -44,7 +45,7 @@ class Plugin_Loader {
 		register_activation_hook( __DIR__ . '/modern-cart.php', [ $this, 'activate' ] );
 		add_action( 'plugins_loaded', [ $this, 'load_classes' ] );
 		add_action( 'init', [ $this, 'save_version_info' ] );
-		add_action( 'init', [ $this, 'register_bsf_analytics_entity' ] );
+		add_action( 'init', [ $this, 'register_bsf_analytics_entity' ], 20 );
 		add_action( 'admin_init', [ $this, 'redirect_to_onboarding' ] );
 		add_filter( 'plugin_action_links_' . MODERNCART_BASE, [ $this, 'action_links' ] );
 
@@ -52,9 +53,49 @@ class Plugin_Loader {
 	}
 
 	/**
+	 * Load plugin text domain.
+	 *
+	 * @since 1.0.9
+	 * @return void
+	 */
+	public function load_textdomain(): void {
+		$site_locale = apply_filters( 'plugin_locale', get_locale(), 'modern-cart' );
+
+		// Global translations directory takes priority (Loco Translate / manual uploads).
+		$mofile = WP_LANG_DIR . '/plugins/modern-cart-' . $site_locale . '.mo';
+
+		if ( ! file_exists( $mofile ) ) {
+			// Fall back to bundled translations shipped with the plugin.
+			$mofile = MODERNCART_DIR . 'languages/modern-cart-' . $site_locale . '.mo';
+		}
+
+		if ( ! file_exists( $mofile ) ) {
+			return;
+		}
+
+		// Load translations for the site locale.
+		load_textdomain( 'modern-cart', $mofile, $site_locale );
+
+		// In AJAX context (admin-ajax.php), WP_Translation_Controller calls
+		// determine_locale() at translate-time, which returns the logged-in user's
+		// profile language rather than the site language. Loading the site translations
+		// under the request locale too ensures the controller finds them regardless
+		// of which locale it looks up — without modifying any global WordPress filters.
+		$request_locale = determine_locale();
+		if ( $request_locale !== $site_locale ) {
+			load_textdomain( 'modern-cart', $mofile, $request_locale );
+		}
+	}
+
+	/**
 	 * Activate plugin and set onboarding redirect.
 	 */
 	public function activate(): void {
+		// Record install timestamp for days_since_install analytics metric.
+		if ( ! get_option( 'mcw_usage_installed_time', false ) ) {
+			update_option( 'mcw_usage_installed_time', time(), false );
+		}
+
 		$is_onboarding_complete = get_option( 'moderncart_is_onboarding_complete', 'no' );
 
 		if ( 'yes' === $is_onboarding_complete ) {
@@ -101,6 +142,11 @@ class Plugin_Loader {
 		if ( is_array( $version ) && isset( $version['current'] ) && MODERNCART_VER === $version['current'] ) {
 			// Already updated.
 			return;
+		}
+
+		// Backfill install time for sites that activated before this tracking was added.
+		if ( ! get_option( 'mcw_usage_installed_time', false ) ) {
+			update_option( 'mcw_usage_installed_time', time(), false );
 		}
 
 		$version = [
@@ -173,6 +219,7 @@ class Plugin_Loader {
 	 * @since 0.0.1
 	 */
 	public function load_classes(): void {
+		$this->load_textdomain();
 		$this->load_bsf_analytics_loader();
 
 		if ( ! class_exists( 'woocommerce' ) ) {
@@ -184,6 +231,8 @@ class Plugin_Loader {
 
 		if ( is_admin() ) {
 			Admin_Menu::get_instance();
+			$this->load_astra_notices();
+			Admin_Notices::get_instance();
 		}
 
 		$this->load_integration_classes();
@@ -213,6 +262,18 @@ class Plugin_Loader {
 		);
 
 		return array_merge( $plugin_links, $links );
+	}
+
+	/**
+	 * Load the Astra Notices library.
+	 *
+	 * @since 1.0.9
+	 * @return void
+	 */
+	public function load_astra_notices() {
+		if ( ! class_exists( 'Astra_Notices' ) ) {
+			require_once MODERNCART_DIR . 'inc/libraries/astra-notices/class-astra-notices.php';
+		}
 	}
 
 	/**
@@ -291,6 +352,16 @@ class Plugin_Loader {
 				),
 			)
 		);
+
+		// Ensure BSF_Analytics_Events is loaded before instantiating Modern_Cart_Analytics.
+		// class-bsf-analytics-events.php is normally loaded inside BSF_Analytics::includes(),
+		// which runs on init at priority 10 via BSF_Analytics_Loader::load_analytics(). Since
+		// register_bsf_analytics_entity() also runs on init (priority 20), BSF_Analytics_Loader
+		// should have already run — but we require it explicitly here as a safety guarantee so
+		// detect_state_events() always finds BSF_Analytics_Events available.
+		if ( ! class_exists( 'BSF_Analytics_Events' ) ) {
+			require_once MODERNCART_DIR . 'inc/libraries/bsf-analytics/class-bsf-analytics-events.php';
+		}
 
 		require_once MODERNCART_DIR . 'inc/libraries/class-modern-cart-analytics.php';
 	}

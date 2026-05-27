@@ -26,7 +26,11 @@ class Slide_Out extends Cart {
 	 * @since 0.0.1
 	 */
 	public function __construct() {
-		add_action( 'wp_footer', [ $this, 'slide_out' ] );
+		// Only register wp_footer hook on frontend pages — not in admin/AJAX context.
+		// Other hooks must remain registered so AJAX refresh handlers can render cart content.
+		if ( ! is_admin() ) {
+			add_action( 'wp_footer', [ $this, 'slide_out' ] );
+		}
 		add_action( 'moderncart_slide_out_content', [ $this, 'render_header' ] );
 		add_action( 'moderncart_slide_out_content', [ $this, 'render_contents' ] );
 		add_action( 'moderncart_slide_out_header_before', [ $this, 'render_free_shipping_bar' ] );

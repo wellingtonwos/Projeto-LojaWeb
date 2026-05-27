@@ -90,6 +90,7 @@ class Plain_Text_Formatter {
 		$footer_copy     = $data['footer']['copy'] ?? '';
 		$body            = $data['body'] ?? array();
 		$unsubscribe_url = $data['footer']['unsubscribe_url'] ?? '';
+		$footer_type     = $data['footer_type'] ?? 'standard';
 
 		$lines = array(
 			__( 'Site Kit by Google', 'google-site-kit' ),
@@ -133,19 +134,12 @@ class Plain_Text_Formatter {
 		// Footer copy.
 		if ( ! empty( $footer_copy ) ) {
 			$lines[] = $footer_copy;
-			$lines[] = '';
 		}
 
-		// Unsubscribe link.
-		if ( ! empty( $unsubscribe_url ) ) {
-			$lines[] = self::format_link( __( 'Unsubscribe', 'google-site-kit' ), $unsubscribe_url );
-			$lines[] = '';
+		// Mirror the HTML `footer_type` branch: `inline` skips utility links.
+		if ( 'inline' !== $footer_type ) {
+			$lines = self::append_footer_links( $lines, $unsubscribe_url );
 		}
-
-		// Footer links (hardcoded to match HTML footer template).
-		$lines[] = self::format_link( __( 'Manage subscription', 'google-site-kit' ), $unsubscribe_url );
-		$lines[] = self::format_link( __( 'Privacy Policy', 'google-site-kit' ), 'https://policies.google.com/privacy' );
-		$lines[] = self::format_link( __( 'Help center', 'google-site-kit' ), add_query_arg( 'doc', 'get-support', 'https://sitekit.withgoogle.com/support/' ) );
 
 		return implode( "\n", $lines );
 	}
@@ -166,8 +160,6 @@ class Plain_Text_Formatter {
 		$template = $section['section_template'] ?? '';
 
 		switch ( $template ) {
-			case 'section-conversions':
-				return self::format_conversions_section( $section );
 			case 'section-metrics':
 				return self::format_metrics_section( $section );
 			case 'section-page-metrics':
@@ -299,24 +291,39 @@ class Plain_Text_Formatter {
 		// Footer copy.
 		if ( ! empty( $footer['copy'] ) ) {
 			$lines[] = $footer['copy'];
-			$lines[] = '';
 		}
 
-		// Unsubscribe link.
-		if ( ! empty( $footer['unsubscribe_url'] ) ) {
-			$lines[] = self::format_link( __( 'Unsubscribe', 'google-site-kit' ), $footer['unsubscribe_url'] );
-			$lines[] = '';
-		}
-
-		// Footer links (hardcoded to match HTML footer template).
-		$unsubscribe_url = $footer['unsubscribe_url'] ?? '';
-		if ( ! empty( $unsubscribe_url ) ) {
-			$lines[] = self::format_link( __( 'Manage subscription', 'google-site-kit' ), $unsubscribe_url );
-			$lines[] = self::format_link( __( 'Privacy Policy', 'google-site-kit' ), 'https://policies.google.com/privacy' );
-			$lines[] = self::format_link( __( 'Help center', 'google-site-kit' ), add_query_arg( 'doc', 'get-support', 'https://sitekit.withgoogle.com/support/' ) );
-		}
+		$lines = self::append_footer_links( $lines, $footer['unsubscribe_url'] ?? '' );
 
 		return implode( "\n", $lines );
+	}
+
+	/**
+	 * Appends the footer utility links to the lines buffer.
+	 *
+	 * Privacy Policy and Help Center always render. Unsubscribe and
+	 * Manage Subscription are only added when the unsubscribe URL is
+	 * available, matching the HTML footer template.
+	 *
+	 * @since 1.179.0
+	 *
+	 * @param array  $lines           Lines buffer to append to.
+	 * @param string $unsubscribe_url Unsubscribe URL used for the Unsubscribe and Manage Subscription links.
+	 * @return array Updated lines buffer.
+	 */
+	protected static function append_footer_links( array $lines, string $unsubscribe_url ): array {
+		$lines[] = '';
+
+		if ( ! empty( $unsubscribe_url ) ) {
+			$lines[] = self::format_link( __( 'Unsubscribe', 'google-site-kit' ), $unsubscribe_url );
+			$lines[] = '';
+			$lines[] = self::format_link( __( 'Manage Subscription', 'google-site-kit' ), $unsubscribe_url );
+		}
+
+		$lines[] = self::format_link( __( 'Privacy Policy', 'google-site-kit' ), 'https://policies.google.com/privacy' );
+		$lines[] = self::format_link( __( 'Help Center', 'google-site-kit' ), add_query_arg( 'doc', 'get-support', 'https://sitekit.withgoogle.com/support/' ) );
+
+		return $lines;
 	}
 
 	/**
@@ -336,91 +343,6 @@ class Plain_Text_Formatter {
 		$display_value = $prefix . round( $change, 1 ) . '%';
 
 		return '(' . $display_value . ')';
-	}
-
-	/**
-	 * Formats the conversions section.
-	 *
-	 * @since 1.170.0
-	 *
-	 * @param array $section Section configuration.
-	 * @return string Formatted section text.
-	 */
-	protected static function format_conversions_section( $section ) {
-		$output        = self::format_section_heading( $section['title'] );
-		$section_parts = $section['section_parts'];
-
-		// Total conversion events (rendered first/separately).
-		if ( ! empty( $section_parts['total_conversion_events']['data'] ) ) {
-			$data    = $section_parts['total_conversion_events']['data'];
-			$output .= self::format_metric(
-				$data['label'] ?? __( 'Total conversions', 'google-site-kit' ),
-				$data['value'] ?? '',
-				$data['change'] ?? null
-			);
-			$output .= "\n";
-
-			if ( ! empty( $data['change_context'] ) ) {
-				$output .= $data['change_context'] . "\n";
-			}
-			$output .= "\n";
-		}
-
-		// Other conversion metrics.
-		foreach ( $section_parts as $part_key => $part_config ) {
-			if ( 'total_conversion_events' === $part_key || empty( $part_config['data'] ) ) {
-				continue;
-			}
-
-			$data    = $part_config['data'];
-			$output .= self::format_conversion_metric_part( $data );
-		}
-
-		return $output . "\n";
-	}
-
-	/**
-	 * Formats a conversion metric part (e.g., purchases, products added to cart).
-	 *
-	 * @since 1.170.0
-	 *
-	 * @param array $data Conversion metric data.
-	 * @return string Formatted metric part text.
-	 */
-	protected static function format_conversion_metric_part( $data ) {
-		$lines = array();
-
-		// Metric label.
-		if ( ! empty( $data['label'] ) ) {
-			$lines[] = $data['label'];
-		}
-
-		// Event count with change.
-		if ( ! empty( $data['event_name'] ) ) {
-			$event_label = sprintf(
-				/* translators: %s: Event name (e.g., "Purchase") */
-				__( '“%s“ events', 'google-site-kit' ),
-				$data['event_name']
-			);
-			$lines[] = self::format_metric(
-				$event_label,
-				$data['value'] ?? '',
-				$data['change'] ?? null
-			);
-		}
-
-		// Top traffic channel.
-		if ( ! empty( $data['dimension'] ) && ! empty( $data['dimension_value'] ) ) {
-			$lines[] = sprintf(
-				'%s: %s',
-				__( 'Top traffic channel driving the most conversions', 'google-site-kit' ),
-				$data['dimension_value']
-			);
-		}
-
-		$lines[] = '';
-
-		return implode( "\n", $lines );
 	}
 
 	/**

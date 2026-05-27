@@ -46,7 +46,7 @@ final class ADBC_Cleanup_Type_Registry {
 		"actionscheduler_completed_logs",
 		"actionscheduler_failed_logs",
 		"actionscheduler_canceled_logs",
-		"actionscheduler_orphan_logs"
+		"actionscheduler_orphan_logs",
 	];
 
 	private const AUTO_COUNT_META_THRESHOLD = 50000;

@@ -27,7 +27,11 @@ class Floating extends Cart {
 		if ( Helper::is_maintenance_mode() ) {
 			return;
 		}
-		add_action( 'wp_footer', [ $this, 'floating_cart' ] );
+		// Only register wp_footer hook on frontend pages — not in admin/AJAX context.
+		// Other hooks must remain registered so AJAX refresh handlers can render cart content.
+		if ( ! is_admin() ) {
+			add_action( 'wp_footer', [ $this, 'floating_cart' ] );
+		}
 		add_filter( 'astra_cart_in_menu_class', [ $this, 'modify_mini_cart_classes' ] );
 		add_filter( 'astra_get_option_woo-header-cart-click-action', [ $this, 'modify_astra_slideout' ] );
 		add_filter( 'astra_get_option_shop-add-to-cart-action', [ $this, 'disable_astra_slideout' ], 10, 3 );

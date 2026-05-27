@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: gpt-po v1.2.4\n"
+"Last-Translator: gpt-po v1.2.3\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 #: astra-sites.php:133
 #: inc/classes/class-astra-sites-nps-notice.php:115
 #: inc/classes/class-astra-sites-utils.php:87
-#: inc/classes/class-astra-sites.php:2893
+#: inc/classes/class-astra-sites.php:2903
 #: inc/lib/onboarding/class-onboarding-loader.php:105
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
@@ -55,67 +55,67 @@ msgstr "Hangi Oluline Tööriistakomplekt"
 #: inc/classes/class-astra-sites-error-handler.php:109
 #: inc/classes/class-astra-sites-error-handler.php:153
 #: inc/lib/ai-builder/inc/classes/importer/class-ai-builder-error-handler.php:110
-#: inc/lib/starter-templates-importer/resetter/st-resetter.php:523
+#: inc/lib/starter-templates-importer/resetter/st-resetter.php:531
 msgid "There was an error on your website."
 msgstr "Teie veebisaidil oli viga."
 
 #: inc/lib/ai-builder/inc/classes/importer/class-ai-builder-error-handler.php:164
-#: inc/lib/starter-templates-importer/resetter/st-resetter.php:492
+#: inc/lib/starter-templates-importer/resetter/st-resetter.php:500
 msgid "There was an error your website."
 msgstr "Teie veebisaidil oli viga."
 
 #. translators: %1$s refers to the plugin name
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:148
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:149
 #, php-format
 msgid "Required File Permissions to import the templates from %s are missing."
 msgstr "Nõutavad failiload %s mallide importimiseks puuduvad."
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:155
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:156
 msgid "This is usually due to inconsistent file permissions."
 msgstr "See on tavaliselt tingitud ebajärjekindlatest faililubadest."
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:158
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:159
 msgid "You can easily update permissions by adding the following code into the wp-config.php file."
 msgstr "Saate õigusi hõlpsasti uuendada, lisades järgmise koodi wp-config.php faili."
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:440
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:449
 msgid "Enabled"
 msgstr "Lubatud"
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:443
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:452
 msgid "Disabled"
 msgstr "Keelatud"
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:527
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:584
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:536
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:593
 msgid "Yes"
 msgstr "Jah"
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:530
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:587
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:539
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:596
 msgid "No"
 msgstr "Ei"
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:602
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:611
 msgid "You currently have no scheduled cron events."
 msgstr "Teil ei ole praegu ühtegi ajastatud cron sündmust."
 
 #: inc/classes/class-astra-sites-page.php:78
 #: inc/classes/class-astra-sites-page.php:232
-#: inc/classes/class-astra-sites.php:283
-#: inc/classes/class-astra-sites.php:856
-#: inc/classes/class-astra-sites.php:1288
-#: inc/classes/class-astra-sites.php:1383
-#: inc/classes/class-astra-sites.php:1418
-#: inc/classes/class-astra-sites.php:1618
-#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1008
-#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1028
-#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1046
+#: inc/classes/class-astra-sites.php:288
+#: inc/classes/class-astra-sites.php:861
+#: inc/classes/class-astra-sites.php:1293
+#: inc/classes/class-astra-sites.php:1388
+#: inc/classes/class-astra-sites.php:1423
+#: inc/classes/class-astra-sites.php:1623
+#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1027
+#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1047
+#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1065
 #: inc/lib/ai-builder/inc/ajax/plugin.php:119
 #: inc/lib/ai-builder/inc/ajax/plugin.php:335
 #: inc/lib/ai-builder/inc/ajax/plugin.php:372
 #: inc/lib/ai-builder/inc/ajax/plugin.php:377
-#: inc/lib/ai-builder/inc/traits/helper.php:937
+#: inc/lib/ai-builder/inc/traits/helper.php:941
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:248
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:315
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:359
@@ -134,8 +134,8 @@ msgstr "Teil ei ole praegu ühtegi ajastatud cron sündmust."
 #: inc/lib/gutenberg-templates/inc/importer/template-kit-importer.php:113
 #: inc/lib/gutenberg-templates/inc/traits/upgrade.php:39
 #: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:69
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:186
-#: inc/lib/zipwp-images/classes/zipwp-images-api.php:269
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:203
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:264
 msgid "You are not allowed to perform this action"
 msgstr "Teil ei ole lubatud seda toimingut teha"
 
@@ -204,7 +204,7 @@ msgstr "WordPressi vaikeeditor"
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Elementor"
 msgstr "Elementor"
 
@@ -212,12 +212,12 @@ msgstr "Elementor"
 #: inc/classes/class-astra-sites-utils.php:121
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Beaver Builder"
 msgstr "Beaver Builder"
 
 #: inc/classes/class-astra-sites-page.php:483
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Brizy"
 msgstr "Brizy"
 
@@ -442,368 +442,368 @@ msgid "This site category does not exist. Please try a different site category."
 msgstr "Seda saidi kategooriat ei eksisteeri. Palun proovige teist saidi kategooriat."
 
 #. Translators: %s Plugin Name.
-#: inc/classes/class-astra-sites.php:264
+#: inc/classes/class-astra-sites.php:269
 #, php-format
 msgid "%s: XMLReader extension is missing! To import templates, please get in touch with your hosting provider to enable this extension."
 msgstr "%s: XMLReader laiend on puudu! Mallide importimiseks võtke ühendust oma majutusteenuse pakkujaga, et see laiend lubada."
 
 #. translators: %d is the Template ID.
-#: inc/classes/class-astra-sites.php:785
+#: inc/classes/class-astra-sites.php:790
 #, php-format
 msgid "Invalid Template ID - %d"
 msgstr "Kehtetu malli ID - %d"
 
-#: inc/classes/class-astra-sites.php:871
-#: inc/classes/class-astra-sites.php:1309
+#: inc/classes/class-astra-sites.php:876
+#: inc/classes/class-astra-sites.php:1314
 msgid "Invalid API URL."
 msgstr "Kehtetu API URL."
 
-#: inc/classes/class-astra-sites.php:883
+#: inc/classes/class-astra-sites.php:888
 msgid "Invalid Post Meta"
 msgstr "Kehtetu postituse meta"
 
-#: inc/classes/class-astra-sites.php:890
+#: inc/classes/class-astra-sites.php:895
 msgid "Invalid Post ID or Elementor Meta"
 msgstr "Kehtetu postituse ID või Elementori meta"
 
-#: inc/classes/class-astra-sites.php:934
+#: inc/classes/class-astra-sites.php:939
 msgid "Provided API URL is empty! Please try again!"
 msgstr "Esitatud API URL on tühi! Palun proovige uuesti!"
 
 #. Translators: %s is API URL.
-#: inc/classes/class-astra-sites.php:961
+#: inc/classes/class-astra-sites.php:966
 #, php-format
 msgid "Invalid API Request URL - %s"
 msgstr "Kehtetu API päringu URL - %s"
 
 #. translators: %s Error Message
-#: inc/classes/class-astra-sites.php:984
-#: inc/classes/class-astra-sites.php:1110
+#: inc/classes/class-astra-sites.php:989
+#: inc/classes/class-astra-sites.php:1115
 #, php-format
 msgid "API Request could not be performed - %s"
 msgstr "API päringut ei saanud teostada - %s"
 
 #. translators: %s Error Message
-#: inc/classes/class-astra-sites.php:989
-#: inc/classes/class-astra-sites.php:1115
+#: inc/classes/class-astra-sites.php:994
+#: inc/classes/class-astra-sites.php:1120
 #, php-format
 msgid "API Request has failed - %s"
 msgstr "API päring ebaõnnestus - %s"
 
-#: inc/classes/class-astra-sites.php:1029
-#: inc/classes/class-astra-sites.php:1144
+#: inc/classes/class-astra-sites.php:1034
+#: inc/classes/class-astra-sites.php:1149
 msgid "Internal Server Error."
 msgstr "Sisemine serveri viga."
 
 #. translators: %s IP address.
-#: inc/classes/class-astra-sites.php:1035
-#: inc/classes/class-astra-sites.php:1150
+#: inc/classes/class-astra-sites.php:1040
+#: inc/classes/class-astra-sites.php:1155
 #, php-format
 msgid "Client IP: %1$s </br> Error code: %2$s"
 msgstr "Kliendi IP: %1$s </br> Veakood: %2$s"
 
-#: inc/classes/class-astra-sites.php:1068
+#: inc/classes/class-astra-sites.php:1073
 msgid "Provided API details are empty! Please try again!"
 msgstr "Esitatud API üksikasjad on tühjad! Palun proovige uuesti!"
 
 #. Translators: %s is Request URL.
 #. Translators: %s is API URL.
-#: inc/classes/class-astra-sites.php:1087
+#: inc/classes/class-astra-sites.php:1092
 #: inc/lib/gutenberg-templates/inc/importer/template-kit-importer.php:60
 #, php-format
 msgid "Invalid Request URL - %s"
 msgstr "Kehtetu päringu URL - %s"
 
-#: inc/classes/class-astra-sites.php:1426
-#: inc/lib/zipwp-images/classes/zipwp-images-api.php:287
+#: inc/classes/class-astra-sites.php:1431
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:282
 msgid "Need to send URL of the image to be downloaded"
 msgstr "Vaja on saata allalaaditava pildi URL"
 
-#: inc/lib/zipwp-images/classes/zipwp-images-api.php:297
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:292
 msgid "Could not download the image."
 msgstr "Pilti ei saanud alla laadida."
 
-#: inc/classes/class-astra-sites.php:1708
+#: inc/classes/class-astra-sites.php:1713
 msgid "Get Started"
 msgstr "Alusta"
 
-#: inc/classes/class-astra-sites.php:1921
-#: inc/classes/class-astra-sites.php:2515
+#: inc/classes/class-astra-sites.php:1926
+#: inc/classes/class-astra-sites.php:2520
 #: inc/includes/templates.php:321
 msgid "Get Access!"
 msgstr "Hangi juurdepääs!"
 
-#: inc/classes/class-astra-sites.php:1923
+#: inc/classes/class-astra-sites.php:1928
 #: inc/lib/one-onboarding/build/main.js:25
 msgid "Upgrade"
 msgstr "Uuenda"
 
-#: inc/classes/class-astra-sites.php:1927
+#: inc/classes/class-astra-sites.php:1932
 msgid "Syncing template library in the background. The process can take anywhere between 2 to 3 minutes. We will notify you once done."
 msgstr "Mallide raamatukogu sünkroonimine taustal. Protsess võib võtta aega 2 kuni 3 minutit. Anname teile teada, kui see on tehtud."
 
-#: inc/classes/class-astra-sites.php:1928
+#: inc/classes/class-astra-sites.php:1933
 msgid "Some of the files required during the import process are missing.<br/><br/>Please try again after some time."
 msgstr "Mõned impordiprotsessi ajal vajalikud failid puuduvad.<br/><br/>Palun proovige mõne aja pärast uuesti."
 
-#: inc/classes/class-astra-sites.php:1938
+#: inc/classes/class-astra-sites.php:1943
 msgid "Done! View Site"
 msgstr "Valmis! Vaata saiti"
 
 #. translators: %s is a template name
-#: inc/classes/class-astra-sites.php:1941
+#: inc/classes/class-astra-sites.php:1946
 #, php-format
 msgid "Import \"%s\" Template"
 msgstr "Impordi \"%s\" mall"
 
-#: inc/classes/class-astra-sites.php:1944
+#: inc/classes/class-astra-sites.php:1949
 msgid "Installing Required Plugins.."
 msgstr "Nõutavate pistikprogrammide installimine.."
 
 #. translators: %s are white label strings.
-#: inc/classes/class-astra-sites.php:1946
+#: inc/classes/class-astra-sites.php:1951
 #, php-format
 msgid "Installing %1$s Theme.."
 msgstr "Paigaldan %1$s teema.."
 
-#: inc/classes/class-astra-sites.php:1969
+#: inc/classes/class-astra-sites.php:1974
 msgid "Dismiss this notice."
 msgstr "Hüljake see teade."
 
-#: inc/classes/class-astra-sites.php:1971
+#: inc/classes/class-astra-sites.php:1976
 msgid "One Last Step.."
 msgstr "Viimane samm.."
 
-#: inc/classes/class-astra-sites.php:1972
+#: inc/classes/class-astra-sites.php:1977
 msgid "Your Selected Website is Being Imported."
 msgstr "Teie valitud veebisaiti imporditakse."
 
-#: inc/classes/class-astra-sites.php:1973
+#: inc/classes/class-astra-sites.php:1978
 msgid "Your Selected Template is Being Imported."
 msgstr "Teie valitud mall imporditakse."
 
-#: inc/classes/class-astra-sites.php:1975
+#: inc/classes/class-astra-sites.php:1980
 msgid "We have sent you a surprise gift on your email address! Please check your inbox!"
 msgstr "Oleme saatnud teile üllatuskingituse teie e-posti aadressile! Palun kontrollige oma postkasti!"
 
-#: inc/classes/class-astra-sites.php:1977
+#: inc/classes/class-astra-sites.php:1982
 msgid "Looks like the template you are importing is temporarily not available."
 msgstr "Tundub, et mall, mida impordite, pole ajutiselt saadaval."
 
-#: inc/classes/class-astra-sites.php:1979
+#: inc/classes/class-astra-sites.php:1984
 msgid "There was an error connecting to the Starter Templates API."
 msgstr "Starter Templates API-ga ühendamisel ilmnes viga."
 
-#: inc/classes/class-astra-sites.php:1980
+#: inc/classes/class-astra-sites.php:1985
 msgid "There was an error while importing the content."
 msgstr "Sisu importimisel tekkis viga."
 
-#: inc/classes/class-astra-sites.php:1981
+#: inc/classes/class-astra-sites.php:1986
 msgid "To import content, WordPress needs to store XML file in /wp-content/ folder. Please get in touch with your hosting provider."
 msgstr "Sisu importimiseks peab WordPress salvestama XML-faili /wp-content/ kausta. Palun võtke ühendust oma majutusteenuse pakkujaga."
 
-#: inc/classes/class-astra-sites.php:1982
+#: inc/classes/class-astra-sites.php:1987
 msgid "Looks like your host probably could not store XML file in /wp-content/ folder."
 msgstr "Tundub, et teie host ei saanud tõenäoliselt XML-faili salvestada /wp-content/ kausta."
 
 #. translators: %s URL to document.
-#: inc/classes/class-astra-sites.php:1986
+#: inc/classes/class-astra-sites.php:1991
 #, php-format
 msgid "%1$sRead&nbsp;<a href=\"%2$s\" target=\"_blank\">article</a>&nbsp;to resolve the issue and continue importing template.%3$s"
 msgstr "%1$sLoe&nbsp;<a href=\"%2$s\" target=\"_blank\">artiklit</a>&nbsp;probleemi lahendamiseks ja malli importimise jätkamiseks.%3$s"
 
 #. translators: %s URL to document.
-#: inc/classes/class-astra-sites.php:1997
+#: inc/classes/class-astra-sites.php:2002
 #, php-format
 msgid "%1$sPlease report this <a href=\"%2$s\" target=\"_blank\">here</a>.%3$s"
 msgstr "%1$sPalun teatage sellest <a href=\"%2$s\" target=\"_blank\">siin</a>.%3$s"
 
 #. translators: %s Anchor link to support URL.
-#: inc/classes/class-astra-sites.php:2002
+#: inc/classes/class-astra-sites.php:2007
 #, php-format
 msgid "Please report this error%1$s here %2$s, so we can fix it."
 msgstr "Palun teatage sellest veast%1$s siin %2$s, et saaksime selle parandada."
 
-#: inc/classes/class-astra-sites.php:2286
+#: inc/classes/class-astra-sites.php:2291
 msgid "XMLReader Support Missing"
 msgstr "XMLReaderi tugi puudub"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2288
+#: inc/classes/class-astra-sites.php:2293
 msgid "You're close to importing the template. To complete the process, enable XMLReader support on your website.."
 msgstr "Olete lähedal malli importimisele. Protsessi lõpuleviimiseks lubage oma veebisaidil XMLReaderi tugi."
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2288
 #: inc/classes/class-astra-sites.php:2293
 #: inc/classes/class-astra-sites.php:2298
-#: inc/classes/class-astra-sites.php:2316
+#: inc/classes/class-astra-sites.php:2303
+#: inc/classes/class-astra-sites.php:2321
 #, php-format
 msgid "Read an article <a href=\"%s\" target=\"_blank\">here</a> to resolve the issue."
 msgstr "Loe artiklit <a href=\"%s\" target=\"_blank\">siin</a>, et probleemi lahendada."
 
-#: inc/classes/class-astra-sites.php:2291
+#: inc/classes/class-astra-sites.php:2296
 msgid "cURL Support Missing"
 msgstr "cURL tugi puudub"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2293
+#: inc/classes/class-astra-sites.php:2298
 msgid "To run a smooth import, kindly enable cURL support on your website."
 msgstr "Selleks, et import sujuks sujuvalt, lubage oma veebisaidil cURL tugi."
 
-#: inc/classes/class-astra-sites.php:2296
+#: inc/classes/class-astra-sites.php:2301
 msgid "Disable Debug Mode"
 msgstr "Lülita silumisrežiim välja"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2298
+#: inc/classes/class-astra-sites.php:2303
 msgid "WordPress debug mode is currently enabled on your website. With this, any errors from third-party plugins might affect the import process."
 msgstr "Teie veebisaidil on praegu lubatud WordPressi tõrkeotsingu režiim. Sellega võivad kolmandate osapoolte pistikprogrammide vead mõjutada importimisprotsessi."
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2298
+#: inc/classes/class-astra-sites.php:2303
 msgid "Kindly disable it to continue importing the Starter Template. To do so, you can add the following code into the wp-config.php file."
 msgstr "Palun keelake see, et jätkata Starter Template'i importimist. Selleks saate lisada järgmise koodi wp-config.php faili."
 
-#: inc/classes/class-astra-sites.php:2301
+#: inc/classes/class-astra-sites.php:2306
 msgid "Update Plugin"
 msgstr "Uuenda pistikprogramm"
 
 #. translators: %s update page link.
-#: inc/classes/class-astra-sites.php:2303
+#: inc/classes/class-astra-sites.php:2308
 #, php-format
 msgid "Kindly <a href=\"%s\" target=\"_blank\">update</a> them for a successful import. Skipping this step might break the template design/feature."
 msgstr "Palun <a href=\"%s\" target=\"_blank\">uuendage</a> neid eduka impordi jaoks. Selle sammu vahelejätmine võib rikkuda mallide kujunduse/funktsiooni."
 
-#: inc/classes/class-astra-sites.php:2306
+#: inc/classes/class-astra-sites.php:2311
 #: inc/includes/templates.php:468
 msgid "Required Plugins Missing"
 msgstr "Nõutud pistikprogrammid puuduvad"
 
-#: inc/classes/class-astra-sites.php:2307
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/classes/class-astra-sites.php:2312
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "This starter template requires premium plugins. As these are third party premium plugins, you'll need to purchase, install and activate them first."
 msgstr "See stardikomplekt nõuab premium pistikprogramme. Kuna need on kolmanda osapoole premium pistikprogrammid, peate need esmalt ostma, installima ja aktiveerima."
 
-#: inc/classes/class-astra-sites.php:2310
+#: inc/classes/class-astra-sites.php:2315
 msgid "Dynamic Page"
 msgstr "Dünaamiline leht"
 
-#: inc/classes/class-astra-sites.php:2311
+#: inc/classes/class-astra-sites.php:2316
 #: inc/lib/gutenberg-templates/dist/main.js:2
 msgid "The page template you are about to import contains a dynamic widget/module. Please note this dynamic data will not be available with the imported page."
 msgstr "Lehe mall, mida kavatsete importida, sisaldab dünaamilist vidinat/moodulit. Pange tähele, et see dünaamiline teave ei ole imporditud lehel saadaval."
 
-#: inc/classes/class-astra-sites.php:2311
+#: inc/classes/class-astra-sites.php:2316
 #: inc/lib/gutenberg-templates/dist/main.js:2
 msgid "You will need to add it manually on the page."
 msgstr "Peate selle lehele käsitsi lisama."
 
-#: inc/classes/class-astra-sites.php:2311
+#: inc/classes/class-astra-sites.php:2316
 msgid "This dynamic content will be available when you import the entire site."
 msgstr "See dünaamiline sisu on saadaval, kui impordite kogu saidi."
 
-#: inc/classes/class-astra-sites.php:2314
+#: inc/classes/class-astra-sites.php:2319
 msgid "Enable Flexbox Container from Elementor"
 msgstr "Luba Flexboxi konteiner Elementoris"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2316
+#: inc/classes/class-astra-sites.php:2321
 msgid "The Flexbox Container widget is disabled on your website. With this disabled, the import process will be affected. Kindly enable it to continue importing the Starter Template."
 msgstr "Teie veebisaidil on Flexboxi konteineri vidin keelatud. Selle keelamise korral mõjutatakse importimisprotsessi. Palun lubage see, et jätkata Starter Template'i importimist."
 
-#: inc/classes/class-astra-sites.php:2319
+#: inc/classes/class-astra-sites.php:2324
 msgid "Missing plugin installation permission"
 msgstr "Puudub pistikprogrammi installimise luba"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2321
+#: inc/classes/class-astra-sites.php:2326
 msgid "You do not have permission to install the required plugin. You must have install permissions to proceed with the required plugin."
 msgstr "Teil ei ole luba vajaliku pistikprogrammi installimiseks. Vajaliku pistikprogrammi installimiseks peate omama installilube."
 
-#: inc/classes/class-astra-sites.php:2324
+#: inc/classes/class-astra-sites.php:2329
 msgid "Missing plugin activation permission"
 msgstr "Puudub pistikprogrammi aktiveerimise luba"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2326
+#: inc/classes/class-astra-sites.php:2331
 msgid "You do not have permission to activate the required plugin. You must have activate permissions to proceed with the required plugin."
 msgstr "Teil ei ole luba vajaliku pistikprogrammi aktiveerimiseks. Vajaliku pistikprogrammi kasutamiseks peate omama aktiveerimisõigusi."
 
-#: inc/classes/class-astra-sites.php:2329
+#: inc/classes/class-astra-sites.php:2334
 msgid "Insufficient Memory Limit"
 msgstr "Ebapiisav mälupiirang"
 
 #. translators: %s doc link.
-#: inc/classes/class-astra-sites.php:2331
+#: inc/classes/class-astra-sites.php:2336
 msgid "The memory limit of your site is below the recommended 256MB. While you can proceed, increasing the memory limit is advised for a seamless import experience."
 msgstr "Teie saidi mälupiirang on alla soovitatud 256 MB. Kuigi saate jätkata, on sujuva importimise kogemuse tagamiseks soovitatav mälupiirangut suurendada."
 
 #. translators: %s are link.
-#: inc/classes/class-astra-sites.php:2461
+#: inc/classes/class-astra-sites.php:2466
 #, php-format
 msgid "This is a premium template available with Essential and Business Toolkits. you can purchase it from <a href=\"%s\" target=\"_blank\">here</a>."
 msgstr "See on premium mall, mis on saadaval Essential ja Business tööriistakomplektidega. Saate selle osta <a href=\"%s\" target=\"_blank\">siit</a>."
 
 #. translators: %s are link.
-#: inc/classes/class-astra-sites.php:2465
+#: inc/classes/class-astra-sites.php:2470
 #, php-format
 msgid "This is a premium template available with Essential and Business Toolkits. <a href=\"%s\" target=\"_blank\">Validate Your License</a> Key to import this template."
 msgstr "See on premium mall, mis on saadaval Essential ja Business tööriistakomplektidega. <a href=\"%s\" target=\"_blank\">Kinnitage oma litsents</a> võtmega, et seda malli importida."
 
-#: inc/classes/class-astra-sites.php:2519
+#: inc/classes/class-astra-sites.php:2524
 msgid "Template"
 msgstr "Mall"
 
-#: inc/classes/class-astra-sites.php:2520
+#: inc/classes/class-astra-sites.php:2525
 msgid "Block"
 msgstr "Blokeeri"
 
-#: inc/classes/class-astra-sites.php:2521
+#: inc/classes/class-astra-sites.php:2526
 #: inc/includes/templates.php:78
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Dismiss"
 msgstr "Loobu"
 
-#: inc/classes/class-astra-sites.php:2522
+#: inc/classes/class-astra-sites.php:2527
 msgid "Install Required Plugins"
 msgstr "Installige vajalikud pistikprogrammid"
 
-#: inc/classes/class-astra-sites.php:2526
+#: inc/classes/class-astra-sites.php:2531
 msgid "You can locate <strong>Starter Templates Settings</strong> under the <strong>Page Settings</strong> of the Style Tab."
 msgstr "Leiad <strong>Starter Templates Settings</strong> <strong>Page Settings</strong> all Style Tabi alt."
 
-#: inc/classes/class-astra-sites.php:2528
+#: inc/classes/class-astra-sites.php:2533
 msgid "Read More →"
 msgstr "Loe edasi →"
 
-#: inc/classes/class-astra-sites.php:2821
+#: inc/classes/class-astra-sites.php:2825
 msgid "Template library refreshed!"
 msgstr "Mallide kogu värskendatud!"
 
-#: inc/classes/class-astra-sites.php:2895
+#: inc/classes/class-astra-sites.php:2905
 msgid "Build Your Dream Site in Minutes With AI"
 msgstr "Looge oma unistuste sait minutitega tehisintellekti abil"
 
-#: inc/classes/class-astra-sites.php:2896
+#: inc/classes/class-astra-sites.php:2906
 msgid "Say goodbye to the days of spending weeks designing and building your website.<br/> You can now create professional-grade websites in minutes."
 msgstr "Ütle hüvasti nädalatepikkusele veebisaidi kujundamisele ja ehitamisele.<br/> Nüüd saate luua professionaalse tasemega veebisaite minutitega."
 
-#: inc/classes/class-astra-sites.php:2898
+#: inc/classes/class-astra-sites.php:2908
 #: inc/lib/one-onboarding/build/main.js:16
 msgid "Let’s Get Started"
 msgstr "Alustame"
 
-#: inc/classes/class-astra-sites.php:2899
+#: inc/classes/class-astra-sites.php:2909
 msgid "I want to build this website from scratch"
 msgstr "Ma tahan seda veebisaiti nullist üles ehitada"
 
-#: inc/classes/class-astra-sites.php:2934
+#: inc/classes/class-astra-sites.php:2944
 msgid "Required WP_Filesystem Permissions to import the templates from Starter Templates are missing."
 msgstr "Starter Templates'i mallide importimiseks on vajalikud WP_Filesystemi õigused puudu."
 
-#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1035
-#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1053
+#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1054
+#: inc/importers/batch-processing/class-astra-sites-batch-processing.php:1072
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:1049
 msgid "You are not allowed to perform this action."
 msgstr "Teil ei ole lubatud seda toimingut teha."
@@ -911,7 +911,7 @@ msgstr "Plokid"
 #: inc/includes/templates.php:144
 #: inc/includes/templates.php:145
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Close"
 msgstr "Sulge"
 
@@ -945,6 +945,7 @@ msgstr "Kas te ei näe malli, mida soovite importida? %s"
 #: inc/includes/templates.php:440
 #: inc/includes/templates.php:501
 #: inc/lib/gutenberg-templates/dist/main.js:2
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
 msgid "Back to Templates"
 msgstr "Tagasi mallide juurde"
 
@@ -992,42 +993,41 @@ msgstr "Plugin Kirjeldus:"
 msgid "AI Builder"
 msgstr "AI Builder"
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:447
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:445
 msgid "Installed! Activating.."
 msgstr "Paigaldatud! Aktiveerimine.."
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:448
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:446
 msgid "Activating..."
 msgstr "Aktiveerimine..."
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:449
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:447
 msgid "Activated!"
 msgstr "Aktiveeritud!"
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:450
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:448
 msgid "Installing..."
 msgstr "Paigaldamine..."
 
 #. translators: %1$s: team name, %2$s: plan name
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:471
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:469
 #, php-format
 msgid "Your current active organization is %1$s, which is on the %2$s plan. You have reached the maximum number of sites allowed to be created on %2$s plan."
 msgstr "Teie praegu aktiivne organisatsioon on %1$s, mis on %2$s plaanil. Olete saavutanud maksimaalse lubatud saitide arvu, mida saab luua %2$s plaanil."
 
-#. translators: %1$s: team name
 #. translators: %s: team name
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:480
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:475
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 #, php-format,js-format
 msgid "Please upgrade the plan for %s in order to create more sites."
 msgstr "Palun uuendage %s plaani, et luua rohkem saite."
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:486
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:479
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Unlock Full Power"
 msgstr "Ava täielik võimsus"
 
-#: inc/lib/ai-builder/ai-builder-plugin-loader.php:489
+#: inc/lib/ai-builder/ai-builder-plugin-loader.php:482
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
 msgid "Contact Support"
 msgstr "Võta ühendust toega"
@@ -1097,7 +1097,7 @@ msgstr "Veebisaidi keele seadistamine ebaõnnestus."
 #: inc/lib/gutenberg-templates/inc/api/settings.php:92
 #: inc/lib/gutenberg-templates/inc/api/sites.php:70
 #: inc/lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:81
-#: inc/lib/nps-survey/classes/nps-survey-script.php:333
+#: inc/lib/nps-survey/classes/nps-survey-script.php:313
 #: inc/lib/onboarding/classes/class-astra-sites-zipwp-api.php:80
 #: inc/lib/onboarding/classes/class-astra-sites-zipwp-integration.php:49
 #: inc/lib/zipwp-images/classes/zipwp-images-api.php:95
@@ -1138,62 +1138,62 @@ msgstr "Kahjuks ei ole sul lubatud seda teha."
 #: inc/lib/gutenberg-templates/inc/api/sites.php:93
 #: inc/lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:142
 #: inc/lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:201
-#: inc/lib/nps-survey/classes/nps-survey-script.php:387
-#: inc/lib/nps-survey/classes/nps-survey-script.php:505
+#: inc/lib/nps-survey/classes/nps-survey-script.php:366
+#: inc/lib/nps-survey/classes/nps-survey-script.php:486
 #: inc/lib/onboarding/classes/class-astra-sites-zipwp-api.php:163
 #: inc/lib/onboarding/classes/class-astra-sites-zipwp-api.php:236
-#: inc/lib/zipwp-images/classes/zipwp-images-api.php:171
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:174
 msgid "Nonce verification failed."
 msgstr "Nonce'i kontrollimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/classes/zipwp/class-ai-builder-zipwp-api.php:1002
-#: inc/lib/starter-templates-importer/importer/st-importer.php:467
+#: inc/lib/starter-templates-importer/importer/st-importer.php:493
 msgid "There was an error downloading the XML file."
 msgstr "XML-faili allalaadimisel tekkis viga."
 
 #: inc/lib/ai-builder/inc/classes/zipwp/class-ai-builder-zipwp-api.php:1014
-#: inc/lib/ai-builder/inc/traits/helper.php:665
-#: inc/lib/ai-builder/inc/traits/helper.php:697
-#: inc/lib/ai-builder/inc/traits/helper.php:733
-#: inc/lib/ai-builder/inc/traits/helper.php:814
-#: inc/lib/ai-builder/inc/traits/helper.php:838
-#: inc/lib/ai-builder/inc/traits/helper.php:863
-#: inc/lib/ai-builder/inc/traits/helper.php:898
+#: inc/lib/ai-builder/inc/traits/helper.php:669
+#: inc/lib/ai-builder/inc/traits/helper.php:701
+#: inc/lib/ai-builder/inc/traits/helper.php:737
+#: inc/lib/ai-builder/inc/traits/helper.php:818
+#: inc/lib/ai-builder/inc/traits/helper.php:842
+#: inc/lib/ai-builder/inc/traits/helper.php:867
+#: inc/lib/ai-builder/inc/traits/helper.php:902
 msgid "Required class not found."
 msgstr "Nõutud klassi ei leitud."
 
-#: inc/classes/class-astra-sites-analytics.php:168
+#: inc/classes/class-astra-sites-analytics.php:202
 #: inc/lib/ai-builder/inc/traits/helper.php:231
 #: inc/lib/zip-ai/classes/helper.php:200
 msgid "You do not have permission to perform this action."
 msgstr "Teil ei ole luba selle toimingu tegemiseks."
 
 #: inc/lib/ai-builder/inc/traits/helper.php:250
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Please contact the hosting service provider to help you update the permissions so that you can successfully import a complete template."
 msgstr "Palun võtke ühendust majutusteenuse pakkujaga, et aidata teil õigusi uuendada, et saaksite edukalt täieliku malli importida."
 
-#: inc/lib/ai-builder/inc/traits/helper.php:494
+#: inc/lib/ai-builder/inc/traits/helper.php:498
 msgid "Insufficient Permission. Please contact your Super Admin to allow the install required plugin permissions."
 msgstr "Ebapiisavad õigused. Palun võtke ühendust oma ülemadministraatoriga, et lubada vajalike pistikprogrammi õiguste installimine."
 
-#: inc/lib/ai-builder/inc/traits/helper.php:646
+#: inc/lib/ai-builder/inc/traits/helper.php:650
 msgid "Plugin Activated"
 msgstr "Plugin aktiveeritud"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:662
+#: inc/lib/ai-builder/inc/traits/helper.php:666
 msgid "User does not have permission!"
 msgstr "Kasutajal pole luba!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:708
+#: inc/lib/ai-builder/inc/traits/helper.php:712
 msgid "Site options Imported!"
 msgstr "Saidi valikud imporditud!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:869
+#: inc/lib/ai-builder/inc/traits/helper.php:873
 msgid "Deleted Widgets!"
 msgstr "Kustutatud vidinad!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:893
+#: inc/lib/ai-builder/inc/traits/helper.php:897
 msgid "Customizer data is empty!"
 msgstr "Kohandaja andmed on tühjad!"
 
@@ -1228,8 +1228,9 @@ msgstr "Lahenda failiõiguste probleem"
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:280
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:291
 #: inc/lib/gutenberg-templates/inc/importer/plugin.php:467
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:270
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:296
 #: inc/lib/ai-builder/inc/assets/build/main.js:184
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Something went wrong"
 msgstr "Midagi läks valesti"
 
@@ -1352,29 +1353,29 @@ msgstr "Konto on juba loodud."
 msgid "Customizer data is empty."
 msgstr "Kohandaja andmed on tühjad."
 
-#: inc/lib/starter-templates-importer/importer/st-importer.php:397
+#: inc/lib/starter-templates-importer/importer/st-importer.php:423
 msgid "Customizer data imported successfully."
 msgstr "Kohandaja andmed imporditi edukalt."
 
 #. Translators: %s is WXR URL.
-#: inc/lib/starter-templates-importer/importer/st-importer.php:426
+#: inc/lib/starter-templates-importer/importer/st-importer.php:452
 #, php-format
 msgid "Invalid WXR Request URL - %s"
 msgstr "Kehtetu WXR-i päringu URL - %s"
 
-#: inc/lib/starter-templates-importer/importer/st-importer.php:569
+#: inc/lib/starter-templates-importer/importer/st-importer.php:595
 msgid "Site options are empty!"
 msgstr "Saidi valikud on tühjad!"
 
-#: inc/lib/starter-templates-importer/importer/st-importer.php:669
+#: inc/lib/starter-templates-importer/importer/st-importer.php:695
 msgid "Options imported successfully."
 msgstr "Valikud imporditi edukalt."
 
-#: inc/lib/starter-templates-importer/importer/st-importer.php:718
+#: inc/lib/starter-templates-importer/importer/st-importer.php:744
 msgid "Widget data is empty!"
 msgstr "Vidina andmed on tühjad!"
 
-#: inc/lib/starter-templates-importer/importer/st-importer.php:736
+#: inc/lib/starter-templates-importer/importer/st-importer.php:762
 msgid "Widgets imported successfully."
 msgstr "Vidinad imporditi edukalt."
 
@@ -1390,195 +1391,195 @@ msgstr "Ei saanud faili parsida"
 msgid "This WXR file (version %1$s) is newer than the importer (version %2$s) and may not be supported. Please consider updating."
 msgstr "See WXR-fail (versioon %1$s) on uuem kui importija (versioon %2$s) ja seda ei pruugita toetada. Palun kaaluge uuendamist."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:623
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:625
 msgid "The file does not exist, please try again."
 msgstr "Faili ei eksisteeri, palun proovige uuesti."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:683
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:685
 msgid "Invalid author mapping"
 msgstr "Vigane autori kaardistus"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:784
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:786
 msgid "Cannot import auto-draft posts"
 msgstr "Ei saa importida automaatmustandi postitusi"
 
 #. translators: %1$s is the import message, %2$s is post type.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:884
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:886
 #, php-format
 msgid "Failed to import \"%1$s\": Invalid post type %2$s"
 msgstr "Ebaõnnestus importida \"%1$s\": Vigane postituse tüüp %2$s"
 
 #. translators: %1$s single post type, %2$s is post title.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:896
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:898
 #, php-format
 msgid "%1$s \"%2$s\" already exists."
 msgstr "%1$s \"%2$s\" on juba olemas."
 
 #. translators: %s is post title
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:994
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:996
 #, php-format
 msgid "Skipping attachment \"%s\", fetching attachments disabled"
 msgstr "Manust \"%s\" ei lisata, manuste allalaadimine on keelatud"
 
 #. translators: %1$s is the post title, %2$s is post type.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1021
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1023
 #, php-format
 msgid "Failed to import \"%1$s\" (%2$s)"
 msgstr "Ei õnnestunud importida \"%1$s\" (%2$s)"
 
 #. translators: %1$s is the post title, %2$s is post type.
 #. translators: %1$s is the taxonomy name, %2$s is taxonomy.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1056
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1967
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1058
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1969
 #, php-format
 msgid "Imported \"%1$s\" (%2$s)"
 msgstr "Imporditud \"%1$s\" (%2$s)"
 
 #. translators: %1$s is the original post id, %2$s is old post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1064
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1066
 #, php-format
 msgid "Post %1$d remapped to %2$d"
 msgstr "Postitus %1$d kaardistati ümber %2$d"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1228
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1230
 msgid "Invalid file type"
 msgstr "Kehtetu failitüüp"
 
 #. translators: %s user login name
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1739
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1741
 #, php-format
 msgid "Failed to import user \"%s\""
 msgstr "Kasutaja \"%s\" importimine ebaõnnestus"
 
 #. translators: %s user login name
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1763
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1765
 #, php-format
 msgid "Imported user \"%s\""
 msgstr "Imporditud kasutaja \"%s\""
 
 #. translators: %1$s original user Id, %2$s old user Id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1770
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1772
 #, php-format
 msgid "User %1$d remapped to %2$d"
 msgstr "Kasutaja %1$d kaardistati ümber %2$d"
 
 #. translators: %1$s is the taxonomy, %2$s is taxonomy name.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1940
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1942
 #, php-format
 msgid "Failed to import %1$s %2$s"
 msgstr "Ei õnnestunud importida %1$s %2$s"
 
 #. translators: %1$s is term original id, %2$s is term id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1975
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1977
 #, php-format
 msgid "Term %1$d remapped to %2$d"
 msgstr "Termin %1$d kaardistati ümber %2$d"
 
 #. translators: %1$s is error code, %2$s is error code header, %3$s is url.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2079
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2081
 #, php-format
 msgid "Remote server returned %1$d %2$s for %3$s"
 msgstr "Kaugserver tagastas %1$d %2$s aadressile %3$s"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2092
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2094
 msgid "Remote file is incorrect size"
 msgstr "Kaugfaili suurus on vale"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2097
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2099
 msgid "Zero size file downloaded"
 msgstr "Allalaaditud faili suurus on null"
 
 #. translators: %s max file size.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2104
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2106
 #, php-format
 msgid "Remote file is too large, limit is %s"
 msgstr "Kaugfail on liiga suur, piirang on %s"
 
 #. translators: %d is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2137
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2139
 #, php-format
 msgid "Running post-processing for post %d"
 msgstr "Käimas on järeltöötlus postituse %d jaoks"
 
 #. translators: %1$s is post title, %2$s is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2153
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2155
 #, php-format
 msgid "Could not find the post parent for \"%1$s\" (post #%2$d)"
 msgstr "Ei leidnud postituse vanemat \"%1$s\" (postitus #%2$d)"
 
 #. translators: %1$d is post id, %2$d is parent post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2161
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2163
 #, php-format
 msgid "Post %1$d was imported with parent %2$d, but could not be found"
 msgstr "Postitus %1$d imporditi koos vanemaga %2$d, kuid seda ei leitud"
 
 #. translators: %1$s is the post title, %2$s is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2178
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2180
 #, php-format
 msgid "Could not find the author for \"%1$s\" (post #%2$d)"
 msgstr "Ei leidnud autorit postitusele \"%1$s\" (postitus #%2$d)"
 
 #. translators: %1$d is post id, %2$s is author slug.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2186
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2188
 #, php-format
 msgid "Post %1$d was imported with author \"%2$s\", but could not be found"
 msgstr "Postitus %1$d imporditi autoriga \"%2$s\", kuid seda ei leitud"
 
 #. translators: %d is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2215
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2217
 #, php-format
 msgid "Post %d was marked for post-processing, but none was required."
 msgstr "Postitus %d märgiti järelprotsessimiseks, kuid seda ei olnud vaja."
 
 #. translators: %1$s is the post title, %2$s is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2232
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2234
 #, php-format
 msgid "Could not update \"%1$s\" (post #%2$d) with mapped data"
 msgstr "Ei saanud värskendada \"%1$s\" (postitus #%2$d) kaardistatud andmetega"
 
 #. translators: %1$s is the post title, %2$s is post id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2286
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2288
 #, php-format
 msgid "Could not find the menu object for \"%1$s\" (post #%2$d)"
 msgstr "Ei leidnud menüü objekti \"%1$s\" (postitus #%2$d)"
 
 #. translators: %1$s is post id, %2$s is post object id, %3$s is menu type.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2294
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2296
 #, php-format
 msgid "Post %1$d was imported with object \"%2$d\" of type \"%3$s\", but could not be found"
 msgstr "Postitus %1$d imporditi objektiga \"%2$d\" tüübist \"%3$s\", kuid seda ei leitud"
 
 #. translators: %d is comment id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2325
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2327
 #, php-format
 msgid "Could not find the comment parent for comment #%d"
 msgstr "Ei leidnud kommentaari #%d vanemat"
 
 #. translators: %1$s is comment id, %2$s is parent comment id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2332
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2334
 #, php-format
 msgid "Comment %1$d was imported with parent %2$d, but could not be found"
 msgstr "Kommentaar %1$d imporditi koos vanemaga %2$d, kuid seda ei leitud"
 
 #. translators: %d is comment id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2349
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2351
 #, php-format
 msgid "Could not find the author for comment #%d"
 msgstr "Ei leidnud kommentaari #%d autorit"
 
 #. translators: %1$d is comment id, %2$d is author id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2356
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2358
 #, php-format
 msgid "Comment %1$d was imported with author %2$d, but could not be found"
 msgstr "Kommentaar %1$d imporditi koos autoriga %2$d, kuid seda ei leitud"
 
 #. translators: %d is comment id.
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2376
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:2378
 #, php-format
 msgid "Could not update comment #%d with mapped data"
 msgstr "Kommentaari #%d ei õnnestunud kaardistatud andmetega uuendada"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:1272
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:1357
 msgid "Import complete!"
 msgstr "Import on lõpetatud!"
 
@@ -1604,11 +1605,11 @@ msgstr "ZipWP API server ei vasta."
 msgid "The ZipWP API server encountered an error."
 msgstr "ZipWP API server kohtas vea."
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:188
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:214
 msgid "The message array was not supplied"
 msgstr "Sõnumi massiivi ei olnud esitatud"
 
-#: inc/lib/zipwp-images/classes/zipwp-images-api.php:283
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:278
 msgid "Need to send photo ID"
 msgstr "Vaja on saata foto ID"
 
@@ -1729,6 +1730,7 @@ msgid "Original %1$s"
 msgstr "Algne %1$s"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:2
+#: inc/lib/ai-builder/inc/assets/build/main.js:195
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:132
 msgid "Original"
 msgstr "Originaal"
@@ -1864,10 +1866,10 @@ msgstr "Alusta ehitamist"
 #: inc/lib/nps-survey/dist/main.js:1
 #: inc/lib/nps-survey/dist/main.js:4
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:132
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 #: inc/lib/one-onboarding/build/main.js:25
 #: inc/lib/one-onboarding/build/main.js:37
 msgid "Back"
@@ -1937,7 +1939,7 @@ msgstr "See on vaid väike eelvaade. Tegelik veebisait ja selle sisu luuakse jä
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:180
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Build with AI"
 msgstr "Ehita tehisintellektiga"
 
@@ -1947,7 +1949,8 @@ msgstr "Premium disain"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:180
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:132
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 #: inc/lib/one-onboarding/build/main.js:25
 #: inc/lib/one-onboarding/build/main.js:40
 msgid "Continue"
@@ -1963,25 +1966,25 @@ msgstr "Reageeriv eelvaade"
 
 #. translators: %s: daily limit
 #: inc/lib/ai-builder/inc/assets/build/main.js:181
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:145
 #, js-format
 msgid "%s AI sites"
 msgstr "%s AI saidid"
 
 #. translators: %s: daily limit
 #: inc/lib/ai-builder/inc/assets/build/main.js:182
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:144
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
 #, js-format
 msgid "This plan allows you to generate %s per day, and you have reached this limit."
 msgstr "See plaan võimaldab teil genereerida %s päevas ja olete selle limiidi saavutanud."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:182
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:144
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
 msgid "To create more AI websites, you will need to either upgrade your plan or wait until the limit resets."
 msgstr "AI-veebisaitide loomiseks peate kas oma plaani uuendama või ootama, kuni limiit lähtestatakse."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:182
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Limit reached"
 msgstr "Limiteeritud"
 
@@ -2038,8 +2041,8 @@ msgstr "Veateade: %1$s"
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Exit to Dashboard"
 msgstr "Välju armatuurlauale"
 
@@ -2145,13 +2148,13 @@ msgstr "Olete edukalt loonud %1$s AI saiti oma %2$s kontoga. Tehke palju rohkem 
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Block Editor"
 msgstr "Blokeerija"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:123
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "AI Website Builder"
 msgstr "AI veebisaidi ehitaja"
 
@@ -2344,12 +2347,12 @@ msgid "Selected Images"
 msgstr "Valitud pildid"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Select features"
 msgstr "Vali funktsioonid"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Select the features you want on this website"
 msgstr "Valige sellel veebisaidil soovitud funktsioonid"
 
@@ -2358,12 +2361,12 @@ msgid "Something went wrong. Please try again later."
 msgstr "Midagi läks valesti. Palun proovige hiljem uuesti."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Skip & Start Building"
 msgstr "Jäta vahele ja alusta ehitamist"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Importing Content…"
 msgstr "Sisu importimine…"
 
@@ -2769,88 +2772,88 @@ msgid "Select features as you need"
 msgstr "Valige funktsioonid vastavalt vajadusele"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting posts."
 msgstr "Postituste lähtestamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting posts failed."
 msgstr "Postituste lähtestamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Taking settings backup."
 msgstr "Seadete varundamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Taking settings backup failed."
 msgstr "Seadete varundamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting customizer."
 msgstr "Kohandaja lähtestamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting customizer failed."
 msgstr "Kohandaja lähtestamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting site options."
 msgstr "Saidi valikute lähtestamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting site options Failed."
 msgstr "Saidi valikute lähtestamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting widgets."
 msgstr "Vidinate lähtestamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting widgets JSON parse failed."
 msgstr "Vidinate uuesti lähtestades ebaõnnestus JSON-i parsimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting widgets failed."
 msgstr "Vidinate lähtestamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting terms and forms."
 msgstr "Terminid ja vormid lähtestatakse."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting terms and forms failed."
 msgstr "Tingimuste ja vormide lähtestamine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Gathering posts for deletions."
 msgstr "Postituste kogumine kustutamiseks."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Resetting posts done."
 msgstr "Postituste lähtestamine on tehtud."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:208
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing Site Content Failed. - Import Process Interrupted"
 msgstr "Saidi sisu importimine ebaõnnestus. - Impordiprotsess katkestati"
 
 #. translators: Response importMessage
 #: inc/lib/ai-builder/inc/assets/build/main.js:211
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:159
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 #, js-format
 msgid "Importing - %1$s"
 msgstr "Importimine - %1$s"
@@ -2873,8 +2876,8 @@ msgstr "Saidi keele salvestamine ebaõnnestus"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:211
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:132
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:159
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Are you sure you want to cancel the site import process?"
 msgstr "Kas olete kindel, et soovite saidi importimise protsessi tühistada?"
 
@@ -2903,7 +2906,7 @@ msgid "The website is created successfully!"
 msgstr "Veebisait on edukalt loodud!"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:211
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:159
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Starting Import."
 msgstr "Impordi alustamine."
 
@@ -2912,7 +2915,7 @@ msgid "Resetting site."
 msgstr "Saidi lähtestamine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:211
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Reset for old website is done."
 msgstr "Vana veebisaidi lähtestamine on tehtud."
 
@@ -2927,96 +2930,96 @@ msgid "Downloading images failed."
 msgstr "Piltide allalaadimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing forms."
 msgstr "Vormide importimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Customizer failed due to parse JSON error."
 msgstr "Kohandaja importimine ebaõnnestus JSON-i tõlgendamise vea tõttu."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Customizer Failed."
 msgstr "Kohandaja importimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Spectra Settings."
 msgstr "Spektri seadete importimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Spectra Settings failed due to parse JSON error."
 msgstr "Spektri seadete importimine ebaõnnestus JSON-i tõlgendamise vea tõttu."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Spectra Settings Failed."
 msgstr "Spektri seadete importimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Surecart Settings failed."
 msgstr "Surecarti seadete importimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Surecart Settings Failed."
 msgstr "Surecarti seadete importimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Content."
 msgstr "Saidisisu importimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:214
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:159
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:155
 msgid "Installing Required Plugins."
 msgstr "Nõutavate pistikprogrammide installimine."
 
 #. translators: Plugin Name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:217
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:162
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:155
 #, js-format
 msgid "%1$s plugin installed successfully."
 msgstr "%1$s plugin on edukalt installitud."
 
 #. translators: Plugin Name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:165
 #, js-format
 msgid "Could not install the plugin - %s"
 msgstr "Ei saanud pistikprogrammi installida - %s"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Options."
 msgstr "Saidi valikute importimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Options failed due to parse JSON error."
 msgstr "Saidi valikute importimine ebaõnnestus JSON-i parsimise vea tõttu."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Options Failed."
 msgstr "Saidi valikute importimine ebaõnnestus."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Widgets."
 msgstr "Vidinate importimine."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Widgets failed due to parse JSON error."
 msgstr "Vidinate importimine ebaõnnestus JSON-i parsimise vea tõttu."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:220
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Widgets Failed."
 msgstr "Vidinate importimine ebaõnnestus."
 
@@ -3046,21 +3049,20 @@ msgstr "Lõplik viimistlus ebaõnnestus."
 
 #. translators: Plugin Name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:223
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:180
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:167
 #, js-format
 msgid "Activating %1$s plugin."
 msgstr "Aktiveerimine %1$s pluginat."
 
 #. translators: Plugin Name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:226
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:186
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 #, js-format
 msgid "%1$s activated."
 msgstr "%1$s aktiveeritud."
 
 #. translators: Plugin name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:229
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:189
 #, js-format
 msgid "JSON_Error: Could not activate the required plugin - %1$s."
 msgstr "JSON_Viga: Ei saanud vajalikku pistikprogrammi aktiveerida - %1$s."
@@ -3075,13 +3077,12 @@ msgstr "%1$sLoe artiklit%2$s, et probleemi lahendada ja jätkata malli importimi
 
 #. translators: Plugin name.
 #: inc/lib/ai-builder/inc/assets/build/main.js:235
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:195
 #, js-format
 msgid "Could not activate the required plugin - %1$s."
 msgstr "Ei saanud vajalikku pistikprogrammi aktiveerida - %1$s."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:238
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "We are building your website…"
 msgstr "Me ehitame teie veebisaiti…"
 
@@ -3113,8 +3114,8 @@ msgstr "Sa tegid seda! Sinu uus veebisait on valmis veebis särama."
 msgid "See Your Website"
 msgstr "Vaata oma veebisaiti"
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:266
-#: inc/classes/class-astra-sites-astra-onboarding.php:275
+#: inc/classes/class-astra-sites-astra-onboarding.php:270
+#: inc/classes/class-astra-sites-astra-onboarding.php:279
 #: inc/lib/ai-builder/inc/assets/build/main.js:239
 msgid "Visit Dashboard"
 msgstr "Külastage armatuurlauda"
@@ -3371,7 +3372,7 @@ msgstr "Hankige kogu oma lehtede sisu vaid ühe klõpsuga. Saate sisu lehekülje
 msgid "Let’s Go (%s Credits)"
 msgstr "Lähme (%s krediiti)"
 
-#: admin/bsf-analytics/class-bsf-analytics.php:321
+#: admin/bsf-analytics/class-bsf-analytics.php:324
 #: inc/lib/gutenberg-templates/dist/main.js:2
 #: inc/lib/one-onboarding/build/main.js:25
 #: inc/lib/one-onboarding/build/main.js:37
@@ -3587,7 +3588,7 @@ msgstr "Vali e-kaubanduse platvorm"
 msgid "Choose your preferred e-Commerce platform. Based on your selection, you will receive the account setup and cart options."
 msgstr "Valige oma eelistatud e-kaubanduse platvorm. Teie valiku põhjal saate konto seadistamise ja ostukorvi valikud."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Skip & Continue"
 msgstr "Jäta vahele ja jätka"
 
@@ -3596,6 +3597,7 @@ msgid "Please Enter License Key"
 msgstr "Palun sisestage litsentsivõti"
 
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:132
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
 msgid "1. Installing required theme, plugins, forms, etc"
 msgstr "1. Nõutud teema, pistikprogrammide, vormide jne paigaldamine"
 
@@ -3665,191 +3667,178 @@ msgstr "Palun teatage sellest veast&nbsp;"
 msgid "&nbsp;so we can fix it."
 msgstr "&nbsp;nii et saaksime selle parandada."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Tell us a little bit about yourself"
 msgstr "Räägi meile natuke endast"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Your First Name"
 msgstr "Teie eesnimi"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Your Work Email"
 msgstr "Teie töö e-post"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Advanced Options"
 msgstr "Täiendavad valikud"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Install & Activate Astra Theme"
 msgstr "Installige ja aktiveerige Astra teema"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "To import the site in the original format, you would need the Astra theme activated. You can import it with any other theme, but the site might lose some of the design settings and look a bit different."
 msgstr "Selleks, et saiti algses formaadis importida, peab Astra teema olema aktiveeritud. Sa võid selle importida ka mõne teise teemaga, kuid sait võib kaotada osa kujundusseadistustest ja näha välja veidi teistsugune."
 
 #: inc/lib/getting-started/classes/class-gs-helper.php:283
 #: inc/lib/getting-started/build/main.js:1
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:126
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Learn More"
 msgstr "Lisateave"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Select Page Builder"
 msgstr "Vali lehe koostaja"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Please choose your preferred page builder from the list below."
 msgstr "Palun valige allolevast loendist oma eelistatud lehe koostaja."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "What type of website are you building?"
 msgstr "Millist veebisaiti te ehitate?"
 
-#. translators: %1$s: search term.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
-#, js-format
-msgid "Starter Templates for %1$s:"
-msgstr "Alustamismallid %1$s jaoks:"
-
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
 msgid "Get unlimited access to all Premium Starter Templates and more, at a single low cost!"
 msgstr "Saage piiramatu juurdepääs kõigile Premium Starteri mallidele ja muule, ühe madala hinnaga!"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
 msgid "Install & Activate"
 msgstr "Installi ja aktiveeri"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
 msgid "Activate"
 msgstr "Aktiveeri"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Okay, just one last step…"
 msgstr "Olgu, ainult üks viimane samm…"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Submit & Build My Website"
 msgstr "Esita ja ehita minu veebisait"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Required plugins missing"
 msgstr "Nõutud pistikprogrammid puuduvad"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Some required plugins could not be able to be installed/activated due to some limitations coming from this website’s hosting service provider."
 msgstr "Mõningaid vajalikke pistikprogramme ei saanud paigaldada/aktiveerida, kuna selle veebisaidi majutusteenuse pakkuja poolt on teatud piirangud."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "We request you to please install/update the following plugins to proceed."
 msgstr "Palume teil installida/uuendada järgmised pistikprogrammid, et jätkata."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Required plugins -"
 msgstr "Nõutavad pistikprogrammid -"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Start Importing"
 msgstr "Alusta importimist"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "We're Almost There!"
 msgstr "Me oleme peaaegu kohal!"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "The Starter Template you are trying to import requires a few plugins to be installed and activated. Your current PHP version does not match the minimum requirement for these plugins."
 msgstr "Imporditav Starter Template nõuab mõne pistikprogrammi installimist ja aktiveerimist. Teie praegune PHP versioon ei vasta nende pistikprogrammide miinimumnõuetele."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "You're close to importing the template. To complete the process, please clear the following conditions."
 msgstr "Olete lähedal malli importimisele. Protsessi lõpuleviimiseks palun täitke järgmised tingimused."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Skip & Start Importing"
 msgstr "Jäta vahele ja alusta importimist"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "The import process was interrupted due to the lack of file-system permissions from your host. It is required to import images, XML files, and more required for the template to work."
 msgstr "Importimisprotsess katkestati, kuna teie hostil puuduvad failisüsteemi õigused. See on vajalik piltide, XML-failide ja muu importimiseks, mis on vajalik malli toimimiseks."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Current file-system permissions:"
 msgstr "Praegused failisüsteemi õigused:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Read Permissions:"
 msgstr "Lugemisõigused:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Write Permissions:"
 msgstr "Kirjutamisõigused:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "WP_Filesystem Permissions:"
 msgstr "WP_Filesystemi õigused:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Reseting site."
 msgstr "Saidi lähtestamine."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing CartFlows flows."
 msgstr "CartFlows voogude importimine."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing CartFlows flows failed due to parse JSON error."
 msgstr "CartFlowsi voogude importimine ebaõnnestus JSON-i tõrke tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing CartFlows flows Failed."
 msgstr "CartFlowsi voogude importimine ebaõnnestus."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing forms failed due to parse JSON error."
 msgstr "Vormide importimine ebaõnnestus JSON-i parsimise vea tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing forms Failed."
 msgstr "Vormide importimine ebaõnnestus."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "The XML URL for the site content is empty."
 msgstr "Saidi sisu XML-i URL on tühi."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Content Failed"
 msgstr "Saidi sisu importimine ebaõnnestus"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Content failed due to parse JSON error."
 msgstr "Saidi sisu importimine ebaõnnestus JSON-i tõlgendamise vea tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Importing Site Content Failed."
 msgstr "Saidi sisu importimine ebaõnnestus."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Final finishings."
 msgstr "Lõplikud viimistlused."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Final finishings failed due to parse JSON error."
 msgstr "Lõplikud viimistlused ebaõnnestusid JSON-i parsimise vea tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Final finishings Failed."
 msgstr "Lõplikud viimistlused ebaõnnestusid."
 
-#. translators: Support article URL.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:192
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
-#, js-format
-msgid "<a href=\"%1$s\">Read article</a> to resolve the issue and continue importing template."
-msgstr "<a href=\"%1$s\">Loe artiklit</a>, et lahendada probleem ja jätkata malli importimist."
-
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Congratulations"
 msgstr "Õnnitlused"
 
@@ -3951,92 +3940,92 @@ msgstr "Kohanda"
 msgid "Add your own logo, change color and font."
 msgstr "Lisa oma logo, muuda värvi ja fonti."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "It looks like you already have a website created with Starter Templates. Check this box to keep your existing content and images."
 msgstr "Tundub, et teil on juba Starter Templates abil loodud veebisait. Märkige see ruut, et säilitada olemasolev sisu ja pildid."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Keep existing data!"
 msgstr "Hoia olemasolevad andmed!"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "I understand, let's go!"
 msgstr "Ma saan aru, lähme!"
 
 #. translators: %1$s: team name, %2$s: plan name
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:144
 #, js-format
 msgid "Your current active organization is %1$s, which is on the %2$s plan."
 msgstr "Teie praegu aktiivne organisatsioon on %1$s, mis on %2$s plaanil."
 
 #. translators: %s: plan name
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:145
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
 #, js-format
 msgid "You have reached the maximum number of sites allowed to be created on %s plan."
 msgstr "Olete jõudnud maksimaalse lubatud saitide arvuni, mida saab luua %s plaanil."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Skip this step"
 msgstr "Jäta see samm vahele"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "How would you like to build your website?"
 msgstr "Kuidas soovite oma veebisaiti luua?"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Experience the future of website building. We offer AI features powered by ZipWP to help you build your website 10x faster."
 msgstr "Kogege veebisaidi loomise tulevikku. Pakume ZipWP poolt toetatud tehisintellekti funktsioone, mis aitavad teil oma veebisaiti 10 korda kiiremini luua."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 #: inc/lib/one-onboarding/build/main.js:2
 msgid "Classic Starter Templates"
 msgstr "Klassikalised stardimallid"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Begin the website-building process with our extensive library of professionally designed templates tailored to meet your requirements."
 msgstr "Alustage veebisaidi loomise protsessi meie ulatusliku raamatukoguga, mis sisaldab professionaalselt kujundatud malle, mis on kohandatud teie vajadustele vastavaks."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 #: inc/lib/one-onboarding/build/main.js:2
 msgid "Build with Templates"
 msgstr "Ehita mallidega"
 
 #: inc/classes/class-astra-sites-utils.php:94
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Page Builder"
 msgstr "Lehekülje koostaja"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Design pages with visual website builder"
 msgstr "Kujunda lehti visuaalse veebisaidi ehitajaga"
 
 #: inc/lib/getting-started/classes/class-gs-helper.php:294
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Contact Form"
 msgstr "Kontaktivorm"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Allow your visitors to get in touch with you"
 msgstr "Luba oma külastajatel sinuga ühendust võtta"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "eCommerce"
 msgstr "e-kaubandus"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Sell your products online"
 msgstr "Müü oma tooteid veebis"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Free Live Chat"
 msgstr "Tasuta reaalajas vestlus"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Connect with your website visitors for free"
 msgstr "Ühenda oma veebisaidi külastajatega tasuta"
 
 #: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Generate Custom Code"
 msgstr "Loo kohandatud kood"
 
@@ -4224,56 +4213,56 @@ msgstr "Urdu"
 msgid "Vietnamese"
 msgstr "Vietnami"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:764
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:797
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Friendly"
 msgstr "Sõbralik"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:762
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:795
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Formal"
 msgstr "Ametlik"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:763
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:796
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Casual"
 msgstr "Vaba"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:766
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:799
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Professional"
 msgstr "Professionaalne"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:765
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:798
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Informative"
 msgstr "Informatiivne"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:767
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:800
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Playful"
 msgstr "Mänguline"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:768
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:801
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Serious"
 msgstr "Tõsine"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:769
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:802
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Humorous"
 msgstr "Humoorikas"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:770
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:803
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Polite"
 msgstr "Viisakas"
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:771
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:804
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:1
 msgid "Emotional"
 msgstr "Emotsionaalne"
@@ -4296,7 +4285,7 @@ msgid "Change tone to %s."
 msgstr "Muuda toon %s."
 
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:2
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Rephrase"
 msgstr "Sõnasta ümber"
 
@@ -4373,17 +4362,17 @@ msgid "and chat from there"
 msgstr "ja vestelda sealt"
 
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:2
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Fix Grammar"
 msgstr "Paranda grammatika"
 
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:2
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Make Longer"
 msgstr "Muuda pikemaks"
 
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:2
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Make Shorter"
 msgstr "Muuda lühemaks"
 
@@ -4433,153 +4422,153 @@ msgid "It looks like I've encountered an error…"
 msgstr "Tundub, et olen kohanud viga…"
 
 #: inc/lib/zip-ai/sidebar/build/sidebar-app.js:3
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Click Here"
 msgstr "Klõpsake siin"
 
 #. translators: %1$d is the current page, %2$d is the total number of pages.
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 #, js-format
 msgid "%1$d/%2$d"
 msgstr "%1$d/%2$d"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Something went wrong while I was generating a response."
 msgstr "Midagi läks valesti, kui ma vastust genereerisin."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Generating…"
 msgstr "Genereerimine…"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "How can I help you?"
 msgstr "Kuidas ma saan teid aidata?"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Ask AI"
 msgstr "Küsi AI-lt"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:5
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:6
 msgid "Clear Chat"
 msgstr "Kustuta vestlus"
 
 #. Translators: %1$s is the opening link tag, %2$s is the closing link tag.
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 #, js-format
 msgid "AI Assistant can make mistakes. Want to %1$sdisable it?%2$s"
 msgstr "Tehisintellekti assistent võib teha vigu. Kas soovite selle %1$skeelata%2$s?"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 msgid "AI Assistant can make mistakes."
 msgstr "Tehisintellekti assistent võib teha vigu."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 msgid "Reconnect and Continue Using AI Features"
 msgstr "Ühenda uuesti ja jätka AI funktsioonide kasutamist"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 msgid "Get Started with 1000 Free Monthly Credits"
 msgstr "Alusta 1000 tasuta igakuise krediidiga"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 msgid "Reconnecting…"
 msgstr "Ühenduse taastamine…"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:7
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
 msgid "Getting Started…"
 msgstr "Alustamine…"
 
 #. Translators: %1$s is the opening link tag, %2$s is the closing link tag.
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:12
 #, js-format
 msgid "Get started from %1$shere%2$s."
 msgstr "Alusta %1$ssiit%2$s."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:9
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:12
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "The possibilities are endless!"
 msgstr "Võimalused on lõputud!"
 
 #. translators: %s: Plugin Name
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:10
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:13
 #, js-format
 msgid "Build 10x Faster with %s AI"
 msgstr "Ehita 10x kiiremini %s AI-ga"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:10
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:13
 msgid "Build 10x Faster with ZipWP"
 msgstr "Ehita 10 korda kiiremini ZipWP-ga"
 
 #. translators: %s: Plugin Name
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 #, js-format
 msgid "%s offers AI features powered by ZipWP to help you build your website 10 times faster."
 msgstr "%s pakub ZipWP poolt toetatud tehisintellekti funktsioone, et aidata teil oma veebisaiti 10 korda kiiremini luua."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "ZipWP offers AI features to help you build your website 10 times faster."
 msgstr "ZipWP pakub tehisintellekti funktsioone, mis aitavad teil oma veebisaiti 10 korda kiiremini luua."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Translate Your Pages"
 msgstr "Tõlgi oma lehed"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Write Content for Pages"
 msgstr "Kirjuta sisu lehtedele"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Customize Templates"
 msgstr "Kohanda malle"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Craft Product Descriptions"
 msgstr "Koosta tootekirjeldusi"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Engage with Comments"
 msgstr "Suhtle kommentaaridega"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Get Ready!"
 msgstr "Valmistu!"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Something went wrong, please try again."
 msgstr "Midagi läks valesti, palun proovige uuesti."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Learn more"
 msgstr "Lisateave"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Hi there! I'm here to assist you."
 msgstr "Tere! Olen siin, et teid aidata."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Choose a prompt bellow or write on your own."
 msgstr "Valige allpool olev viip või kirjutage oma enda oma."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Ask me about what you need."
 msgstr "Küsi minult, mida sa vajad."
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:12
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:15
 msgid "AI Assistant"
 msgstr "Tehisintellekti assistent"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:11
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:14
 msgid "Get More Credits"
 msgstr "Hangi rohkem krediiti"
 
 #. translators: %s: lastUsedTone label
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:12
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:15
 #, js-format
 msgid "Change Tone to %s"
 msgstr "Muuda tooniks %s"
 
-#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:12
+#: inc/lib/zip-ai/sidebar/build/sidebar-app.js:15
 msgid "Something Else"
 msgstr "Midagi muud"
 
@@ -4701,41 +4690,42 @@ msgid "If you have a moment, please share why you are deactivating Starter Templ
 msgstr "Kui teil on hetk, palun jagage, miks te Starter Mallide deaktiveerite:"
 
 #. translators: %1$s is a terms link, %2$s is a privacy policy link
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 #, js-format
 msgid "By continuing, you agree to our %1$s and %2$s."
 msgstr "Jätkates nõustute meie %1$s ja %2$s tingimustega."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing LatePoint data."
 msgstr "LatePoint andmete importimine."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing LatePoint data failed due to parse JSON error."
 msgstr "LatePoint andmete importimine ebaõnnestus JSON-i tõlgendamise vea tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing LatePoint data Failed."
 msgstr "LatePoint andmete importimine ebaõnnestus."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Website Emails & SMTP"
 msgstr "Veebisaidi e-kirjad ja SMTP"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Get emails from your website (forms, etc)"
 msgstr "Saage e-kirju oma veebisaidilt (vormid jne)"
 
-#: inc/lib/astra-notices/class-astra-notices.php:150
+#: inc/lib/astra-notices/class-bsf-admin-notices.php:176
+#: inc/lib/astra-notices/class-bsf-admin-notices.php:183
 msgid "Invalid notice ID."
 msgstr "Kehtetu teate ID."
 
 #: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:73
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:190
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:207
 msgid "Missing required parameter."
 msgstr "Puudub nõutud parameeter."
 
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:197
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:214
 msgid "Usage tracking updated successfully."
 msgstr "Kasutusjälgimine edukalt uuendatud."
 
@@ -4755,19 +4745,19 @@ msgstr "tühi_vastus"
 msgid "Encountered an error while processing your request. Please try again."
 msgstr "Teie päringu töötlemisel tekkis viga. Palun proovige uuesti."
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:287
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:315
 msgid "Authentication failed. Invalid or missing bearer token."
 msgstr "Autentimine ebaõnnestus. Kehtetu või puuduv kandjatunnus."
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:289
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:317
 msgid "You've run out of credits."
 msgstr "Teie krediit on otsas."
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:291
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:319
 msgid "To continue using the assistant and access its full features, please purchase more credits."
 msgstr "Assistendi kasutamise jätkamiseks ja selle täielike funktsioonide kasutamiseks ostke rohkem krediiti."
 
-#: inc/lib/zip-ai/classes/sidebar-configurations.php:293
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:321
 msgid "Buy more credits"
 msgstr "Osta rohkem krediiti"
 
@@ -4811,8 +4801,8 @@ msgstr "(Maksimaalselt 20)"
 msgid "Batch process failed."
 msgstr "Partii protsess ebaõnnestus."
 
-#: inc/classes/class-astra-sites.php:1716
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:147
+#: inc/classes/class-astra-sites.php:1721
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
 msgid "Get Premium Templates"
 msgstr "Hangi premium-malle"
 
@@ -4824,12 +4814,12 @@ msgstr "Allkiri"
 msgid "Show Other Builders"
 msgstr "Kuva teisi ehitajaid"
 
-#: inc/classes/class-astra-sites-analytics.php:174
+#: inc/classes/class-astra-sites-analytics.php:208
 #: inc/lib/ai-builder/inc/compatibility/woocommerce-payments/ai-builder-compatibility-woocommerce-payments.php:173
 msgid "Invalid nonce"
 msgstr "Vigane nonce"
 
-#: inc/classes/class-astra-sites-analytics.php:180
+#: inc/classes/class-astra-sites-analytics.php:214
 msgid "Invalid source"
 msgstr "Vigane allikas"
 
@@ -4910,7 +4900,7 @@ msgid "Analytics"
 msgstr "Analüütika"
 
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:126
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Collect non-sensitive information from your website, such as the PHP version and features used, to help us fix bugs faster, make smarter decisions, and build features that actually matter to you."
 msgstr "Koguge oma veebisaidilt mittetundlikku teavet, nagu PHP versioon ja kasutatavad funktsioonid, et aidata meil kiiremini vigu parandada, teha targemaid otsuseid ja luua funktsioone, mis teile tegelikult korda lähevad."
 
@@ -4920,19 +4910,19 @@ msgstr "Koguge oma veebisaidilt mittetundlikku teavet, nagu PHP versioon ja kasu
 msgid "Contribute to %s"
 msgstr "Panusta %s"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing Cart Abandonment Recovery data."
 msgstr "Ostukorvi hülgamise taastamise andmete importimine."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing Cart Abandonment Recovery data failed due to parse JSON error."
 msgstr "Ostukorvi hülgamise taastamise andmete importimine ebaõnnestus JSON-i parsimise vea tõttu."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 msgid "Importing Cart Abandonment Recovery data Failed."
 msgstr "Ostukorvi hülgamise taastamise andmete importimine ebaõnnestus."
 
-#: inc/lib/ai-builder/inc/traits/helper.php:585
+#: inc/lib/ai-builder/inc/traits/helper.php:589
 msgid "This plugin requires WooCommerce to be installed and activated first."
 msgstr "See plugin nõuab, et WooCommerce oleks esmalt installitud ja aktiveeritud."
 
@@ -4952,31 +4942,25 @@ msgstr "See veebisait on mõeldud"
 msgid "Enter address"
 msgstr "Sisestage aadress"
 
-#. translators: Plugin Name.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:183
-#, js-format
-msgid "%1$s deferred (requires WooCommerce)."
-msgstr "%1$s edasi lükatud (nõuab WooCommerce'i)."
-
-#: inc/lib/getting-started/classes/class-gs-admin.php:243
+#: inc/lib/getting-started/classes/class-gs-admin.php:230
 msgid "Complete these steps to take full control of your website."
 msgstr "Täida need sammud, et saada oma veebisaidi täielik kontroll."
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:247
+#: inc/lib/getting-started/classes/class-gs-admin.php:234
 msgid "Awesome, You did it! 😍"
 msgstr "Vinge, sa tegid seda! 😍"
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:283
+#: inc/lib/getting-started/classes/class-gs-admin.php:270
 msgid "Hi there 👋"
 msgstr "Tere 👋"
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:293
+#: inc/lib/getting-started/classes/class-gs-admin.php:280
 msgid "🎉 Congratulations on completing the tasks and instructional videos to take full control of your website.\\n 🚀 Now, you're well-equipped to make your website thrive. Best of luck with your website journey, and may it bring you great achievements and opportunities in the digital world!"
 msgstr "🎉 Palju õnne ülesannete ja juhendvideote lõpetamise puhul, et saada oma veebisaidi täielik kontroll.\\n 🚀 Nüüd oled hästi varustatud, et muuta oma veebisait edukaks. Soovin sulle edu veebisaidi teekonnal ja et see tooks sulle suuri saavutusi ja võimalusi digitaalses maailmas!"
 
 #: inc/lib/getting-started/classes/class-gs-admin.php:110
 #: inc/lib/ai-builder/inc/assets/build/main.js:239
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 #: inc/lib/onboarding/assets/dist/onboarding/main.js:141
 msgid "Finish Setup"
 msgstr "Lõpeta seadistamine"
@@ -5003,11 +4987,11 @@ msgstr "Sisesta videoid kaasaegsete funktsioonidega nagu peatükid, ülekatteid 
 msgid "Step %d:"
 msgstr "Samm %d:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "SEO & Search Visibility"
 msgstr "SEO ja otsingu nähtavus"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:198
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
 msgid "Optimize your website for search engines"
 msgstr "Optimeeri oma veebisait otsingumootorite jaoks"
 
@@ -5024,12 +5008,12 @@ msgid "Confirm and Proceed"
 msgstr "Kinnita ja jätka"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "The following plugins will be installed and activated for the selected features:"
 msgstr "Järgmised pistikprogrammid installitakse ja aktiveeritakse valitud funktsioonide jaoks:"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:195
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Required plugins for the website"
 msgstr "Veebisaidi jaoks vajalikud pistikprogrammid"
 
@@ -5227,7 +5211,6 @@ msgid "Streamline your booking process so clients can book and pay you with zero
 msgstr "Lihtsusta oma broneerimisprotsessi, et kliendid saaksid broneerida ja maksta ilma vaevata."
 
 #: inc/lib/getting-started/build/main.js:1
-#: inc/lib/getting-started/build/main.js:4
 msgid "Learn how"
 msgstr "Õpi, kuidas"
 
@@ -5443,6 +5426,7 @@ msgid "Great Job! Your Site is Ready! 🎉"
 msgstr "Suurepärane töö! Teie sait on valmis! 🎉"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:191
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
 msgid "Already have an account?"
 msgstr "Kas teil on juba konto?"
 
@@ -5450,45 +5434,45 @@ msgstr "Kas teil on juba konto?"
 msgid "Click here to login."
 msgstr "Klõpsake siin, et sisse logida."
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Finish Setup Icon"
 msgstr "Lõpeta seadistamise ikoon"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Setup dismissal failed!"
 msgstr "Seadistuse tühistamine ebaõnnestus!"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Failed to dismiss setup."
 msgstr "Seadistuse tühistamine ebaõnnestus."
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Dismiss Setup"
 msgstr "Tühista seadistus"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Mark as incomplete"
 msgstr "Märgi mittetäielikuks"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Mark as complete"
 msgstr "Märgi lõpetatuks"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "An error occurred while updating the step status."
 msgstr "Sammu oleku uuendamisel ilmnes viga."
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Failed to update step status:"
 msgstr "Sammu oleku uuendamine ebaõnnestus:"
 
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Error updating step status:"
 msgstr "Viga sammu oleku uuendamisel:"
 
 #: inc/lib/getting-started/classes/class-gs-helper.php:340
 #: inc/lib/getting-started/classes/class-gs-helper.php:465
-#: inc/lib/getting-started/build/main.js:4
+#: inc/lib/getting-started/build/main.js:1
 msgid "Set Up"
 msgstr "Seadista"
 
@@ -5502,15 +5486,15 @@ msgstr "Esita video"
 msgid "%1$d of %2$d steps completed"
 msgstr "%1$d %2$d-st sammust lõpetatud"
 
-#: inc/lib/getting-started/build/main.js:1
+#: inc/lib/getting-started/build/main.js:7
 msgid "Finish Setting Up Your Website"
 msgstr "Lõpeta oma veebisaidi seadistamine"
 
-#: inc/lib/getting-started/build/main.js:1
+#: inc/lib/getting-started/build/main.js:7
 msgid "Let’s get your new website fully ready. Follow this quick checklist to customize, configure, and launch with confidence."
 msgstr "Võtame teie uue veebisaidi täielikult valmis. Järgige seda kiiret kontrollnimekirja, et kohandada, konfigureerida ja käivitada enesekindlalt."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Please check your internet connection and try again."
 msgstr "Palun kontrollige oma internetiühendust ja proovige uuesti."
 
@@ -5532,23 +5516,23 @@ msgstr "Vihkan seda"
 msgid "Love it"
 msgstr "Armastan seda"
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:331
+#: inc/lib/getting-started/classes/class-gs-admin.php:318
 msgid "Security verification failed."
 msgstr "Turvakontroll ebaõnnestus."
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:340
+#: inc/lib/getting-started/classes/class-gs-admin.php:327
 msgid "Insufficient permissions."
 msgstr "Ebapiisavad õigused."
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:407
+#: inc/lib/getting-started/classes/class-gs-admin.php:394
 msgid "This quick, checklist-style course walks you through the final steps of site settings, essential setups, and more so your website is polished, professional, and ready for the world!"
 msgstr "See kiire, kontroll-loendi stiilis kursus juhendab teid läbi viimaste saidi seadistuste, oluliste seadistuste ja muu, et teie veebisait oleks viimistletud, professionaalne ja valmis maailmale!"
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:413
+#: inc/lib/getting-started/classes/class-gs-admin.php:400
 msgid "Continue to finish setup"
 msgstr "Jätkake seadistuse lõpetamiseks"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Help Us Improve Your Experience"
 msgstr "Aita meil parandada sinu kogemust"
 
@@ -5692,23 +5676,23 @@ msgstr "Muu (palun täpsustage)"
 msgid "Privacy Policy"
 msgstr "Privaatsuspoliitika"
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:253
+#: inc/classes/class-astra-sites-astra-onboarding.php:257
 msgid "Unlock more design control, faster setup, and powerful customization, so you can build a better website, effortlessly."
 msgstr "Avage rohkem disainikontrolli, kiirem seadistamine ja võimas kohandamine, et saaksite vaevata luua parema veebisaidi."
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:265
+#: inc/classes/class-astra-sites-astra-onboarding.php:269
 msgid "Customize Your Website"
 msgstr "Kohandage oma veebisaiti"
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:267
+#: inc/classes/class-astra-sites-astra-onboarding.php:271
 msgid "View Documentation"
 msgstr "Vaadake dokumentatsiooni"
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:271
+#: inc/classes/class-astra-sites-astra-onboarding.php:275
 msgid "Customize Your Site"
 msgstr "Kohandage oma saiti"
 
-#: inc/classes/class-astra-sites-astra-onboarding.php:279
+#: inc/classes/class-astra-sites-astra-onboarding.php:283
 msgid "Docs & Help Center"
 msgstr "Dokumendid ja abikeskus"
 
@@ -5845,10 +5829,12 @@ msgstr "Loo AI-ga"
 msgid "Pick from 300+ hand-crafted designs for different niches and styles."
 msgstr "Vali üle 300 käsitsi valmistatud disaini hulgast erinevatele niššidele ja stiilidele."
 
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
 #: inc/lib/one-onboarding/build/main.js:2
 msgid "Active"
 msgstr "Aktiivne"
 
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
 #: inc/lib/one-onboarding/build/main.js:2
 #: inc/lib/one-onboarding/build/main.js:25
 msgid "Activating…"
@@ -5858,6 +5844,7 @@ msgstr "Aktiveerimine…"
 msgid "Inactive"
 msgstr "Mitteaktiivne"
 
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
 #: inc/lib/one-onboarding/build/main.js:2
 #: inc/lib/one-onboarding/build/main.js:34
 msgid "Installing…"
@@ -6057,211 +6044,211 @@ msgstr "Mida saate järgmisena teha:"
 msgid "By submitting, you agree to our %s"
 msgstr "Esitades nõustute meie %s"
 
-#: inc/classes/class-astra-sites-importer.php:95
+#: inc/classes/class-astra-sites-importer.php:96
 msgid "Permission denied: You don't have the required capability to delete imported posts. Please contact your site administrator."
 msgstr "Luba keelatud: Teil puudub vajalik võimekus imporditud postituste kustutamiseks. Palun võtke ühendust oma saidi administraatoriga."
 
-#: inc/classes/class-astra-sites-importer.php:135
+#: inc/classes/class-astra-sites-importer.php:136
 msgid "Permission denied: You don't have the required capability to delete imported forms. Please contact your site administrator."
 msgstr "Luba keelatud: Teil puudub vajalik võimekus imporditud vormide kustutamiseks. Palun võtke ühendust oma saidi administraatoriga."
 
-#: inc/classes/class-astra-sites-importer.php:170
+#: inc/classes/class-astra-sites-importer.php:171
 msgid "Permission denied: You don't have the required capability to delete imported terms. Please contact your site administrator."
 msgstr "Luba keelatud: Teil puudub vajalik võimekus imporditud termineid kustutada. Palun võtke ühendust oma saidi administraatoriga."
 
 #. translators: %s: URL
-#: inc/classes/class-astra-sites-importer.php:375
+#: inc/classes/class-astra-sites-importer.php:378
 #, php-format
 msgid "Invalid URL format - %s"
 msgstr "Vigane URL-i vorming - %s"
 
 #. translators: %s: URL
-#: inc/classes/class-astra-sites-importer.php:387
+#: inc/classes/class-astra-sites-importer.php:390
 #, php-format
 msgid "Invalid data file URL - %s"
 msgstr "Vigane andmefaili URL - %s"
 
-#: inc/classes/class-astra-sites-importer.php:400
-#: inc/lib/starter-templates-importer/importer/st-importer.php:499
+#: inc/classes/class-astra-sites-importer.php:403
+#: inc/lib/starter-templates-importer/importer/st-importer.php:525
 msgid "Could not download data file. Please check your internet connection and try again."
 msgstr "Ei saanud andmefaili alla laadida. Palun kontrollige oma internetiühendust ja proovige uuesti."
 
 #. translators: %s: Error message
-#: inc/classes/class-astra-sites-importer.php:406
+#: inc/classes/class-astra-sites-importer.php:409
 #, php-format
 msgid "File download failed - %s"
 msgstr "Faili allalaadimine ebaõnnestus - %s"
 
-#: inc/classes/class-astra-sites-importer.php:415
+#: inc/classes/class-astra-sites-importer.php:418
 msgid "Downloaded file path is missing in the response."
 msgstr "Allalaaditud faili tee puudub vastuses."
 
-#: inc/classes/class-astra-sites-importer.php:425
+#: inc/classes/class-astra-sites-importer.php:428
 msgid "Downloaded file is missing. Please retry the import."
 msgstr "Allalaaditud fail puudub. Palun proovige importimist uuesti."
 
-#: inc/classes/class-astra-sites-importer.php:433
+#: inc/classes/class-astra-sites-importer.php:436
 msgid "Downloaded file is not readable. Please check server file permissions."
 msgstr "Allalaaditud fail ei ole loetav. Palun kontrollige serveri failiõigusi."
 
-#: inc/classes/class-astra-sites-importer.php:442
+#: inc/classes/class-astra-sites-importer.php:445
 msgid "The file must be in JSON format."
 msgstr "Fail peab olema JSON-vormingus."
 
-#: inc/classes/class-astra-sites-importer.php:457
+#: inc/classes/class-astra-sites-importer.php:460
 msgid "Could not read the file from the server."
 msgstr "Ei saanud serverist faili lugeda."
 
-#: inc/classes/class-astra-sites-importer.php:464
+#: inc/classes/class-astra-sites-importer.php:467
 msgid "The file is empty."
 msgstr "Fail on tühi."
 
 #. translators: %s: JSON error
-#: inc/classes/class-astra-sites-importer.php:477
+#: inc/classes/class-astra-sites-importer.php:480
 #, php-format
 msgid "Invalid JSON format - %s"
 msgstr "Vigane JSON-vorming - %s"
 
-#: inc/classes/class-astra-sites-importer.php:504
+#: inc/classes/class-astra-sites-importer.php:507
 msgid "Permission denied: You don't have the required capability to import forms. Please contact your site administrator."
 msgstr "Luba keelatud: Teil puudub vajalik võimekus vormide importimiseks. Palun võtke ühendust oma saidi administraatoriga."
 
 #. translators: %s is Elementor plugin name.
-#: inc/classes/class-astra-sites-importer.php:518
+#: inc/classes/class-astra-sites-importer.php:521
 #, php-format
 msgid "WPForms import failed: Template ID is missing. Unable to proceed with %s import."
 msgstr "WPFormsi import ebaõnnestus: Malli ID puudub. %s importimisega ei saa jätkata."
 
 #. translators: %s is the error message.
-#: inc/classes/class-astra-sites-importer.php:537
+#: inc/classes/class-astra-sites-importer.php:540
 #, php-format
 msgid "WPForms import failed: %s"
 msgstr "WPForms import ebaõnnestus: %s"
 
 #. translators: %s is exception error message.
-#: inc/classes/class-astra-sites-importer.php:652
+#: inc/classes/class-astra-sites-importer.php:655
 #, php-format
 msgid "WPForms import failed: Unexpected error - %s"
 msgstr "WPFormsi import ebaõnnestus: Ootamatu viga - %s"
 
 #. translators: %s: Fatal error message.
-#: inc/classes/class-astra-sites-importer.php:661
+#: inc/classes/class-astra-sites-importer.php:664
 #, php-format
 msgid "WPForms import failed: Fatal Error: %s"
 msgstr "WPFormsi import ebaõnnestus: Saatuslik viga: %s"
 
-#: inc/classes/class-astra-sites-importer.php:686
+#: inc/classes/class-astra-sites-importer.php:689
 msgid "Permission Denied: You don't have permission to import CartFlows flows. Please contact your site administrator."
 msgstr "Luba keelatud: Teil ei ole luba CartFlowsi voogude importimiseks. Palun võtke ühendust oma saidi administraatoriga."
 
 #. translators: %s is the error message.
 #. translators: Sending cartflows import failed.
-#: inc/classes/class-astra-sites-importer.php:707
-#: inc/classes/class-astra-sites-importer.php:746
+#: inc/classes/class-astra-sites-importer.php:710
+#: inc/classes/class-astra-sites-importer.php:749
 #, php-format
 msgid "CartFlows import failed: %s"
 msgstr "CartFlows import ebaõnnestus: %s"
 
 #. translators: %s: Exception error message.
-#: inc/classes/class-astra-sites-importer.php:754
+#: inc/classes/class-astra-sites-importer.php:757
 #, php-format
 msgid "CartFlows import failed: Unexpected error - %s"
 msgstr "CartFlows import ebaõnnestus: Ootamatu viga - %s"
 
 #. translators: %s: Fatal error message.
-#: inc/classes/class-astra-sites-importer.php:758
+#: inc/classes/class-astra-sites-importer.php:761
 #, php-format
 msgid "CartFlows import failed: Fatal Error - %s"
 msgstr "CartFlows import ebaõnnestus: Saatuslik viga - %s"
 
-#: inc/classes/class-astra-sites-importer.php:786
+#: inc/classes/class-astra-sites-importer.php:789
 msgid "Permission denied: You don't have permission to import Cart Abandonment Recovery data. Please contact your site administrator."
 msgstr "Luba keelatud: Teil ei ole luba importida ostukorvi hülgamise taastamise andmeid. Palun võtke ühendust oma saidi administraatoriga."
 
 #. translators: %s: Exception error message.
-#: inc/classes/class-astra-sites-importer.php:841
+#: inc/classes/class-astra-sites-importer.php:844
 #, php-format
 msgid "Cart Abandonment Recovery import failed: Unexpected error - %s"
 msgstr "Ostukorvi hülgamise taastamise import ebaõnnestus: Ootamatu viga - %s"
 
 #. translators: %s: Fatal error message.
-#: inc/classes/class-astra-sites-importer.php:844
+#: inc/classes/class-astra-sites-importer.php:847
 #, php-format
 msgid "Cart Abandonment Recovery import failed: Fatal Error - %s"
 msgstr "Ostukorvi mahajätmise taastamise import ebaõnnestus: Tõsine viga - %s"
 
-#: inc/classes/class-astra-sites-importer.php:866
+#: inc/classes/class-astra-sites-importer.php:869
 msgid "Permission denied: You don't have permission to import LatePoint data. Please contact your site administrator."
 msgstr "Luba keelatud: Teil ei ole luba LatePointi andmete importimiseks. Palun võtke ühendust oma saidi administraatoriga."
 
 #. translators: %s is the error message.
 #. translators: %s is exception error message.
-#: inc/classes/class-astra-sites-importer.php:880
-#: inc/classes/class-astra-sites-importer.php:907
+#: inc/classes/class-astra-sites-importer.php:883
+#: inc/classes/class-astra-sites-importer.php:910
 #, php-format
 msgid "LatePoint import failed: %s"
 msgstr "LatePoint import ebaõnnestus: %s"
 
 #. translators: %s is exception error message.
-#: inc/classes/class-astra-sites-importer.php:914
+#: inc/classes/class-astra-sites-importer.php:917
 #, php-format
 msgid "LatePoint import failed: Unexpected error - %s"
 msgstr "LatePoint import ebaõnnestus: Ootamatu viga - %s"
 
 #. translators: %s: Fatal error message.
-#: inc/classes/class-astra-sites-importer.php:919
+#: inc/classes/class-astra-sites-importer.php:922
 #, php-format
 msgid "LatePoint import failed: Fatal Error - %s"
 msgstr "LatePoint import ebaõnnestus: Saatuslik viga - %s"
 
-#: inc/classes/class-astra-sites.php:430
+#: inc/classes/class-astra-sites.php:435
 msgid "Import failed due to insufficient memory. Please increase the PHP memory_limit on your server and retry. If you're unsure how to do this, contact your hosting provider for assistance."
 msgstr "Import ebaõnnestus ebapiisava mälu tõttu. Palun suurendage oma serveris PHP memory_limit'i ja proovige uuesti. Kui te ei tea, kuidas seda teha, võtke abi saamiseks ühendust oma majutusteenuse pakkujaga."
 
-#: inc/classes/class-astra-sites.php:1451
+#: inc/classes/class-astra-sites.php:1456
 msgid "Failed to download the image. Please verify the URL and your network connection, then try again."
 msgstr "Pildi allalaadimine ebaõnnestus. Palun kontrollige URL-i ja oma võrguühendust ning proovige uuesti."
 
-#: inc/classes/class-astra-sites.php:1929
+#: inc/classes/class-astra-sites.php:1934
 msgid "<p>The import process was interrupted as Debug mode is currently enabled on your site.</p><p>Kindly disable debug mode and try importing Starter Template again.</p><p>You can add the following code into the wp-config.php file to disable debug mode.</p><p><code>define('WP_DEBUG', false);</code></p>"
 msgstr "<p>Importimisprotsess katkestati, kuna teie saidil on praegu lubatud silumisrežiim.</p><p>Palun keelake silumisrežiim ja proovige Starter Malli uuesti importida.</p><p>Silumisrežiimi keelamiseks saate lisada järgmise koodi wp-config.php faili.</p><p><code>define('WP_DEBUG', false);</code></p>"
 
 #. translators: %s is a documentation link.
-#: inc/classes/class-astra-sites.php:1931
+#: inc/classes/class-astra-sites.php:1936
 #, php-format
 msgid "<p>Template import was interrupted due to a temporary error.</p><p>Read <a href=\"%s\" target=\"_blank\">article</a> to resolve the issue and continue importing template.</p>"
 msgstr "<p>Malli importimine katkestati ajutise vea tõttu.</p><p>Lugege <a href=\"%s\" target=\"_blank\">artiklit</a>, et lahendada probleem ja jätkata malli importimist.</p>"
 
 #. translators: %s is a documentation link.
-#: inc/classes/class-astra-sites.php:1933
+#: inc/classes/class-astra-sites.php:1938
 #, php-format
 msgid "<p>Failed to install one or more required plugins.</p><p>Read&nbsp;<a href=\"%s\" target=\"_blank\">article</a>&nbsp;to resolve the issue and continue importing template.</p>"
 msgstr "<p>Ühe või mitme vajaliku pistikprogrammi installimine ebaõnnestus.</p><p>Lugege&nbsp;<a href=\"%s\" target=\"_blank\">artiklit</a>&nbsp;probleemi lahendamiseks ja malli importimise jätkamiseks.</p>"
 
 #. translators: %s are white label strings.
-#: inc/classes/class-astra-sites.php:1937
+#: inc/classes/class-astra-sites.php:1942
 #, php-format
 msgid "Warning! %1$s Closing this window will cancel the process. Do you still want to leave?"
 msgstr "Hoiatus! %1$s Selle akna sulgemine katkestab protsessi. Kas soovite siiski lahkuda?"
 
-#: inc/classes/class-astra-sites.php:1978
+#: inc/classes/class-astra-sites.php:1983
 msgid "Couldn't start import process. WordPress returned:"
 msgstr "Importimisprotsessi ei saanud alustada. WordPress tagastas:"
 
 #. translators: %s HTML tags
-#: inc/classes/class-astra-sites.php:1984
+#: inc/classes/class-astra-sites.php:1989
 #, php-format
 msgid "%1$sAJAX request failed. WordPress returned:%2$s"
 msgstr "%1$sAJAX päring ebaõnnestus. WordPress tagastas:%2$s"
 
 #. translators: %s URL to document.
-#: inc/classes/class-astra-sites.php:1995
+#: inc/classes/class-astra-sites.php:2000
 #, php-format
 msgid "%1$sImport process interrupted due to an AJAX error:%2$s"
 msgstr "%1$sImpordi protsess katkestati AJAX-i vea tõttu:%2$s"
 
 #. translators: %s update page link.
-#: inc/classes/class-astra-sites.php:2303
+#: inc/classes/class-astra-sites.php:2308
 msgid "Updates are available for one or more plugins used by this starter template."
 msgstr "Selle algmalli kasutatavate pistikprogrammide jaoks on saadaval värskendusi."
 
@@ -6317,29 +6304,29 @@ msgstr "SureCarti import ebaõnnestus: ST_Importer klassi ei leitud. Palun veend
 msgid "SureCart import failed: %s"
 msgstr "SureCart import ebaõnnestus: %s"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:564
+#: inc/lib/ai-builder/inc/traits/helper.php:568
 msgid "Error: You don't have the required permissions to activate plugins."
 msgstr "Viga: Teil puuduvad vajalikud õigused pistikprogrammide aktiveerimiseks."
 
-#: inc/lib/ai-builder/inc/traits/helper.php:757
+#: inc/lib/ai-builder/inc/traits/helper.php:761
 msgid "Permission denied: You don't have sufficient permissions to import. Please contact your site administrator."
 msgstr "Luba keelatud: Teil pole piisavalt õigusi importimiseks. Palun võtke ühendust oma saidi administraatoriga."
 
-#: inc/lib/ai-builder/inc/traits/helper.php:760
+#: inc/lib/ai-builder/inc/traits/helper.php:764
 msgid "Import failed: ST_Importer_File_System class not found. Please ensure the importer is properly loaded."
 msgstr "Importimine ebaõnnestus: klassi ST_Importer_File_System ei leitud. Palun veenduge, et importija on õigesti laaditud."
 
 #. translators: %s: Error message.
 #. translators: %s is the exception message.
-#: inc/lib/ai-builder/inc/traits/helper.php:773
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:161
+#: inc/lib/ai-builder/inc/traits/helper.php:777
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:178
 #, php-format
 msgid "Import failed: Unexpected error - %s"
 msgstr "Import ebaõnnestus: Ootamatu viga - %s"
 
 #. translators: %s: Error message.
-#: inc/lib/ai-builder/inc/traits/helper.php:777
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:164
+#: inc/lib/ai-builder/inc/traits/helper.php:781
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:181
 #, php-format
 msgid "Import failed: Fatal error - %s"
 msgstr "Import ebaõnnestus: Saatuslik viga - %s"
@@ -6466,24 +6453,24 @@ msgstr "Installimine ebaõnnestus: %1$s installimiseks pole piisavalt kettaruumi
 msgid "Plugin %1$s installation failed: %2$s. Please try again or install the plugin manually from the WordPress admin area."
 msgstr "Plugin %1$s installimine ebaõnnestus: %2$s. Palun proovige uuesti või installige plugin käsitsi WordPressi administreerimisalalt."
 
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:130
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:147
 msgid "Permission denied: You don't have permission to initiate the import process. Please contact your site administrator."
 msgstr "Luba keelatud: Teil ei ole luba importimisprotsessi alustamiseks. Palun võtke ühendust oma saidi administraatoriga."
 
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:137
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:154
 msgid "Import failed: The XMLReader PHP extension is missing on your server. Please contact your hosting provider to enable it."
 msgstr "Importimine ebaõnnestus: Teie serveris puudub XMLReader PHP laiendus. Palun võtke ühendust oma majutusteenuse pakkujaga, et see lubada."
 
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:145
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:162
 msgid "Import failed: This template does not include site content (posts, pages, media). You can proceed with design-only import or choose a different template."
 msgstr "Importimine ebaõnnestus: see mall ei sisalda saidi sisu (postitused, lehed, meedia). Saate jätkata ainult kujunduse importimist või valida teise malli."
 
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:153
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:170
 msgid "Import failed: The required import library is not loaded. This may be due to a plugin conflict. Please deactivate other plugins temporarily and try again, or reinstall the Starter Templates plugin."
 msgstr "Importimine ebaõnnestus: Nõutud imporditeeki ei ole laaditud. See võib olla tingitud pistikprogrammi konfliktist. Palun deaktiveerige ajutiselt teised pistikprogrammid ja proovige uuesti või installige Starter Templates pistikprogramm uuesti."
 
 #. translators: %s: Error message
-#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:169
+#: inc/lib/onboarding/classes/class-astra-sites-onboarding-setup.php:186
 #, php-format
 msgid "Import failed: %s"
 msgstr "Import ebaõnnestus: %s"
@@ -6499,13 +6486,13 @@ msgid "Spectra plugin installed but class not loaded. Please refresh and try aga
 msgstr "Spectra plugin on installitud, kuid klassi ei laaditud. Palun värskendage ja proovige uuesti."
 
 #. translators: %s is the error message.
-#: inc/lib/starter-templates-importer/importer/st-importer.php:459
+#: inc/lib/starter-templates-importer/importer/st-importer.php:485
 #, php-format
 msgid "Error occurred while inserting XML file: %s"
 msgstr "Tõrge XML-faili sisestamisel: %s"
 
 #. translators: %s is the download error message.
-#: inc/lib/starter-templates-importer/importer/st-importer.php:506
+#: inc/lib/starter-templates-importer/importer/st-importer.php:532
 #, php-format
 msgid "File download failed: %s"
 msgstr "Faili allalaadimine ebaõnnestus: %s"
@@ -6566,116 +6553,116 @@ msgstr "Plugin'i aktiveerimine ebaõnnestus: %s"
 msgid "Plugin activated successfully."
 msgstr "Plugin aktiveeriti edukalt."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:239
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:248
 msgid "Permission denied: You don't have sufficient permissions to perform this action. Please contact your site administrator."
 msgstr "Luba keelatud: Teil pole piisavalt õigusi selle toimingu sooritamiseks. Palun võtke ühendust oma saidi administraatoriga."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:291
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:300
 msgid "Template content file not found or inaccessible. The import process cannot continue without the content file. Please try importing again."
 msgstr "Mallifaili sisu ei leitud või pole sellele juurdepääsu. Importimisprotsess ei saa ilma sisufailita jätkuda. Palun proovige uuesti importida."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:314
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:323
 msgid "Template content file does not exist on the server. The file may have been deleted or moved. Please try re-importing the template."
 msgstr "Malli sisufaili ei eksisteeri serveris. Fail võidi kustutada või teisaldada. Palun proovige malli uuesti importida."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:338
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:347
 msgid "Template content file cannot be read due to file permission issues. Please contact your hosting provider to fix file permissions."
 msgstr "Malli sisufaili ei saa lugeda faililubade probleemide tõttu. Palun võtke ühendust oma majutusteenuse pakkujaga, et faililubasid parandada."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:454
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:471
 msgid "A fatal error occurred during import, likely due to server resource limitations. Try a different template, or contact your hosting provider to increase server resources."
 msgstr "Impordi ajal ilmnes tõsine viga, tõenäoliselt serveri ressursside piirangute tõttu. Proovige teist malli või võtke ühendust oma majutusteenuse pakkujaga, et suurendada serveri ressursse."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:518
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:535
 msgid "Import failed due to server memory limitations. This template may be too large for your current server configuration. Try importing a smaller template, or contact your hosting provider to increase memory limits."
 msgstr "Import ebaõnnestus serveri mälupiirangute tõttu. See mall võib olla teie praeguse serveri konfiguratsiooni jaoks liiga suur. Proovige importida väiksemat malli või võtke ühendust oma majutusteenuse pakkujaga, et suurendada mälupiiranguid."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:524
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:541
 msgid "Import timed out due to server limitations. The template import process took too long to complete. Try again, or contact your hosting provider to increase execution time limits."
 msgstr "Import aegus katkestati serveri piirangute tõttu. Malli importimise protsess võttis liiga kaua aega. Proovige uuesti või võtke ühendust oma majutusteenuse pakkujaga, et suurendada täitmisaja piiranguid."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:531
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:548
 msgid "Import failed due to database issues. This could be due to database connection problems or insufficient database permissions. Please contact your hosting provider."
 msgstr "Import ebaõnnestus andmebaasi probleemide tõttu. See võib olla tingitud andmebaasi ühenduse probleemidest või ebapiisavatest andmebaasi õigustest. Palun võtke ühendust oma majutusteenuse pakkujaga."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:538
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:555
 msgid "Import failed due to file permission issues. The server cannot create or write files needed for the import. Please contact your hosting provider to fix file permissions."
 msgstr "Import ebaõnnestus faililubade probleemide tõttu. Server ei saa luua ega kirjutada impordi jaoks vajalikke faile. Palun võtke ühendust oma majutusteenuse pakkujaga, et faililubasid parandada."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:545
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:562
 msgid "Import completed but some images or media files could not be downloaded. This could be due to network issues or the original files being unavailable. The template structure has been imported successfully."
 msgstr "Importimine on lõpetatud, kuid mõningaid pilte või meediafaile ei õnnestunud alla laadida. See võib olla tingitud võrgu probleemidest või algfailide kättesaamatusest. Malli struktuur on edukalt imporditud."
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:551
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:568
 msgid "Import failed due to corrupted template content. The template file appears to be damaged or incomplete. Please try importing again, or select a different template."
 msgstr "Importimine ebaõnnestus rikutud mallisisu tõttu. Mallifail näib olevat kahjustatud või puudulik. Palun proovige uuesti importida või valige teine mall."
 
 #. translators: Import encountered error text.
-#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:557
+#: inc/lib/starter-templates-importer/importer/wxr-importer/st-wxr-importer.php:574
 #, php-format
 msgid "Import process encountered an error: %s. Please try again, or contact support if the issue persists."
 msgstr "Importimise protsessis ilmnes viga: %s. Palun proovige uuesti või võtke ühendust toega, kui probleem püsib."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Missing Required Plugins or Theme"
 msgstr "Puuduvad nõutud pistikprogrammid või teema"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:180
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "In a multisite environment, you need to have all required plugins and themes already installed and activated by your network administrator to import this template."
 msgstr "Mitme saidi keskkonnas peavad kõik vajalikud pistikprogrammid ja teemad olema juba teie võrguadministraatori poolt installitud ja aktiveeritud, et seda malli importida."
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:180
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Missing Theme:"
 msgstr "Puuduv teema:"
 
 #: inc/lib/ai-builder/inc/assets/build/main.js:180
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Missing Plugins:"
 msgstr "Puuduvad pistikprogrammid:"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Please contact your network administrator to install and activate these plugins."
 msgstr "Palun võtke ühendust oma võrguadministraatoriga, et need pistikprogrammid installida ja aktiveerida."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:150
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:152
 msgid "Continue Anyway"
 msgstr "Jätka ikkagi"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Unknown error occurred."
 msgstr "Tundmatu viga ilmnes."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Parse error occurred."
 msgstr "Ilmnes parsiviga."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Network error occurred."
 msgstr "Võrguviga tekkis."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "The server returned an invalid response. This may be due to server configuration issues or plugin conflicts."
 msgstr "Server tagastas kehtetu vastuse. See võib olla tingitud serveri konfiguratsiooniprobleemidest või pluginakonfliktidest."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Unable to connect to the server. This could be due to internet connectivity issues."
 msgstr "Serveriga ühendamine ebaõnnestus. See võib olla tingitud internetiühenduse probleemidest."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Connection failed: Failed to connect to the import server. This could be due to network issues or server problems."
 msgstr "Ühendus ebaõnnestus: ei õnnestunud importserveriga ühendust luua. See võib olla tingitud võrgu probleemidest või serveri probleemidest."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Request timeout: The import request took too long to complete. This could be due to server load or network issues."
 msgstr "Päringu ajapiirang: Impordipäring võttis liiga kaua aega. See võib olla tingitud serveri koormusest või võrgu probleemidest."
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Please try again. If the problem persists, try a different template."
 msgstr "Palun proovige uuesti. Kui probleem püsib, proovige teist malli."
 
-#: inc/lib/getting-started/classes/class-gs-admin.php:403
+#: inc/lib/getting-started/classes/class-gs-admin.php:390
 msgid "Your Website is Almost Ready!"
 msgstr "Teie veebisait on peaaegu valmis!"
 
@@ -6803,31 +6790,31 @@ msgstr "Mall edukalt lisatud."
 msgid "Insert Template"
 msgstr "Lisa mall"
 
-#: inc/classes/class-astra-sites-importer.php:547
+#: inc/classes/class-astra-sites-importer.php:550
 msgid "No WP Forms to import."
 msgstr "WP Forme pole importimiseks."
 
-#: inc/classes/class-astra-sites-importer.php:640
+#: inc/classes/class-astra-sites-importer.php:643
 msgid "WP Forms Imported."
 msgstr "WP Formid imporditud."
 
-#: inc/classes/class-astra-sites-importer.php:717
+#: inc/classes/class-astra-sites-importer.php:720
 msgid "No CartFlows data to import."
 msgstr "CartFlows andmeid pole importimiseks."
 
 #. translators: %s is the URL.
-#: inc/classes/class-astra-sites-importer.php:763
-#: inc/classes/class-astra-sites-importer.php:925
+#: inc/classes/class-astra-sites-importer.php:766
+#: inc/classes/class-astra-sites-importer.php:928
 #, php-format
 msgid "Imported from %s"
 msgstr "Imporditud alates %s"
 
-#: inc/classes/class-astra-sites-importer.php:809
+#: inc/classes/class-astra-sites-importer.php:812
 msgid "No Cart Abandonment Recovery data to import."
 msgstr "Cart Abandonment Recovery andmeid pole importimiseks."
 
 #. translators: %s is the URL.
-#: inc/classes/class-astra-sites-importer.php:837
+#: inc/classes/class-astra-sites-importer.php:840
 #, php-format
 msgid "Imported Cart Abandonment Recovery data from %s"
 msgstr "Imporditud Cart Abandonment Recovery andmed alates %s"
@@ -6948,30 +6935,30 @@ msgid "Required function not found!"
 msgstr "Nõutud funktsiooni ei leitud!"
 
 #. translators: 1: Error message.
-#: inc/lib/ai-builder/inc/traits/helper.php:627
+#: inc/lib/ai-builder/inc/traits/helper.php:631
 #, php-format
 msgid "Plugin Activation Error: %s"
 msgstr "Plugina aktiveerimise viga: %s"
 
 #. translators: %s: Log file path.
-#: inc/lib/ai-builder/inc/traits/helper.php:674
+#: inc/lib/ai-builder/inc/traits/helper.php:678
 #, php-format
 msgid "File generated at %s"
 msgstr "Fail genereeritud aadressil %s"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:744
+#: inc/lib/ai-builder/inc/traits/helper.php:748
 msgid "Widget Imported!"
 msgstr "Vidin imporditud!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:796
+#: inc/lib/ai-builder/inc/traits/helper.php:800
 msgid "Import completed successfully!"
 msgstr "Importimine edukalt lõpetatud!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:820
+#: inc/lib/ai-builder/inc/traits/helper.php:824
 msgid "Deleted Customizer Settings!"
 msgstr "Kohandaja seaded kustutatud!"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:844
+#: inc/lib/ai-builder/inc/traits/helper.php:848
 msgid "Deleted Site Options!"
 msgstr "Saidi valikud kustutatud!"
 
@@ -7080,11 +7067,11 @@ msgstr "allahindlus."
 msgid "Failed to activate plugin %1$s. Error: %2$s"
 msgstr "Ebaõnnestus aktiveerida plugin %1$s. Viga: %2$s"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Custom Templates"
 msgstr "Kohandatud mallid"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:146
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:148
 msgid "Go to Templates"
 msgstr "Mine mallide juurde"
 
@@ -7120,7 +7107,7 @@ msgstr "Me ei saanud teie konto aktiivset plaani kinnitada. Palun kontrollige om
 msgid "Highlight"
 msgstr "Esiletõst"
 
-#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1236
+#: inc/lib/starter-templates-importer/importer/wxr-importer.php:1238
 msgid "The image file is too large to process with the current server memory settings."
 msgstr "Pildifail on liiga suur, et seda praeguste serveri mäluseadetega töödelda."
 
@@ -7140,57 +7127,53 @@ msgstr "Ei, valin ise"
 msgid "Yes, Skip"
 msgstr "Jah, jäta vahele"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
 msgid "Your current site will be updated with the selected layout, design, content, and pages."
 msgstr "Teie praegune sait uuendatakse valitud paigutuse, kujunduse, sisu ja lehtedega."
 
 #. translators: %1$s: Plugin name
-#: inc/classes/class-astra-sites-importer.php:1185
+#: inc/classes/class-astra-sites-importer.php:1194
 #, php-format
 msgid "%1$s import failed: Plugin files not found. Please ensure %1$s is properly installed."
 msgstr "%1$s import ebaõnnestus: Plugin faile ei leitud. Palun veenduge, et %1$s on õigesti paigaldatud."
 
 #. translators: %1$s: Plugin name
-#: inc/classes/class-astra-sites-importer.php:1197
+#: inc/classes/class-astra-sites-importer.php:1206
 #, php-format
 msgid "%1$s import failed: Plugin is installed but not activated. Please activate %1$s and try again."
 msgstr "%1$s import ebaõnnestus: Plugin on paigaldatud, kuid mitte aktiveeritud. Palun aktiveerige %1$s ja proovige uuesti."
 
 #. translators: %s: Plugin name
-#: inc/classes/class-astra-sites-importer.php:1225
+#: inc/classes/class-astra-sites-importer.php:1234
 #, php-format
 msgid "%s import failed: Plugin class/functions not available after loading. Please try again or contact support."
 msgstr "%s import ebaõnnestus: Plugin klass/funktsioonid pole laadimise järel saadaval. Palun proovige uuesti või võtke ühendust toega."
 
 #. translators: %1$s: Import name, %2$d: current attempt, %3$d: max attempts.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:153
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:158
 #, js-format
 msgid "%1$s (retry attempt %2$d/%3$d)…"
 msgstr "%1$s (uuesti katse %2$d/%3$d)…"
 
 #. translators: Import name, seconds to wait.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:156
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:161
 #, js-format
 msgid "%1$s encountered an error. Retrying in %2$d seconds…"
 msgstr "%1$s tekkis viga. Proovin uuesti %2$d sekundi pärast…"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:165
-msgid "Waiting for plugins to initialize…"
-msgstr "Ootan, kuni pluginad initsialiseeruvad…"
-
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "CartFlows Import"
 msgstr "CartFlows import"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Cart Abandonment Recovery Import"
 msgstr "Cart Abandonment Recovery import"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "LatePoint Import"
 msgstr "LatePoint import"
 
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "WPForms Import"
 msgstr "WPForms import"
 
@@ -7234,15 +7217,15 @@ msgstr "Palun jagage vähemalt 50 tähemärki, et saaksime paremini mõista, mid
 msgid "characters (minimum)"
 msgstr "tähemärki (miinimum)"
 
-#: inc/lib/ai-builder/inc/traits/helper.php:571
+#: inc/lib/ai-builder/inc/traits/helper.php:575
 msgid "Error: Missing or invalid plugin initialization parameter."
 msgstr "Viga: Puuduv või vigane plugina initsialiseerimise parameeter."
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:661
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:670
 msgid "Log Files"
 msgstr "Logifailid"
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:675
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:684
 msgid "Backup Files"
 msgstr "Varukoopia failid"
 
@@ -7251,24 +7234,24 @@ msgid "Always open Design Library when creating new pages"
 msgstr "Avage alati disainiraamatukogu uute lehtede loomisel"
 
 #. translators: %s is the error message.
-#: inc/classes/class-astra-sites-importer.php:798
+#: inc/classes/class-astra-sites-importer.php:801
 #, php-format
 msgid "Cart Abandonment Recovery import failed: %s"
 msgstr "Ostukorvi hülgamise taastamise import ebaõnnestus: %s"
 
-#: inc/classes/class-astra-sites-importer.php:944
+#: inc/classes/class-astra-sites-importer.php:947
 msgid "Permission denied: You do not have permission to verify plugins."
 msgstr "Luba keelatud: Teil pole õigust pistikprogramme kontrollida."
 
-#: inc/classes/class-astra-sites-importer.php:963
+#: inc/classes/class-astra-sites-importer.php:966
 msgid "No plugins to verify."
 msgstr "Kontrollimiseks pole pistikprogramme."
 
-#: inc/classes/class-astra-sites-importer.php:1001
+#: inc/classes/class-astra-sites-importer.php:1010
 msgid "Some required plugins are not ready."
 msgstr "Mõned vajalikud pistikprogrammid pole valmis."
 
-#: inc/classes/class-astra-sites-importer.php:1013
+#: inc/classes/class-astra-sites-importer.php:1022
 msgid "All plugins verified."
 msgstr "Kõik pistikprogrammid on kontrollitud."
 
@@ -7296,39 +7279,11 @@ msgstr "Ühtegi malli ei leitud"
 msgid "Try changing your search keyword or sort options."
 msgstr "Proovige muuta oma otsingusõna või sorteerimisvalikuid."
 
-#. translators: %s: Plugin names being verified.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:168
-#, js-format
-msgid "Verifying plugins: %s"
-msgstr "Pistikprogrammide kontrollimine: %s"
-
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:168
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
 msgid "Plugin verification failed."
 msgstr "Pistikprogrammi kontroll ebaõnnestus."
 
-#. translators: %s: Plugin names that are not installed.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
-#, js-format
-msgid "Not installed: %s"
-msgstr "Pole installitud: %s"
-
-#. translators: %s: Plugin names that are not activated.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:174
-#, js-format
-msgid "Not activated: %s"
-msgstr "Pole aktiveeritud: %s"
-
-#. translators: %s: Details about plugins needing attention.
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
-#, js-format
-msgid "Plugins need attention. %s. Retrying…"
-msgstr "Pistikprogrammid vajavad tähelepanu. %s. Proovin uuesti…"
-
-#: inc/lib/onboarding/assets/dist/onboarding/main.js:177
-msgid "Plugin verification failed. Retrying…"
-msgstr "Pistikprogrammi kontroll ebaõnnestus. Proovin uuesti…"
-
-#: inc/classes/class-astra-sites.php:1389
+#: inc/classes/class-astra-sites.php:1394
 msgid "Pixabay API key is not configured. Set it via the astra_sites_pixabay_api_key filter or option."
 msgstr "Pixabay API võti pole konfigureeritud. Määrake see astra_sites_pixabay_api_key filtri või valiku kaudu."
 
@@ -7526,14 +7481,410 @@ msgstr "Spectra aktiveerimine ebaõnnestus. Palun proovige hiljem uuesti."
 msgid "Failed to install Spectra. Please try again later."
 msgstr "Spectra installimine ebaõnnestus. Palun proovige hiljem uuesti."
 
+#: admin/bsf-analytics/class-bsf-analytics.php:279
+msgid "This will be applicable for all sites from the network."
+msgstr "See kehtib kõigi võrgustiku saitide kohta."
+
+#. translators: %s usage doc link
+#: admin/bsf-analytics/class-bsf-analytics.php:303
+#: inc/lib/one-onboarding/build/main.js:25
+msgid "Learn more."
+msgstr "Lisateave."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:502
+msgid "Usage Tracking"
+msgstr "Kasutuse jälgimine"
+
+#. translators: %s Product title
+#: admin/bsf-analytics/class-bsf-analytics.php:547
+#, php-format
+msgid "Help improve %s by sharing non-sensitive usage data — like PHP version and features used."
+msgstr "Aita parandada %s, jagades mitte-tundlikke kasutusandmeid — nagu PHP versioon ja kasutatud funktsioonid."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:550
+msgid " This will be applicable for all sites from the network."
+msgstr " See kehtib kõigi võrgustiku saitide kohta."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:555
+msgid "Learn More."
+msgstr "Lisateave."
+
+#: admin/bsf-analytics/classes/class-bsf-analytics-helper.php:28
+msgid "Oops! Something went wrong. Please refresh the page and try again."
+msgstr "Ups! Midagi läks valesti. Palun värskenda lehte ja proovi uuesti."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:83
+msgid "If you have a moment, please share why you are deactivating the plugin."
+msgstr "Kui sul on hetk, palun jaga, miks sa pistikprogrammi deaktiveerid."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:105
+msgid "Icon"
+msgstr "Ikoon"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:132
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:307
+msgid "Please tell us more details."
+msgstr "Palun räägi meile rohkem üksikasju."
+
+#. translators: %1$s: link html start, %2$s: link html end
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:141
+#, php-format
+msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
+msgstr "Kas vajad abi meie ekspertidelt? %1$sKlõpsa siia, et meiega ühendust võtta.%2$s"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:152
+msgid "Submit & Deactivate"
+msgstr "Esita ja deaktiveeri"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:153
+msgid "Skip & Deactivate"
+msgstr "Jäta vahele ja deaktiveeri"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:282
+msgid "This is a temporary deactivation for testing."
+msgstr "See on ajutine deaktiveerimine testimiseks."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:283
+msgid "How can we assist you?"
+msgstr "Kuidas saame sind aidata?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:288
+msgid "The plugin isn't working properly."
+msgstr "Pistikprogramm ei tööta korralikult."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:289
+msgid "Please tell us more about what went wrong?"
+msgstr "Palun räägi meile rohkem, mis valesti läks?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:294
+msgid "I found a better alternative plugin."
+msgstr "Leidsin parema alternatiivse pistikprogrammi."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:295
+msgid "Could you please specify which plugin?"
+msgstr "Kas saaksite täpsustada, milline pistikprogramm?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:300
+msgid "It's missing a specific feature."
+msgstr "Puudub konkreetne funktsioon."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:301
+msgid "Please tell us more about the feature."
+msgstr "Palun räägi meile rohkem funktsioonist."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Get Started Now"
+msgstr "Alusta kohe"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Go back to the dashboard"
+msgstr "Mine tagasi juhtpaneelile"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Welcome to the Zip AI Setup Wizard!"
+msgstr "Tere tulemast Zip AI seadistusviisardisse!"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Zip AI is your WordPress assistant, accessible right within your backend. Create persuasive content, generate custom code, and get answers to your WordPress queries in seconds. The possibilities are endless!"
+msgstr "Zip AI on teie WordPressi assistent, kättesaadav otse teie taustaprogrammis. Looge veenev sisu, genereerige kohandatud kood ja saage vastuseid oma WordPressi küsimustele sekunditega. Võimalused on lõputud!"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Craft Compelling Content"
+msgstr "Loo veenev sisu"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "With Zip, you can effortlessly create persuasive, engaging copy that resonates with your audience."
+msgstr "Zipiga saate vaevata luua veenva ja kaasahaarava teksti, mis kõnetab teie publikut."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "AI-Powered Block Patterns"
+msgstr "Tehisintellekti juhitud plokimustrid"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Zip can personalize and customize the block patterns and section templates tailored to your website's unique needs."
+msgstr "Zip saab isikupärastada ja kohandada plokimustreid ja sektsioonimalle, mis on kohandatud teie veebisaidi ainulaadsetele vajadustele."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "WordPress Wizardry"
+msgstr "WordPressi võlukunst"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Got questions? Zip has the answers. Whether it's troubleshooting, or customizing your site, Zip has your back."
+msgstr "Kas teil on küsimusi? Zipil on vastused. Olgu see tõrkeotsing või teie saidi kohandamine, Zip on teie seljataga."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Personalized Templates"
+msgstr "Isikupärastatud mallid"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Say goodbye to generic designs and say hello to Zip's personalized page templates, tailored just for you."
+msgstr "Ütle hüvasti üldistele kujundustele ja tere Zipi isikupärastatud lehemallidele, mis on kohandatud just teile."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "No more struggling with complex coding issues. Zip can whip up custom code, functions, and CSS tailored to your needs."
+msgstr "Enam pole vaja vaeva näha keeruliste koodiprobleemidega. Zip saab luua kohandatud koodi, funktsioone ja CSS-i, mis on kohandatud teie vajadustele."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
+msgid "Custom Pages with AI"
+msgstr "Kohandatud lehed tehisintellektiga"
+
+#. translators: %s: Percentage Ascii Code
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
+#, js-format
+msgid "With Zip AI by your side, you can create beautiful, 100%s custom web pages without the need for any design or coding skills."
+msgstr "Zip AI abil saate luua ilusaid, 100%s kohandatud veebilehti ilma disaini- või kodeerimisoskusteta."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
+msgid "From the Team Behind Some Iconic WordPress Products"
+msgstr "Meeskonnalt, kes on loonud mõned ikoonilised WordPressi tooted"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
+msgid "Visit Website"
+msgstr "Külastage veebisaiti"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
+msgid "Words Written"
+msgstr "Kirjutatud sõnad"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
+msgid "Get more Credits"
+msgstr "Hankige rohkem krediiti"
+
+#. translators: %s: number of words
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+#, js-format
+msgid "of %s"
+msgstr "%s kohta"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Enable Zip AI"
+msgstr "Luba Zip AI"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "You can easily enable or disable Zip AI from this section. Simply toggle the switch on or off with a single click."
+msgstr "Saate Zip AI hõlpsasti lubada või keelata sellest jaotisest. Lihtsalt lülitage lüliti sisse või välja ühe klõpsuga."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Zip is Authorized"
+msgstr "Zip on autoriseeritud"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Your website is connected to AI. You can disconnect at any time."
+msgstr "Teie veebisait on ühendatud tehisintellektiga. Saate igal ajal ühenduse katkestada."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Are you sure you want to disconnect?"
+msgstr "Kas olete kindel, et soovite ühenduse katkestada?"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "You will need to reconnect to use AI features again."
+msgstr "Te peate uuesti ühenduse looma, et kasutada tehisintellekti funktsioone."
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Default route fallback"
+msgstr "Vaikimisi marsruudi varuvariant"
+
+#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+msgid "Zip - Your AI Assistant"
+msgstr "Zip - Teie AI assistent"
+
+#: admin/bsf-analytics/class-bsf-analytics.php:273
+#, php-format
+msgid "<strong>Help shape the future of %1$s.</strong><br><br>Share how you use the plugin so we can build features that matter, fix issues faster, and make smarter decisions."
+msgstr "<strong>Aita kujundada %1$s tulevikku.</strong><br><br>Jaga, kuidas sa pistikprogrammi kasutad, et saaksime luua olulisi funktsioone, kiiremini lahendada probleeme ja teha targemaid otsuseid."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:313
+msgid "Happy to help!"
+msgstr "Hea meel aidata!"
+
+#: inc/classes/class-astra-sites-astra-onboarding.php:251
+msgid "Get helpful updates, new features, and tips to make your website better, while helping us improve Astra by sharing how you use it."
+msgstr "Saage kasulikke uuendusi, uusi funktsioone ja näpunäiteid, et muuta oma veebisait paremaks, aidates samal ajal meil Astra täiustada, jagades, kuidas te seda kasutate."
+
+#: inc/lib/astra-notices/class-bsf-admin-notices.php:159
+msgid "Permission denied."
+msgstr "Luba keelatud."
+
+#: inc/lib/one-onboarding/build/main.js:25
+msgid "Get notified about updates, tips and new features. Plus help us improve by sharing how you use the plugin."
+msgstr "Saage teateid uuenduste, näpunäidete ja uute funktsioonide kohta. Lisaks aidake meil täiustada, jagades, kuidas te pistikprogrammi kasutate."
+
+#. translators: %1$s: search term.
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+#, js-format
+msgid "Starter Templates for: %1$s"
+msgstr "Stardimallid: %1$s"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+msgid "Already purchased it?"
+msgstr "Kas olete selle juba ostnud?"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+msgid "Install and activate Premium Starter Templates"
+msgstr "Installige ja aktiveerige Premium Starter Templates"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:149
+msgid "[Need Help?]"
+msgstr "[Vajate abi?]"
+
+#: inc/lib/nps-survey/classes/nps-survey-script.php:431
+#: inc/lib/zipwp-images/classes/zipwp-images-api.php:222
+msgid "Remote request failed."
+msgstr "Kaugpäring ebaõnnestus."
+
+#: inc/lib/nps-survey/classes/nps-survey-script.php:466
+msgid "Request failed."
+msgstr "Päring ebaõnnestus."
+
+#: inc/lib/zip-ai/classes/admin-configurations.php:276
+#: inc/lib/zip-ai/classes/admin-configurations.php:307
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:342
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:839
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:866
+msgid "Insufficient permissions"
+msgstr "Ebapiisavad õigused"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:180
+msgid "your team"
+msgstr "teie meeskond"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:180
+msgid "your current plan"
+msgstr "teie praegune plaan"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:191
+msgid "Connect ZipWP to access images"
+msgstr "Ühendage ZipWP, et pääseda juurde piltidele"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:191
+msgid "Sign up for a free ZipWP account to load curated images for your region and finish building your website."
+msgstr "Registreeruge tasuta ZipWP kontole, et laadida oma piirkonna jaoks kureeritud pilte ja lõpetada oma veebisaidi loomine."
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "Connect ZipWP to load images for your region"
+msgstr "Ühendage ZipWP, et laadida oma piirkonna pilte"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "Image search uses an API key from your ZipWP account. Connect a free account to load images available in your region."
+msgstr "Pildiotsing kasutab teie ZipWP konto API-võtit. Ühendage tasuta konto, et laadida oma piirkonnas saadaolevaid pilte."
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "Connect ZipWP"
+msgstr "Ühendage ZipWP"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "Log in"
+msgstr "Logi sisse"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "OR"
+msgstr "VÕI"
+
+#: inc/lib/ai-builder/inc/assets/build/main.js:192
+msgid "Upload your own"
+msgstr "Laadige oma enda üles"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+msgid "Failed"
+msgstr "Ebaõnnestus"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+msgid "Skipped"
+msgstr "Jäeti vahele"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+msgid "Pending"
+msgstr "Ootel"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+msgid "Required plugin"
+msgstr "Nõutav pistikprogramm"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:141
+msgid "Retry"
+msgstr "Proovi uuesti"
+
+#. translators: %1$s: plugin name
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+#, js-format
+msgid "Could not install %1$s automatically. <a>Click here to install it manually</a>, then come back to this tab."
+msgstr "Ei saanud %1$s automaatselt installida. <a>Klõpsake siin, et installida see käsitsi</a>, seejärel naaske sellele vahekaardile."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+msgid "Some required plugins could not be installed. Please retry below."
+msgstr "Mõnda nõutavat pistikprogrammi ei saanud installida. Palun proovige uuesti allpool."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+msgid "Optional plugins failed. You can continue without them or retry."
+msgstr "Valikulised pistikprogrammid ebaõnnestusid. Saate jätkata ilma nendeta või proovida uuesti."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+msgid "Re-check plugin status. Use this after manually installing or activating a plugin in another tab."
+msgstr "Kontrollige pistikprogrammi olekut uuesti. Kasutage seda pärast pistikprogrammi käsitsi installimist või aktiveerimist teises vahekaardis."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:142
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+msgid "Refresh"
+msgstr "Värskenda"
+
+#. translators: %d: failed count
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+#, js-format
+msgid "Retry Failed (%d)"
+msgstr "Proovi uuesti ebaõnnestunud (%d)"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+msgid "Retry optional"
+msgstr "Proovi uuesti valikuline"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:143
+msgid "Mark failed optional plugins as skipped and continue with the import. Your site will work without them. You can install them later from Plugins → Add New."
+msgstr "Märgistage ebaõnnestunud valikulised pistikprogrammid vahelejäetuks ja jätkake importimisega. Teie sait töötab ilma nendeta. Saate need hiljem installida menüüst Pistikprogrammid → Lisa uus."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:155
+msgid "Installation failed."
+msgstr "Installimine ebaõnnestus."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
+msgid "Verifying plugins…"
+msgstr "Pistikprogramme kontrollitakse…"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:164
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
+msgid "Preparing import…"
+msgstr "Importimiseks ettevalmistamine…"
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:167
+msgid "a required plugin"
+msgstr "nõutav pistikprogramm"
+
+#. translators: %1$s: plugin name, %2$s: dependency plugin name
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:168
+#, js-format
+msgid "%1$s deferred (requires %2$s)."
+msgstr "%1$s edasi lükatud (nõuab %2$s)."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
+msgid "Activation failed (invalid response)."
+msgstr "Aktiveerimine ebaõnnestus (kehtetu vastus)."
+
+#: inc/lib/onboarding/assets/dist/onboarding/main.js:171
+msgid "Activation failed."
+msgstr "Aktiveerimine ebaõnnestus."
+
+#: inc/lib/zip-ai/classes/sidebar-configurations.php:274
+msgid "An error occurred while processing your request."
+msgstr "Teie päringu töötlemisel ilmnes viga."
+
 #. translators: %1$s Memory Limit, %2$s Recommended memory limit.
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:460
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:469
 #, php-format
 msgctxt "Recommended Memory Limit"
 msgid "Current memory limit %1$s. We recommend setting memory to at least %2$s."
 msgstr "Praegune mälupiirang %1$s. Soovitame seada mälu vähemalt %2$s."
 
-#: inc/lib/starter-templates-importer/importer/st-importer-log.php:541
+#: inc/lib/starter-templates-importer/importer/st-importer-log.php:550
 msgctxt "PHP Version"
 msgid "We recommend to use php 5.4 or higher"
 msgstr "Soovitame kasutada php versiooni 5.4 või uuemat"
@@ -7542,218 +7893,3 @@ msgstr "Soovitame kasutada php versiooni 5.4 või uuemat"
 msgctxt "block title"
 msgid "Spectra AI"
 msgstr "Spectra AI"
-
-#: admin/bsf-analytics/class-bsf-analytics.php:276
-msgid "This will be applicable for all sites from the network."
-msgstr ""
-
-#. translators: %s usage doc link
-#: admin/bsf-analytics/class-bsf-analytics.php:300
-msgid "Learn more."
-msgstr ""
-
-#: admin/bsf-analytics/class-bsf-analytics.php:499
-msgid "Usage Tracking"
-msgstr ""
-
-#. translators: %s Product title
-#: admin/bsf-analytics/class-bsf-analytics.php:544
-#, php-format
-msgid "Help improve %s by sharing non-sensitive usage data — like PHP version and features used."
-msgstr ""
-
-#: admin/bsf-analytics/class-bsf-analytics.php:547
-msgid " This will be applicable for all sites from the network."
-msgstr ""
-
-#: admin/bsf-analytics/class-bsf-analytics.php:552
-msgid "Learn More."
-msgstr ""
-
-#: admin/bsf-analytics/classes/class-bsf-analytics-helper.php:28
-msgid "Oops! Something went wrong. Please refresh the page and try again."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:83
-msgid "If you have a moment, please share why you are deactivating the plugin."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:105
-msgid "Icon"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:132
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:307
-msgid "Please tell us more details."
-msgstr ""
-
-#. translators: %1$s: link html start, %2$s: link html end
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:141
-#, php-format
-msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:152
-msgid "Submit & Deactivate"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:153
-msgid "Skip & Deactivate"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:282
-msgid "This is a temporary deactivation for testing."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:283
-msgid "How can we assist you?"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:288
-msgid "The plugin isn't working properly."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:289
-msgid "Please tell us more about what went wrong?"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:294
-msgid "I found a better alternative plugin."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:295
-msgid "Could you please specify which plugin?"
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:300
-msgid "It's missing a specific feature."
-msgstr ""
-
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:301
-msgid "Please tell us more about the feature."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Get Started Now"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Go back to the dashboard"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Welcome to the Zip AI Setup Wizard!"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Zip AI is your WordPress assistant, accessible right within your backend. Create persuasive content, generate custom code, and get answers to your WordPress queries in seconds. The possibilities are endless!"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Craft Compelling Content"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "With Zip, you can effortlessly create persuasive, engaging copy that resonates with your audience."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "AI-Powered Block Patterns"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Zip can personalize and customize the block patterns and section templates tailored to your website's unique needs."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "WordPress Wizardry"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Got questions? Zip has the answers. Whether it's troubleshooting, or customizing your site, Zip has your back."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Personalized Templates"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Say goodbye to generic designs and say hello to Zip's personalized page templates, tailored just for you."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "No more struggling with complex coding issues. Zip can whip up custom code, functions, and CSS tailored to your needs."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:1
-msgid "Custom Pages with AI"
-msgstr ""
-
-#. translators: %s: Percentage Ascii Code
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
-#, js-format
-msgid "With Zip AI by your side, you can create beautiful, 100%s custom web pages without the need for any design or coding skills."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
-msgid "From the Team Behind Some Iconic WordPress Products"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
-msgid "Visit Website"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
-msgid "Words Written"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:2
-msgid "Get more Credits"
-msgstr ""
-
-#. translators: %s: number of words
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-#, js-format
-msgid "of %s"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Enable Zip AI"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "You can easily enable or disable Zip AI from this section. Simply toggle the switch on or off with a single click."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Zip is Authorized"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Your website is connected to AI. You can disconnect at any time."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Are you sure you want to disconnect?"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "You will need to reconnect to use AI features again."
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Default route fallback"
-msgstr ""
-
-#: inc/lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-msgid "Zip - Your AI Assistant"
-msgstr ""
-
-#: admin/bsf-analytics/class-bsf-analytics.php:270
-#, php-format
-msgid "<strong>Help shape the future of %1$s.</strong><br><br>Share how you use the plugin so we can build features that matter, fix issues faster, and make smarter decisions."
-msgstr ""
-
-#: admin/bsf-analytics/class-bsf-analytics.php:310
-msgid "Happy to help!"
-msgstr ""

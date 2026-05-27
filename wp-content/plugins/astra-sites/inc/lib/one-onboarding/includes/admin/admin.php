@@ -8,7 +8,7 @@
 
 namespace One_Onboarding\Admin;
 
-if ( ! class_exists( 'Admin' ) ) {
+if ( ! class_exists( '\One_Onboarding\Admin\Admin' ) ) {
 
 	/**
 	 * Admin Class
@@ -254,6 +254,7 @@ if ( ! class_exists( 'Admin' ) ) {
 			);
 
 			wp_localize_script( 'one-onboarding-script', 'oneOnboardingData', $localized_data );
+
 			wp_set_script_translations(
 				'one-onboarding-script',
 				apply_filters( 'one_onboarding_textdomain', 'one-onboarding' ),
@@ -313,10 +314,16 @@ if ( ! class_exists( 'Admin' ) ) {
 		private static function get_current_user_info(): array {
 			$user = wp_get_current_user();
 
+			// Fallback: first_name → display_name → user_login.
+			$first_name = ! empty( $user->user_firstname ) ? $user->user_firstname : '';
+			if ( '' === $first_name ) {
+				$first_name = ! empty( $user->display_name ) ? $user->display_name : $user->user_login;
+			}
+
 			return array(
 				'id'        => $user->ID,
 				'email'     => $user->user_email,
-				'firstName' => $user->user_firstname ?? $user->display_name ?? '',
+				'firstName' => $first_name,
 				'lastName'  => $user->user_lastname ?? '',
 			);
 		}

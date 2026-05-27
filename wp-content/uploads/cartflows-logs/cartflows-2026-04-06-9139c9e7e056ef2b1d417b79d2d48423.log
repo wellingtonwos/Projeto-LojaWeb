@@ -1,3 +1,0 @@
-2026-04-06T20:56:54+00:00 INFO Start-Cartflows_Admin_Report_Emails::send_weekly_report_email
-2026-04-06T20:56:54+00:00 INFO Send weekly emails to dev-email@wpengine.local
-2026-04-06T20:56:54+00:00 INFO Total Revenue: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#82;&#36;</span>0,00</bdi></span>

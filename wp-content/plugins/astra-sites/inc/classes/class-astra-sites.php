@@ -127,8 +127,13 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 				return;
 			}
 
-			// 🎯 FIX: Global hook to prevent Elementor placeholder image imports
-			add_filter( 'pre_http_request', array( $this, 'block_elementor_placeholder_requests' ), 10, 3 );
+			// Only register the placeholder blocking filter when a batch import is actively running.
+			// This avoids unnecessary get_option() DB calls on every HTTP request.
+			if ( 'yes' === get_option( 'astra_sites_batch_process_started', 'no' )
+				&& 'yes' !== get_option( 'astra_sites_batch_process_complete', 'no' )
+			) {
+				add_filter( 'pre_http_request', array( $this, 'block_elementor_placeholder_requests' ), 10, 3 );
+			}
 
 			$this->set_api_url();
 			$this->includes();
@@ -1549,7 +1554,7 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 					} else {
 
 						if ( is_serialized( $meta_value, true ) ) {
-							$raw_data = astra_sites_safe_unserialize( stripslashes( $meta_value ) );
+							$raw_data = maybe_unserialize( stripslashes( $meta_value ) );
 						} elseif ( is_array( $meta_value ) ) {
 							$raw_data = json_decode( stripslashes( $meta_value ), true );
 						} else {
@@ -1591,7 +1596,7 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 					} else {
 
 						if ( is_serialized( $meta_value, true ) ) {
-							$raw_data = astra_sites_safe_unserialize( stripslashes( $meta_value ) );
+							$raw_data = maybe_unserialize( stripslashes( $meta_value ) );
 						} elseif ( is_array( $meta_value ) ) {
 							$raw_data = json_decode( stripslashes( $meta_value ), true );
 						} else {
@@ -2622,7 +2627,6 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 			require_once ASTRA_SITES_DIR . 'inc/classes/compatibility/class-astra-sites-compatibility.php';
 
 			// classes 'inc/classes/class-astra-sites-'.
-			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-update.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-utils.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-error-handler.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-white-label.php';
@@ -2633,8 +2637,8 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-wp-cli.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-file-system.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-nps-notice.php';
-			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-analytics-events.php';
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-analytics.php';
+			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-update.php';
 
 			// Astra Onboarding Integration.
 			require_once ASTRA_SITES_DIR . 'inc/classes/class-astra-sites-astra-onboarding.php';
@@ -2828,17 +2832,23 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 		}
 
 		/**
-		 * Get an instance of WP_Filesystem_Direct.
+		 * Get an instance of WP_Filesystem.
+		 *
+		 * Returns null when WP_Filesystem() fails to initialise (e.g. FTP method
+		 * selected without valid credentials), preventing fatal errors when callers
+		 * invoke filesystem methods on a partially initialised global.
 		 *
 		 * @since 2.0.0
-		 * @return mixed A WP_Filesystem_Direct instance.
+		 * @return \WP_Filesystem_Base|null Filesystem instance, or null on failure.
 		 */
 		public static function get_filesystem() {
 			global $wp_filesystem;
 
 			require_once ABSPATH . '/wp-admin/includes/file.php';
 
-			WP_Filesystem();
+			if ( ! WP_Filesystem() ) {
+				return null;
+			}
 
 			return $wp_filesystem;
 		}
@@ -2878,7 +2888,7 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 		 */
 		public function admin_welcome_notices() {
 			$first_import_status = get_option( 'astra_sites_import_complete', false );
-			Astra_Notices::add_notice(
+			BSF_Admin_Notices::add_notice(
 				array(
 					'id'      => 'astra-sites-welcome-notice',
 					'type'    => 'notice',
@@ -3011,10 +3021,10 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 		 * @return bool True if import is active.
 		 */
 		private function is_import_process_active() {
-			
+
 			// Check if visible import is complete but batch processing is not yet complete.
-			$import_complete = get_option( 'astra_sites_import_complete', 'no' );
-			$batch_process_started = get_option( 'astra_sites_batch_process_started', 'no' );
+			$import_complete        = get_option( 'astra_sites_import_complete', 'no' );
+			$batch_process_started  = get_option( 'astra_sites_batch_process_started', 'no' );
 			$batch_process_complete = get_option( 'astra_sites_batch_process_complete', 'no' );
 
 			// Hook should be active when:
@@ -3022,6 +3032,15 @@ if ( ! class_exists( 'Astra_Sites' ) ) :
 			// 2. Batch process has started
 			// 3. Batch process is not yet complete.
 			if ( 'yes' === $import_complete && 'yes' === $batch_process_started && 'yes' !== $batch_process_complete ) {
+				// Safety: treat as inactive if batch flags are stale.
+				// No timestamp = flag predates the timestamp feature, guaranteed stale.
+				// Timestamp older than 6 hours = failed/interrupted import.
+				$started_time = (int) get_option( 'astra_sites_batch_process_started_time', 0 );
+				if ( 0 === $started_time || ( time() - $started_time ) > 6 * HOUR_IN_SECONDS ) {
+					delete_option( 'astra_sites_batch_process_started' );
+					delete_option( 'astra_sites_batch_process_started_time' );
+					return false;
+				}
 				return true;
 			}
 

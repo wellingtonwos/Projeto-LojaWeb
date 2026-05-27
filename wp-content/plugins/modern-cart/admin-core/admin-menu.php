@@ -240,6 +240,17 @@ class Admin_Menu {
 		}
 
 		if ( count( $keys ) === $succeded ) {
+			// Set flag for first_settings_saved analytics event.
+			if ( ! get_option( 'mcw_first_settings_saved', false ) ) {
+				update_option( 'mcw_first_settings_saved', true, false );
+			}
+
+			// Clear the state-events transient so detect_state_events() re-runs on the next
+			// admin page load. This ensures state-based events (free_shipping_bar_enabled,
+			// express_checkout_enabled, etc.) are queued promptly after settings change,
+			// rather than waiting up to 24 hours for the transient to expire naturally.
+			delete_transient( 'mcw_state_events_checked' );
+
 			wp_send_json_success( [ 'message' => esc_html__( 'Settings saved successfully.', 'modern-cart' ) ] );
 		}
 
@@ -271,7 +282,11 @@ class Admin_Menu {
 			update_option( 'mcw_usage_optin', true === $data['enable_usage_tracking'] ? 'yes' : 'no' );
 		}
 
-		return update_option( $key, $data );
+		// update_option() returns false for both DB errors and "value unchanged" — we call it
+		// for its side-effect but always return true here since the data was valid and processed
+		// successfully. The AJAX handler must not treat an unchanged value as a failure.
+		update_option( $key, $data );
+		return true;
 	}
 
 	/**
@@ -395,6 +410,18 @@ class Admin_Menu {
 		$installable_plugin_slugs = [];
 
 		$user_details_data = [];
+
+		// Detect skipped steps for analytics before processing.
+		$skipped_steps = [];
+		foreach ( $onboarding_data as $index => $data ) {
+			if ( is_array( $data ) && ! empty( $data['hasSkipped'] ) ) {
+				$skipped_steps[] = (string) $index;
+			}
+		}
+		if ( ! empty( $skipped_steps ) ) {
+			update_option( 'mcw_onboarding_skipped', true, false );
+			update_option( 'mcw_onboarding_exit_step', implode( ',', $skipped_steps ), false );
+		}
 
 		foreach ( $onboarding_data as $index => $data ) {
 			if ( ! is_array( $data ) ) {

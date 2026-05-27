@@ -1,5 +1,10 @@
 CHANGELOG
 
+= 7.5.3.9 (April 15th, 2026) =
+
+# Bugs Fixed (Microthemer)
+* Another animation shorthand parsing error. 
+
 = 7.5.3.8 (March 16th, 2026) =
 
 # Bugs Fixed (Microthemer)

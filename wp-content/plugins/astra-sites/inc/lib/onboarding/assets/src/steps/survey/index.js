@@ -5,12 +5,13 @@ import { PreviousStepLink, DefaultStep } from '../../components/index';
 import ICONS from '../../../icons';
 import { useStateValue } from '../../store/store';
 import { checkRequiredPlugins } from '../../steps/import-site/import-utils';
+import { trackOnboardingStep } from '../../utils/functions';
 import SurveyForm from './survey';
 import AdvancedSettings from './advanced-settings';
 import './style.scss';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
-const { phpVersion, analytics, firstImportStatus } = starterTemplates;
+const { phpVersion, firstImportStatus } = starterTemplates;
 
 const Survey = () => {
 	const storedState = useStateValue();
@@ -21,7 +22,6 @@ const Survey = () => {
 			requiredPlugins,
 			notInstalledList,
 			notActivatedList,
-			analyticsFlag,
 			shownRequirementOnce,
 			pluginInstallationAttempts,
 			fileSystemPermissions,
@@ -220,31 +220,9 @@ const Survey = () => {
 				} );
 			}, 500 );
 
-			if ( analytics !== 'yes' ) {
-				// Send data to analytics.
-				const answer = analyticsFlag ? 'yes' : 'no';
-				const optinAnswer = new FormData();
-				optinAnswer.append( 'action', 'astra-sites-update-analytics' );
-				optinAnswer.append(
-					'_ajax_nonce',
-					astraSitesVars?._ajax_nonce
-				);
-				optinAnswer.append( 'data', answer );
-
-				fetch( ajaxurl, {
-					method: 'post',
-					body: optinAnswer,
-				} )
-					.then( ( response ) => response.json() )
-					.then( ( response ) => {
-						if ( response.success ) {
-							starterTemplates.analytics = answer;
-						}
-					} );
-			}
-
 			// Skip subscription if chose to skip and start building.
 			if ( skipSubscription ) {
+				trackOnboardingStep( 'survey', 'skipped' );
 				return;
 			}
 

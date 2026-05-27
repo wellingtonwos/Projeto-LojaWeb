@@ -188,6 +188,13 @@ class Settings_Fields {
 						'name'        => 'moderncart_cart[enable_usage_tracking]',
 						'priority'    => 45,
 					],
+					'moderncart_setting_delete_data_on_uninstall' => [
+						'type'        => 'toggle',
+						'label'       => __( 'Delete Plugin Data on Uninstall', 'modern-cart' ),
+						'description' => __( 'Enable this to delete all Modern Cart settings and data when the plugin is deleted. Once deleted, your saved data cannot be restored.', 'modern-cart' ),
+						'name'        => 'moderncart_setting[delete_data_on_uninstall]',
+						'priority'    => 110,
+					],
 				],
 				'moderncart_text'     => [
 					'moderncart_cart_main_title'         => [

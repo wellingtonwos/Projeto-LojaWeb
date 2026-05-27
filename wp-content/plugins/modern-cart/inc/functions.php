@@ -129,6 +129,13 @@ if ( ! function_exists( 'moderncart_cart_item_price' ) ) {
 	 * @return mixed|void
 	 */
 	function moderncart_cart_item_price( &$product, &$cart_item, $cart_item_key ) {
+		// Ensure cart totals are calculated so that plugins which set prices
+		// dynamically via woocommerce_before_calculate_totals (e.g. gift cards,
+		// name-your-price) have their prices reflected on the product objects.
+		if ( 0 === did_action( 'woocommerce_before_calculate_totals' ) ) {
+			WC()->cart->calculate_totals();
+		}
+
 		$price                 = '';
 		$percentage            = '';
 		$onsale                = $product->is_on_sale();

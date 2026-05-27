@@ -36,7 +36,8 @@ class ADBC_Settings_Validator {
 		'automation',
 		'analytics',
 		'addons_activity',
-		'info_and_logs'
+		'info_and_logs',
+		'post_types',
 	);
 
 	/**

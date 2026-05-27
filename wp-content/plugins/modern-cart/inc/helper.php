@@ -49,6 +49,10 @@ class Helper {
 					'value' => false,
 					'type'  => 'boolean',
 				],
+				'delete_data_on_uninstall' => [
+					'value' => false,
+					'type'  => 'boolean',
+				],
 			],
 			MODERNCART_SETTINGS            => [
 				'cart_style'                      => [

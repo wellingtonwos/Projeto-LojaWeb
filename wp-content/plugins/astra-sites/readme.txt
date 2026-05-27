@@ -4,8 +4,8 @@ Donate link: https://wpastra.com/pro/
 Tags: Elementor,Templates,Gutenberg,Block Editor,Astra Starter Sites
 Requires at least: 6.6
 Requires PHP: 7.4
-Tested up to: 6.9
-Stable tag: 4.5.1
+Tested up to: 7.0
+Stable tag: 4.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -245,6 +245,45 @@ You can report the issue through our [Bug Bounty Program](https://brainstormforc
 6. Use the power of AI with a single click to write copy, proofread, translate content into different languages. Adjust content length and tone seamlessly for maximum appeal.
 
 == Changelog ==
+v4.6.0 - 20-May-2026
+- Improvement:
+    - Compatibility with WordPress 7.0.
+    - Import: Redesigned the plugin install/activation step with per-plugin status, inline retry, and clearer error messages so users can recover from individual plugin failures without restarting the import.
+    - Prevented Power Coupons from redirecting to its onboarding after template import.
+    - Logo and other customizer images are now correctly replaced with media library URLs after template import.
+- Fix:
+    - Prevented PHP fatal in filesystem helper when running on FTP-based hosts without WordPress credentials.
+    - Astra Pro enabled extensions were not being applied after template import.
+    - AI Builder: Template cards now load with their default color palette instead of a random one; shuffle only applies on button click.
+    - AI Builder: Temporarily reverted popup-based ZipWP authentication to same-tab redirect to resolve environment-specific issues.
+    - AI Builder: Logo and other customizer images are now correctly replaced with media library URLs after template import.
+    - AI Builder: Resolved blank organization and plan name in the Limit Reached modal when connecting ZipWP account mid-flow.
+    - AI Builder: Resolved a crash on the contact details step caused by invalid saved social media data.
+    - AI Builder: Custom color palette selection no longer crashes the design step when the default palette has not yet been hydrated.
+    - Free Images: Improved REST API compliance — return WP_REST_Response/WP_Error, add `sanitize_callback` to route args, and use `esc_url_raw( wp_unslash() )` for URL sanitization.
+
+v4.5.4 - 01-May-2026
+- Fix:
+    - Clean up stale import flags from failed/interrupted imports plus deactivation/uninstall cleanup of import state options.
+    - Fixed some templates not appearing on the onboarding templates listing screen due to an incorrect total template count.
+    - Fixed search results label displaying colon after the search term instead of before it.
+    - AI Builder: Content duplication on retry after failed site import.
+    - Importer: Record batch processing start timestamp for stale import flag detection.
+    - Importer: Strip residual websitedemos.net URLs from customizer settings and Spectra container block attributes during classic-template imports.
+    - Importer: Resolved fatal errors during content import on hosts where set_time_limit is disabled, and when another plugin defines a global Api, Admin, Ajax, Plugin, or Register class.
+- Security:
+    - AI Builder: Hardened ZipWP auth postMessage handling by validating origin and source window to prevent CSRF-based credential overwrite (CWE-352) - (Props - Nhan Tran Van).
+
+v4.5.3 - 17-April-2026
+- Fix:
+    - Resolved a fatal error caused by a missing Astra_Notices class.
+
+v4.5.2 - 16-April-2026
+- Fix:
+    - Fixed infinite retry loop during template import when Beaver Builder Pro is active instead of Lite.
+    - Removed the unserialize update that was stripping Beaver Builder layout data and other serialized objects during template import.
+    - Importer: Skip orphaned attachments during WXR import that don't belong to the imported template.
+
 v4.5.1 - 09-April-2026
 - Improvement:
     - Added improvements in the import process.

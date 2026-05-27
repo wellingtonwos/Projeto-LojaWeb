@@ -156,7 +156,7 @@ class ADBC_Common_Validator {
 	 */
 	public static function validate_get_column_value_endpoint_data( $items_type, $site_id, $row_id, $transient_found_in ) {
 
-		$answer = [ "success" => false, "message" => "", "data" => [] ];
+		$answer = [ "success" => false, "message" => "", "data" => []];
 
 		// Check items type is valid
 		if ( ! in_array( $items_type, [ 'options', 'transients', 'posts_meta', 'users_meta', 'revisions', 'auto_drafts', 'trashed_posts', 'unapproved_comments', 'spam_comments', 'trashed_comments', 'pingbacks', 'trackbacks', 'unused_postmeta', 'duplicated_postmeta', 'unused_commentmeta', 'duplicated_commentmeta', 'unused_usermeta', 'duplicated_usermeta', 'unused_termmeta', 'duplicated_termmeta', 'unused_relationships', 'expired_transients', 'oembed_caches', 'actionscheduler_completed_actions', 'actionscheduler_failed_actions', 'actionscheduler_canceled_actions', 'actionscheduler_completed_logs', 'actionscheduler_failed_logs', 'actionscheduler_canceled_logs', 'actionscheduler_orphan_logs' ], true ) )

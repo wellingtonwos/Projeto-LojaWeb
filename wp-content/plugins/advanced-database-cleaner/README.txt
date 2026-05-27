@@ -5,7 +5,7 @@ Tags: clean, database, optimize, performance, postmeta
 Requires at least: 5.0.0
 Requires PHP: 7.0
 Tested up to: 6.9.4
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -258,6 +258,14 @@ This section describes how to install the plugin. In general, there are 3 ways t
 21. Settings page
 
 == Changelog ==
+
+= 4.1.1 – 05/05/2026 =
+- Security: [Premium + Pro-Lifetime] Patched a security vulnerability in the EDD SDK package
+- Fix: Resolved an issue where the "No route was found matching the URL" error occurred when the default REST API URL was modified
+- Fix: Fixed ReflectionFunction::__construct() error requiring a Closure or string as the first argument
+- Fix: Corrected "Invalid setting key" error when hiding the post types menu item
+- Fix: [Premium + Pro-Lifetime] Addressed undefined array key DOCUMENT_ROOT on sites running WP-Cron via system cron and WP-CLI in the Easy Digital Downloads (EDD) SDK package
+- Tweak: Refactored several parts of the codebase to improve performance and maintainability
 
 = 4.1.0 – 08/04/2026 =
 - New: Added "Post Types" cleanup module

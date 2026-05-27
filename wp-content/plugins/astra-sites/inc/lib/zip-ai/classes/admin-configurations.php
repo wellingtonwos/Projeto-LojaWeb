@@ -273,7 +273,7 @@ class Admin_Configurations {
 	public function disabler_ajax() {
 		// If the current user does not have the required capability, then abandon ship.
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error();
+			wp_send_json_error( array( 'message' => __( 'Insufficient permissions', 'astra-sites' ) ), 403 );
 		}
 
 		// Verify the nonce.
@@ -283,7 +283,7 @@ class Admin_Configurations {
 		$is_module_disabled = false;
 
 		// Check if the Zip AI Assistant was requested to be disabled.
-		if ( ! empty( $_POST['disable_zip_ai_assistant'] ) ) {
+		if ( ! empty( sanitize_text_field( wp_unslash( $_POST['disable_zip_ai_assistant'] ?? '' ) ) ) ) {
 			$is_module_disabled = Module::disable( 'ai_assistant' );
 		}
 
@@ -304,7 +304,7 @@ class Admin_Configurations {
 	public function toggle_assistant_status_ajax() {
 		// If the current user does not have the required capability, then abandon ship.
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error();
+			wp_send_json_error( array( 'message' => __( 'Insufficient permissions', 'astra-sites' ) ), 403 );
 		}
 
 		// Verify the nonce.
@@ -357,7 +357,7 @@ class Admin_Configurations {
 	public function settings_admin_scripts() {
 
 		// If the current page is not the Zip AI Settings page, then abandon ship.
-		if ( empty( $_GET['page'] ) || ( $this->menu_slug !== $_GET['page'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( empty( $_GET['page'] ) || ( $this->menu_slug !== $_GET['page'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Page routing check only; no data is written or processed based on this value.
 			return;
 		}
 
@@ -386,11 +386,11 @@ class Admin_Configurations {
 			}
 		}
 
-		// Enqueue the admin Google Fonts and WP Components.
+		// Enqueue the admin font (Inter, self-hosted) and WP Components.
 		$admin_slug = 'zip-ai-admin';
 		wp_enqueue_style(
 			$admin_slug . '-font',
-			'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap',
+			ZIP_AI_URL . 'assets/fonts/fonts.css',
 			array(),
 			ZIP_AI_VERSION
 		);
@@ -479,10 +479,10 @@ class Admin_Configurations {
 			ZIP_AI_VERSION
 		);
 
-		// Register the admin Google Fonts.
+		// Register the admin font (Inter, self-hosted).
 		wp_register_style(
-			'zip-ai-admin-google-fonts',
-			'https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap',
+			'zip-ai-admin-font',
+			ZIP_AI_URL . 'assets/fonts/fonts.css',
 			array(),
 			ZIP_AI_VERSION
 		);
@@ -491,8 +491,8 @@ class Admin_Configurations {
 		wp_enqueue_script( $handle );
 		// Set the script translations.
 		wp_set_script_translations( $handle, apply_filters( 'zip_ai_library_textdomain', 'zip-ai' ) );
-		// Enqueue the Google Fonts.
-		wp_enqueue_style( 'zip-ai-admin-google-fonts' );
+		// Enqueue the bundled font.
+		wp_enqueue_style( 'zip-ai-admin-font' );
 		// Enqueue the admin styles.
 		wp_enqueue_style( $handle );
 		// Set the RTL styles.

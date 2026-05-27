@@ -49,8 +49,11 @@ class Order_Tracking {
 	 * @since 1.0.8
 	 */
 	public function __construct() {
-		// Stamp order meta on new orders.
+		// Stamp order meta on new orders — classic shortcode checkout.
 		add_action( 'woocommerce_checkout_order_created', array( $this, 'stamp_order_meta' ) );
+
+		// Stamp order meta on new orders — WooCommerce Blocks (Store API) checkout.
+		add_action( 'woocommerce_store_api_checkout_order_processed', array( $this, 'stamp_order_meta' ) );
 	}
 
 	/**
@@ -90,5 +93,10 @@ class Order_Tracking {
 
 		$order->update_meta_data( self::ORDER_META_KEY, '1' );
 		$order->save_meta_data();
+
+		// Set flag for first_order_via_modern_cart analytics event.
+		if ( ! get_option( 'mcw_first_order_tracked', false ) ) {
+			update_option( 'mcw_first_order_tracked', true, false );
+		}
 	}
 }

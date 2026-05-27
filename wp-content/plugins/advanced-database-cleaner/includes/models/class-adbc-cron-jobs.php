@@ -389,7 +389,7 @@ class ADBC_Cron_Jobs {
 			list( $obj_or_class, $method ) = $callback;
 			if ( is_object( $obj_or_class ) )
 				return get_class( $obj_or_class ) . '->' . (string) $method . '()';
-			return (string) $obj_or_class . '->' . (string) $method . '()';
+			return (string) $obj_or_class . '::' . (string) $method . '()';
 		}
 
 		if ( $callback instanceof \Closure )
@@ -422,6 +422,10 @@ class ADBC_Cron_Jobs {
 				$ref = PHP_VERSION_ID >= 80400
 					? \ReflectionMethod::createFromMethodName( $callback )
 					: new \ReflectionMethod( ...explode( '::', $callback, 2 ) );
+			} elseif ( $callback instanceof \Closure ) {
+				$ref = new \ReflectionFunction( $callback );
+			} elseif ( is_object( $callback ) ) {
+				$ref = new \ReflectionMethod( $callback, '__invoke' );
 			} else {
 				$ref = new \ReflectionFunction( $callback );
 			}
@@ -430,7 +434,7 @@ class ADBC_Cron_Jobs {
 			if ( ! empty( $file ) )
 				return $file . ':' . $ref->getStartLine();
 
-		} catch (\ReflectionException $e) {
+		} catch (\Throwable $e) {
 			return '';
 		}
 

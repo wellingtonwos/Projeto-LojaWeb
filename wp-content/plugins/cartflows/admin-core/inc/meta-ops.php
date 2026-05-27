@@ -93,6 +93,12 @@ class MetaOps {
 					break;
 
 				case 'FILTER_SCRIPT':
+					// Custom JS/CSS sinks are output raw on the front end. Restrict authoring to
+					// users with `unfiltered_html` so per-plugin caps cannot grant script write
+					// access to lower roles (e.g. Editors via the role manager).
+					if ( ! current_user_can( 'unfiltered_html' ) ) {
+						continue 2;
+					}
 					// Reason for ignoring phpcs rule: Here we are saving the custom JS/CSS script. Encoding it before saving to db. No escaping function working here.
 					// We first decode any existing HTML entities to prevent double-encoding on multiple saves, then encode once.
 					$meta_value = htmlentities( html_entity_decode( wp_unslash( $_POST[ $key ] ), ENT_QUOTES, 'UTF-8' ), ENT_QUOTES, 'UTF-8' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
@@ -263,6 +269,10 @@ class MetaOps {
 
 			if ( false !== $meta_value ) {
 				update_post_meta( $post_id, $key, $meta_value );
+				// Track first checkout configured event.
+				if ( 'wcf-checkout-products' === $key ) {
+					\Cartflows_Helper::set_analytics_flag( 'first_checkout_configured', $post_id );
+				}
 			} else {
 				// To delete the wcf-checkout-products if empty.
 				delete_post_meta( $post_id, $key );

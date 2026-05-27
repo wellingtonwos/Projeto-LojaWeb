@@ -1664,54 +1664,72 @@
 	/**
 	 * Process a form field with array notation
 	 *
-	 * @param {string} key    - The field key
+	 * Converts bracket-notation keys like "name[0][field]" into nested objects.
+	 *
+	 * @param {string} key    - The field key (e.g. "recipients[0][email]")
 	 * @param {string} value  - The field value
 	 * @param {Object} result - The result object to store the processed data
 	 */
 	function moderncartProcessArrayField( key, value, result ) {
-		const matches = key.match( /([^\[]+)(?:\[([^\]]*)\])?/g );
-		if ( ! matches ) {
+		// Split the key into separate parts: base name and each bracketed segment.
+		const parts = [];
+		const regex = /([^\[\]]+)|\[(.*?)\]/g;
+		let match;
+		while ( ( match = regex.exec( key ) ) !== null ) {
+			if ( match[ 1 ] !== undefined ) {
+				parts.push( match[ 1 ] );
+			} else if ( match[ 2 ] !== undefined ) {
+				parts.push( match[ 2 ] );
+			}
+		}
+
+		if ( ! parts.length ) {
 			return;
 		}
 
 		let current = result;
-		let parentKey = null;
+		for ( let i = 0; i < parts.length; i++ ) {
+			const part = parts[ i ];
+			const isLast = i === parts.length - 1;
 
-		matches.forEach( ( match, index ) => {
-			const cleanKey = match.replace( /[\[\]]/g, '' );
-
-			if ( index === 0 ) {
-				// First match is the parent key
-				parentKey = cleanKey;
-				if ( ! current[ parentKey ] ) {
-					current[ parentKey ] = [];
-				}
-				current = current[ parentKey ];
-			} else if ( index === matches.length - 1 ) {
-				// Last match, set the value
-				if ( cleanKey === '' ) {
+			if ( isLast ) {
+				if ( part === '' ) {
+					// Empty bracket "[]" means array push.
+					if ( ! Array.isArray( current ) ) {
+						break;
+					}
 					current.push( value );
-				} else if ( ! current.length ) {
-					current.push( {} );
-					current[ 0 ][ cleanKey ] = value;
 				} else {
-					current[ 0 ][ cleanKey ] = value;
+					current[ part ] = value;
 				}
 			} else {
-				// Middle matches
-				if ( cleanKey === '' ) {
-					if ( ! current.length ) {
+				// Determine what the next container should be.
+				const nextPart = parts[ i + 1 ];
+
+				if ( part === '' ) {
+					// Empty bracket in the middle — push into array.
+					if ( ! Array.isArray( current ) ) {
+						break;
+					}
+					if (
+						! current.length ||
+						typeof current[ current.length - 1 ] !== 'object'
+					) {
 						current.push( {} );
 					}
 					current = current[ current.length - 1 ];
-					return;
+				} else if ( ! ( part in current ) ) {
+					// Create the next level: array if next part is "" or numeric, object otherwise.
+					current[ part ] =
+						nextPart === '' ||
+						( nextPart !== undefined && /^\d+$/.test( nextPart ) )
+							? []
+							: {};
+					current = current[ part ];
+				} else {
+					current = current[ part ];
 				}
-
-				if ( ! current[ cleanKey ] ) {
-					current[ cleanKey ] = {};
-				}
-				current = current[ cleanKey ];
 			}
-		} );
+		}
 	}
 } )( jQuery );

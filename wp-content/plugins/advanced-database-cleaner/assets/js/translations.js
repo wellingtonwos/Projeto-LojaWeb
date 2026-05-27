@@ -48,6 +48,14 @@ const translations = [
   __("Info & logs", "advanced-database-cleaner"),
   __("Settings", "advanced-database-cleaner"),
   sprintf(
+    // translators: %s is the REST URL the plugin tried to reach.
+    __(
+      "The plugin could not reach the WordPress REST API at %s. This usually means the REST URL prefix has been customized on your site (for example /wp-json/ changed to /api/) without applying the 'rest_url_prefix' filter. Please contact your developer or hosting support.",
+      "advanced-database-cleaner"
+    ),
+    variable
+  ),
+  sprintf(
     /* translators: %d: number of tables */
     _n("Empty %d table?", "Empty %d tables?", variable, "advanced-database-cleaner"),
     variable
@@ -1143,9 +1151,13 @@ const translations = [
     "advanced-database-cleaner"
   ),
   __("Starter plan", "advanced-database-cleaner"),
-  __("Standard plan", "advanced-database-cleaner"),
   __("Business plan", "advanced-database-cleaner"),
+  __("Standard plan", "advanced-database-cleaner"),
   __("Agency plan", "advanced-database-cleaner"),
+  __("Starter plan (lifetime)", "advanced-database-cleaner"),
+  __("Standard plan (lifetime)", "advanced-database-cleaner"),
+  __("Business plan (lifetime)", "advanced-database-cleaner"),
+  __("Agency plan (lifetime)", "advanced-database-cleaner"),
   __("Unknown plan", "advanced-database-cleaner"),
   __("License key", "advanced-database-cleaner"),
   __("Deactivate license", "advanced-database-cleaner"),

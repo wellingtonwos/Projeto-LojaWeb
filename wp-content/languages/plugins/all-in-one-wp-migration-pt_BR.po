@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - All-in-One WP Migration and Backup - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-02-08 16:57:13+0000\n"
+"PO-Revision-Date: 2026-05-08 18:59:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,30 @@ msgstr ""
 "X-Generator: GlotPress/4.0.3\n"
 "Language: pt_BR\n"
 "Project-Id-Version: Plugins - All-in-One WP Migration and Backup - Stable (latest release)\n"
+
+#: lib/model/import/class-ai1wm-import-validate-crc.php:129
+msgid "This backup file is damaged and can't be imported.<br />Try downloading or transferring the file again.<br /><br /><strong>Reason:</strong> File integrity check failed (CRC mismatch). <a href=\"https://help.servmask.com/knowledgebase/import-failed-crc-mismatch/\" target=\"_blank\">Technical details</a>"
+msgstr "Este arquivo de backup está danificado e não pode ser importado.<br />Tente baixar ou transferir novamente o arquivo.<br /><br /><strong>Razão:</strong> Falha na verificação de integridade do arquivo (incompatiblidade do CRC). <a href=\"https://help.servmask.com/knowledgebase/import-failed-crc-mismatch/\" target=\"_blank\">Detalhes técnicos</a>"
+
+#: lib/model/import/class-ai1wm-import-validate-crc.php:43
+msgid "Validating archive checksum..."
+msgstr "Validando o checksum do arquivo..."
+
+#: lib/model/export/class-ai1wm-export-archive-crc.php:38
+msgid "Calculating archive checksum..."
+msgstr "Calculando o checksum do arquivo..."
+
+#: lib/view/common/share-buttons.php:56 lib/view/common/share-buttons.php:57
+msgid "Subscribe on YouTube"
+msgstr "Assine no YouTube"
+
+#: lib/view/common/share-buttons.php:47 lib/view/common/share-buttons.php:48
+msgid "Share on Facebook"
+msgstr "Compartilhe no Facebook"
+
+#: lib/view/common/share-buttons.php:38 lib/view/common/share-buttons.php:39
+msgid "Share on X"
+msgstr "Compartilhe no X"
 
 #: lib/model/import/class-ai1wm-import-validate.php:65
 msgid "Unpacking configuration..."
@@ -153,7 +177,7 @@ msgstr "Opções de Segurança"
 
 #. translators: 1: Link to archive, 2: Archive title, 3: File name, 4: Archive
 #. title, 5: File size.
-#: lib/model/export/class-ai1wm-export-download.php:67
+#: lib/model/export/class-ai1wm-export-download.php:73
 msgid ""
 "<a href=\"%1$s\" class=\"ai1wm-button-green ai1wm-emphasize ai1wm-button-download\" title=\"%2$s\" download=\"%3$s\">\n"
 "\t\t\t\t\t\t\t<span>Download %2$s</span>\n"
@@ -454,11 +478,11 @@ msgstr "Arquivos de conteúdo coletados."
 msgid "Gathering content files..."
 msgstr "Coletando arquivos de conteúdo..."
 
-#: lib/model/export/class-ai1wm-export-database.php:164
+#: lib/model/export/class-ai1wm-export-database.php:165
 msgid "Database exported."
 msgstr "Banco de dados exportado."
 
-#: lib/model/export/class-ai1wm-export-database-file.php:100
+#: lib/model/export/class-ai1wm-export-database-file.php:107
 msgid "Database archived."
 msgstr "Banco de dados arquivado."
 
@@ -514,29 +538,29 @@ msgstr "<strong>%1$s</strong> está desatualizada. Você deve <a href=\"%2$s\">a
 msgid "%s is out of date. Please update this extension before using it."
 msgstr "%s está desatualizada. Atualize esta extensão antes de usá-la."
 
-#: lib/controller/class-ai1wm-main-controller.php:850
+#: lib/controller/class-ai1wm-main-controller.php:852
 msgid "Please enter a password to restore the backup"
 msgstr "Digite uma senha para restaurar este backup"
 
-#: lib/controller/class-ai1wm-main-controller.php:829
+#: lib/controller/class-ai1wm-main-controller.php:831
 msgid "Could not download backup"
 msgstr "Não foi possível baixar o backup"
 
-#: lib/controller/class-ai1wm-main-controller.php:893
+#: lib/controller/class-ai1wm-main-controller.php:895
 msgid "Could not read backup content"
 msgstr "Não foi possível ler o conteúdo do backup"
 
 #. translators: Disk space to free up.
-#: lib/controller/class-ai1wm-main-controller.php:858
+#: lib/controller/class-ai1wm-main-controller.php:860
 msgid "Not enough disk space.<br /> Free up %s before restoring."
 msgstr "Não há espaço suficiente em disco.<br /> Libere %s antes de restaurar."
 
 #. translators: 1: Link to Unlimited Extension
-#: lib/controller/class-ai1wm-main-controller.php:889
+#: lib/controller/class-ai1wm-main-controller.php:891
 msgid "\"Restore\" functionality is available in our <a href=\"%s\" target=\"_blank\">Unlimited Extension</a>.<br /> If you would rather go the manual route, you can still restore by downloading your backup and using \"Import from file\"."
 msgstr "A funcionalidade \"Restaurar\" está disponível em nossa <a href=\"%s\" target=\"_blank\">Extensão Ilimitada</a>.<br />Se preferir o caminho manual, você pode restaurar baixando o seu backup e usando \"Importar a partir de arquivo\"."
 
-#: lib/controller/class-ai1wm-main-controller.php:877
+#: lib/controller/class-ai1wm-main-controller.php:879
 msgid ""
 "Invalid file type. Please ensure that your file is a <strong>.wpress</strong> file created with All-in-One WP Migration.\n"
 "\t\t\t\t\t<a href=\"https://help.servmask.com/knowledgebase/invalid-backup-file/\" target=\"_blank\">Technical details</a>"
@@ -545,92 +569,93 @@ msgstr ""
 "\t\t\t\t\t<a href=\"https://help.servmask.com/knowledgebase/invalid-backup-file/\" target=\"_blank\">Detalhes técnicso</a>"
 
 #. translators: 1: Link to Unlimited Extension, 2: Link to how to article
-#: lib/controller/class-ai1wm-main-controller.php:861
+#: lib/controller/class-ai1wm-main-controller.php:863
 msgid "Your file exceeds the upload limit set by your host web server.<br />%1$s<br />%2$s"
 msgstr "Seu arquivo excede o limite de envio definido pelo seu servidor web. <br />%1$s<br />%2$s"
 
-#: lib/controller/class-ai1wm-main-controller.php:856
+#: lib/controller/class-ai1wm-main-controller.php:858
 msgid "Upload failed"
 msgstr "O envio falhou"
 
-#: lib/controller/class-ai1wm-main-controller.php:855
+#: lib/controller/class-ai1wm-main-controller.php:857
 msgid "Upload failed - connection lost or timeout. Try uploading the file again."
 msgstr "O envio falhou - conexão perdida ou tempo limite esgotado. Tente enviar o arquivo novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:841
+#: lib/controller/class-ai1wm-main-controller.php:843
 msgid "Stopping the import, please wait..."
 msgstr "Parando a importação, aguarde..."
 
-#: lib/controller/class-ai1wm-main-controller.php:840
+#: lib/controller/class-ai1wm-main-controller.php:842
 msgid "Could not stop the import. Please refresh and try again."
 msgstr "Não foi possível parar a importação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:839
+#: lib/controller/class-ai1wm-main-controller.php:841
 msgid "Could not prepare blogs for import. Please refresh and try again."
 msgstr "Não foi possível preparar os blogs para importar. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:838
+#: lib/controller/class-ai1wm-main-controller.php:840
 msgid "Could not check the decryption password. Please refresh and try again."
 msgstr "Não foi possível verificar a senha de desencriptação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:837
+#: lib/controller/class-ai1wm-main-controller.php:839
 msgid "Could not confirm the import. Please refresh and try again."
 msgstr "Não foi possível confirmar a importação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:836
+#: lib/controller/class-ai1wm-main-controller.php:838
 msgid "Could not start the import. Please refresh and try again."
 msgstr "Não foi possível iniciar a importação. Atualize e tente novametne."
 
-#: lib/controller/class-ai1wm-main-controller.php:833
+#: lib/controller/class-ai1wm-main-controller.php:835
 msgid "Are you sure you want to stop the import?"
 msgstr "Tem certeza que deseja parar a importação?"
 
 #. translators: Link to how to article
-#: lib/controller/class-ai1wm-main-controller.php:799
-#: lib/controller/class-ai1wm-main-controller.php:872
+#: lib/controller/class-ai1wm-main-controller.php:801
+#: lib/controller/class-ai1wm-main-controller.php:874
 #: lib/view/import/pro.php:61
 msgid "If you prefer a manual fix, follow our step-by-step guide on <a href=\"%s\" target=\"_blank\">raising your upload limit</a>."
 msgstr "Se preferir uma correção manual, siga o nosso guia passo-a-passo sobre <a href=\"%s\" target=\"_blank\">aumentar seu limite de envio</a>."
 
 #. translators: Link to Unlimited Extension
-#: lib/controller/class-ai1wm-main-controller.php:794
-#: lib/controller/class-ai1wm-main-controller.php:867
+#: lib/controller/class-ai1wm-main-controller.php:796
+#: lib/controller/class-ai1wm-main-controller.php:869
 #: lib/view/import/pro.php:49
 msgid "Our <a href=\"%s\" target=\"_blank\">Unlimited Extension</a> bypasses this!"
 msgstr "Nossa <a href=\"%s\" target=\"_blank\">Extensão Ilimitada</a> contorna isso!"
 
 #. translators: 1: Max upload file size
-#: lib/controller/class-ai1wm-main-controller.php:787
+#: lib/controller/class-ai1wm-main-controller.php:789
 msgid "Your file exceeds the <strong>%1$s</strong> upload limit set by your host.<br />%2$s<br />%3$s"
 msgstr "Seu arquivo excede o lmite de envio de <strong>%1$s</strong> definido pelo seu servior.<br />%2$s<br />%3$s"
 
-#: lib/controller/class-ai1wm-main-controller.php:822
+#: lib/controller/class-ai1wm-main-controller.php:824
 msgid "Stopping the export, please wait..."
 msgstr "Interrompendo a exportação, aguarde..."
 
-#: lib/controller/class-ai1wm-main-controller.php:821
+#: lib/controller/class-ai1wm-main-controller.php:823
 msgid "Could not stop the export. Please refresh and try again."
 msgstr "Não foi possível interromper a exportação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:820
+#: lib/controller/class-ai1wm-main-controller.php:822
 msgid "Could not run the export. Please refresh and try again."
 msgstr "Não foi possível executar a exportação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:819
+#: lib/controller/class-ai1wm-main-controller.php:821
 msgid "Could not start the export. Please refresh and try again."
 msgstr "Não foi possível iniciar a exportação. Atualize e tente novamente."
 
-#: lib/controller/class-ai1wm-main-controller.php:816
+#: lib/controller/class-ai1wm-main-controller.php:818
 msgid "Are you sure you want to stop the export?"
 msgstr "Tem certeza de que deseja interromper a exportação?"
 
-#: lib/controller/class-ai1wm-main-controller.php:809
+#: lib/controller/class-ai1wm-main-controller.php:811
 msgid "Thank you! We have received your request and will be in touch soon."
 msgstr "Recebemos sua solicitação e entraremos em contato em breve."
 
-#: lib/controller/class-ai1wm-import-controller.php:109
 #: lib/controller/class-ai1wm-import-controller.php:110
-#: lib/controller/class-ai1wm-main-controller.php:835
+#: lib/controller/class-ai1wm-import-controller.php:112
+#: lib/controller/class-ai1wm-import-controller.php:115
+#: lib/controller/class-ai1wm-main-controller.php:837
 msgid "Import failed"
 msgstr "Falha na importação"
 
@@ -651,7 +676,7 @@ msgstr "Falha na importação. Código: %1$s. %2$s"
 
 #: lib/controller/class-ai1wm-export-controller.php:98
 #: lib/controller/class-ai1wm-export-controller.php:99
-#: lib/controller/class-ai1wm-main-controller.php:818
+#: lib/controller/class-ai1wm-main-controller.php:820
 msgid "Export failed"
 msgstr "Falha na exportação"
 
@@ -740,7 +765,7 @@ msgstr "Não foi possíveli localizar o caminho de armazenamento. O processo nã
 msgid "All-in-One WP Migration makes moving your entire WordPress site simple. Export or import your database, media, plugins, and themes with just a few clicks."
 msgstr "O All-in-One WP Migration simplifica a migração de todo o seu site WordPress. Exporte ou importe seu banco de dados, mídia, plugins e temas com apenas alguns cliques."
 
-#: lib/controller/class-ai1wm-main-controller.php:830
+#: lib/controller/class-ai1wm-main-controller.php:832
 msgid "View Error Log"
 msgstr "Ver o registro de erros"
 
@@ -749,7 +774,7 @@ msgid "Invalid archive file type. Only .wpress files are allowed. The process ca
 msgstr "Tipo de arquivo inválido. Apenas arquivos .wordpress são permitidos. O processo não pode continuar. <a href=\"https://help.servmask.com/knowledgebase/invalid-file-type/\" target=\"_blank\">Detalhes técnicos</a>"
 
 #. translators: 1: Archive title, 2: File name, 3: Archive title, 4: File size.
-#: lib/model/export/class-ai1wm-export-download.php:84
+#: lib/model/export/class-ai1wm-export-download.php:90
 msgid ""
 "<a href=\"#\" class=\"ai1wm-button-green ai1wm-emphasize ai1wm-direct-download\" title=\"%1$s\" download=\"%2$s\">\n"
 "\t\t\t\t\t\t\t<span>Download %3$s</span>\n"
@@ -781,8 +806,8 @@ msgstr "Experimente funcionalidade completa com Premium!"
 msgid "Star"
 msgstr "Estrela"
 
-#: lib/controller/class-ai1wm-main-controller.php:729
-#: lib/controller/class-ai1wm-main-controller.php:730
+#: lib/controller/class-ai1wm-main-controller.php:731
+#: lib/controller/class-ai1wm-main-controller.php:732
 msgid "Reset Hub"
 msgstr "Redefinir o Hub"
 
@@ -888,8 +913,8 @@ msgstr "Configurações de notificação"
 msgid "Backup Scheduler"
 msgstr "Agendador de backup"
 
-#: lib/controller/class-ai1wm-main-controller.php:738
-#: lib/controller/class-ai1wm-main-controller.php:739
+#: lib/controller/class-ai1wm-main-controller.php:740
+#: lib/controller/class-ai1wm-main-controller.php:741
 msgid "Schedules"
 msgstr "Agendamentos"
 
@@ -913,22 +938,22 @@ msgstr "Criptografe este backup com uma senha"
 msgid "Importing an encrypted backup is not supported on this server. The process cannot continue. <a href=\"https://help.servmask.com/knowledgebase/unable-to-encrypt-and-decrypt-backups/\" target=\"_blank\">Technical details</a>"
 msgstr "A importação de um backup criptografado não é permitida neste servidor. <a href=\"https://help.servmask.com/knowledgebase/unable-to-encrypt-and-decrypt-backups/\" target=\"_blank\">Detalhes técnicos</a>"
 
-#: lib/controller/class-ai1wm-main-controller.php:854
+#: lib/controller/class-ai1wm-main-controller.php:856
 #: lib/view/export/advanced-settings.php:58
 msgid "The passwords do not match"
 msgstr "As senhas não correspondem"
 
-#: lib/controller/class-ai1wm-main-controller.php:853
+#: lib/controller/class-ai1wm-main-controller.php:855
 #: lib/view/export/advanced-settings.php:56
 msgid "Repeat the password"
 msgstr "Repita a senha"
 
-#: lib/controller/class-ai1wm-main-controller.php:851
-#: lib/controller/class-ai1wm-main-controller.php:897
+#: lib/controller/class-ai1wm-main-controller.php:853
+#: lib/controller/class-ai1wm-main-controller.php:899
 msgid "Submit"
 msgstr "Enviar"
 
-#: lib/controller/class-ai1wm-main-controller.php:849
+#: lib/controller/class-ai1wm-main-controller.php:851
 msgid "The backup is encrypted"
 msgstr "O backup é criptografado"
 
@@ -944,15 +969,15 @@ msgstr "Mostrar conteúdo do backup"
 msgid "Downloading is not possible because backups directory is not accessible."
 msgstr "Não é possível baixar porque o diretório de backups não está acessível."
 
-#: lib/controller/class-ai1wm-main-controller.php:895
+#: lib/controller/class-ai1wm-main-controller.php:897
 msgid "Reading..."
 msgstr "Lendo..."
 
-#: lib/controller/class-ai1wm-main-controller.php:894
+#: lib/controller/class-ai1wm-main-controller.php:896
 msgid "List the content of the backup"
 msgstr "Lista o conteúdo do backup"
 
-#: lib/controller/class-ai1wm-main-controller.php:892
+#: lib/controller/class-ai1wm-main-controller.php:894
 msgid "Error"
 msgstr "Erro"
 
@@ -961,13 +986,13 @@ msgid "More"
 msgstr "Mais"
 
 #. translators: 1: Number of backups.
-#: lib/controller/class-ai1wm-main-controller.php:828
+#: lib/controller/class-ai1wm-main-controller.php:830
 msgid "You have %d backups"
 msgstr "Você tem %d backups"
 
 #. translators: 1: Number of backups.
 #. translators: Numbers of backups.
-#: lib/controller/class-ai1wm-main-controller.php:826
+#: lib/controller/class-ai1wm-main-controller.php:828
 #: lib/view/main/backups.php:33
 msgid "You have %d backup"
 msgid_plural "You have %d backups"
@@ -980,8 +1005,8 @@ msgid "Error: %s"
 msgstr "Erro: %s"
 
 #. translators: 1: Number of files, 2: Progress.
-#: lib/model/export/class-ai1wm-export-themes.php:102
-#: lib/model/export/class-ai1wm-export-themes.php:142
+#: lib/model/export/class-ai1wm-export-themes.php:109
+#: lib/model/export/class-ai1wm-export-themes.php:153
 msgid "Archiving %1$d theme files...<br />%2$d%% complete"
 msgstr "Arquivando %1$d arquivos de tema...<br />%2$d%% concluído"
 
@@ -1010,18 +1035,18 @@ msgid "Translate"
 msgstr "Traduzir"
 
 #. translators: 1: Number of files, 2: Progress.
-#: lib/model/export/class-ai1wm-export-media.php:102
-#: lib/model/export/class-ai1wm-export-media.php:142
+#: lib/model/export/class-ai1wm-export-media.php:109
+#: lib/model/export/class-ai1wm-export-media.php:153
 msgid "Archiving %1$d media files...<br />%2$d%% complete"
 msgstr "Arquivando %1$d arquivos de mídia...<br />%2$d%% concluído"
 
 #. translators: 1: Number of files, 2: Progress.
-#: lib/model/export/class-ai1wm-export-content.php:102
-#: lib/model/export/class-ai1wm-export-content.php:142
+#: lib/model/export/class-ai1wm-export-content.php:109
+#: lib/model/export/class-ai1wm-export-content.php:153
 msgid "Archiving %1$d content files...<br />%2$d%% complete"
 msgstr "Arquivando %1$d arquivos de conteúdo...<br />%2$d%% concluído"
 
-#: lib/controller/class-ai1wm-main-controller.php:846
+#: lib/controller/class-ai1wm-main-controller.php:848
 msgid "I have enough disk space"
 msgstr "Não tenho espaço em disco suficiente"
 
@@ -1083,7 +1108,7 @@ msgstr ""
 msgid "To choose a file please go inside the link and click on the browse button."
 msgstr "Para escolher um arquivo, vá dentro do link e clique no botão navegar."
 
-#: lib/controller/class-ai1wm-main-controller.php:844
+#: lib/controller/class-ai1wm-main-controller.php:846
 msgid "Finish"
 msgstr "Finalizar"
 
@@ -1110,19 +1135,19 @@ msgstr "Arraste e solte um backup para importá-lo"
 
 #. translators: 1: Progress, 2: Number of records.
 #: lib/model/export/class-ai1wm-export-database.php:81
-#: lib/model/export/class-ai1wm-export-database.php:191
+#: lib/model/export/class-ai1wm-export-database.php:192
 msgid "Exporting database...<br />%1$d%% complete<br />%2$s records saved"
 msgstr "Exportando banco de dados...<br />%1$d%% concluído<br />%2$s registros salvos"
 
-#: lib/controller/class-ai1wm-main-controller.php:886
+#: lib/controller/class-ai1wm-main-controller.php:888
 msgid "Backup restore requires the Unlimited Extension. <a href=\"https://servmask.com/products/unlimited-extension\" target=\"_blank\">Get it here</a>"
 msgstr "A restauração do Backup requer a Extensão Unlimited. <a href=\"https://servmask.com/products/unlimited-extension\" target=\"_blank\">Obtenha-a aqui</a>"
 
-#: lib/controller/class-ai1wm-main-controller.php:252
+#: lib/controller/class-ai1wm-main-controller.php:254
 msgid "All-in-One WP Migration Command"
 msgstr "Linha de comando All-in-One WP Migration"
 
-#: lib/controller/class-ai1wm-main-controller.php:817
+#: lib/controller/class-ai1wm-main-controller.php:819
 #: lib/model/export/class-ai1wm-export-init.php:47
 msgid "Preparing to export..."
 msgstr "Preparando para exportar..."
@@ -1132,37 +1157,37 @@ msgstr "Preparando para exportar..."
 msgid "%s ago"
 msgstr "Há %s"
 
-#: lib/controller/class-ai1wm-main-controller.php:813
+#: lib/controller/class-ai1wm-main-controller.php:815
 msgid "Your purchase ID is invalid. Please <a href=\"mailto:support@servmask.com\">contact us</a>."
 msgstr "O seu ID de compra é inválido, <a href=\"mailto:support@servmask.com\">fale conosco</a>."
 
-#: lib/controller/class-ai1wm-main-controller.php:885
+#: lib/controller/class-ai1wm-main-controller.php:887
 msgid "Are you sure you want to delete this backup?"
 msgstr "Tem certeza que deseja excluir este backup?"
 
-#: lib/controller/class-ai1wm-main-controller.php:848
+#: lib/controller/class-ai1wm-main-controller.php:850
 msgid "Please do not close this browser window or your import will fail"
 msgstr "Não feche esta janela do navegador ou a sua importação irá falhar"
 
-#: lib/controller/class-ai1wm-main-controller.php:847
+#: lib/controller/class-ai1wm-main-controller.php:849
 msgid "Continue"
 msgstr "Continuar"
 
-#: lib/controller/class-ai1wm-main-controller.php:845
+#: lib/controller/class-ai1wm-main-controller.php:847
 msgid "Proceed"
 msgstr "Continuar"
 
-#: lib/controller/class-ai1wm-main-controller.php:843
+#: lib/controller/class-ai1wm-main-controller.php:845
 msgid "Stop import"
 msgstr "Parar a importação"
 
-#: lib/controller/class-ai1wm-main-controller.php:824
+#: lib/controller/class-ai1wm-main-controller.php:826
 msgid "Stop export"
 msgstr "Parar a exportação"
 
-#: lib/controller/class-ai1wm-main-controller.php:823
-#: lib/controller/class-ai1wm-main-controller.php:842
-#: lib/controller/class-ai1wm-main-controller.php:896
+#: lib/controller/class-ai1wm-main-controller.php:825
+#: lib/controller/class-ai1wm-main-controller.php:844
+#: lib/controller/class-ai1wm-main-controller.php:898
 msgid "Close"
 msgstr "Fechar"
 
@@ -1171,8 +1196,8 @@ msgid "Preparing configuration..."
 msgstr "Preparando a configuração..."
 
 #. translators: Progress.
-#: lib/model/export/class-ai1wm-export-database-file.php:88
-#: lib/model/export/class-ai1wm-export-database-file.php:127
+#: lib/model/export/class-ai1wm-export-database-file.php:95
+#: lib/model/export/class-ai1wm-export-database-file.php:137
 msgid "Archiving database...<br />%d%% complete"
 msgstr "Arquivando do banco de dados, ...<br />%d%%, concluído."
 
@@ -1188,15 +1213,15 @@ msgstr "Restaurando o banco de dados...<br />%d%% concluído"
 msgid "Unpacking database...<br />%d%% complete"
 msgstr "Descomprimindo o banco de dados...<br />%d%% concluído"
 
-#: lib/controller/class-ai1wm-main-controller.php:834
+#: lib/controller/class-ai1wm-main-controller.php:836
 msgid "Preparing to import..."
 msgstr "Preparando para importar..."
 
-#: lib/controller/class-ai1wm-main-controller.php:1367
+#: lib/controller/class-ai1wm-main-controller.php:1369
 msgid "Monthly"
 msgstr "Mensalmente"
 
-#: lib/controller/class-ai1wm-main-controller.php:1363
+#: lib/controller/class-ai1wm-main-controller.php:1365
 msgid "Weekly"
 msgstr "Semanalmente"
 
@@ -1212,7 +1237,7 @@ msgstr "<strong>Não</strong> alterar o domínio de e-mail"
 msgid "Preparing blogs..."
 msgstr "Preparando os blogs..."
 
-#: lib/controller/class-ai1wm-main-controller.php:812
+#: lib/controller/class-ai1wm-main-controller.php:814
 #: lib/view/updater/check.php:33
 msgid "Check for updates"
 msgstr "Verificar por atualizações"
@@ -1292,7 +1317,7 @@ msgstr "Cancelar"
 msgid "Send"
 msgstr "Enviar"
 
-#: lib/controller/class-ai1wm-main-controller.php:852
+#: lib/controller/class-ai1wm-main-controller.php:854
 #: lib/view/export/advanced-settings.php:51
 msgid "Enter a password"
 msgstr "Digite uma senha"
@@ -1343,29 +1368,29 @@ msgstr "Seu site foi importado com sucesso!"
 msgid "Restoring %1$d files...<br />%2$d%% complete"
 msgstr "Restaurando %1$d arquivos ... <br />%2$d%% concluído"
 
-#: lib/model/export/class-ai1wm-export-download.php:37
+#: lib/model/export/class-ai1wm-export-download.php:43
 msgid "Renaming export file..."
 msgstr "Renomeando o arquivo exportado..."
 
 #. translators: 1: Number of files, 2: Progress.
-#: lib/model/export/class-ai1wm-export-plugins.php:102
-#: lib/model/export/class-ai1wm-export-plugins.php:142
+#: lib/model/export/class-ai1wm-export-plugins.php:109
+#: lib/model/export/class-ai1wm-export-plugins.php:153
 msgid "Archiving %1$d plugin files...<br />%2$d%% complete"
 msgstr "Arquivando %1$d arquivos de plugin...<br />%2$d%% concluído"
 
-#: lib/controller/class-ai1wm-main-controller.php:719
-#: lib/controller/class-ai1wm-main-controller.php:720
+#: lib/controller/class-ai1wm-main-controller.php:721
+#: lib/controller/class-ai1wm-main-controller.php:722
 #: lib/view/backups/index.php:39
 msgid "Backups"
 msgstr "Backups"
 
-#: lib/controller/class-ai1wm-main-controller.php:710
-#: lib/controller/class-ai1wm-main-controller.php:711
+#: lib/controller/class-ai1wm-main-controller.php:712
+#: lib/controller/class-ai1wm-main-controller.php:713
 msgid "Import"
 msgstr "Importar"
 
-#: lib/controller/class-ai1wm-main-controller.php:701
-#: lib/controller/class-ai1wm-main-controller.php:702
+#: lib/controller/class-ai1wm-main-controller.php:703
+#: lib/controller/class-ai1wm-main-controller.php:704
 msgid "Export"
 msgstr "Exportar"
 

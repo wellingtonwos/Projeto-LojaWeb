@@ -47,6 +47,8 @@ class Admin_Stripe_Handler {
 		add_action( 'wp_ajax_srfm_stripe_pause_subscription', [ $this, 'ajax_pause_subscription' ] );
 		// Hook into unified refund filter system.
 		add_filter( 'srfm_process_transaction_refund', [ $this, 'process_stripe_refund' ], 10, 2 );
+		// Hook into unified subscription cancellation filter system.
+		add_filter( 'srfm_process_subscription_cancellation', [ $this, 'process_stripe_subscription_cancellation' ], 10, 2 );
 		// Admin notices.
 		add_action( 'admin_notices', [ $this, 'webhook_configuration_notice' ] );
 	}
@@ -87,7 +89,7 @@ class Admin_Stripe_Handler {
 		// Get payment record.
 		$payment = Payments::get( $payment_id );
 
-		$this->payment_mode = $payment['payment_mode'] ?? 'test';
+		$this->payment_mode = ! empty( $payment['mode'] ) && is_string( $payment['mode'] ) ? $payment['mode'] : 'test';
 		if ( ! $payment ) {
 			wp_send_json_error( [ 'message' => esc_html__( 'Payment not found in the database.', 'sureforms' ) ] );
 		}
@@ -143,12 +145,12 @@ class Admin_Stripe_Handler {
 		];
 		$current_logs[] = $new_log;
 
-		// Update database status to canceled (following WPForms pattern).
+		// Preserve the transaction `status` (e.g. 'succeeded') so the Refund option
+		// remains available; lifecycle is tracked via `subscription_status`.
 		$updated = Payments::update(
 			$payment_id,
 			[
 				'subscription_status' => 'canceled',
-				'status'              => 'canceled',
 				'log'                 => $current_logs,
 			]
 		);
@@ -157,6 +159,89 @@ class Admin_Stripe_Handler {
 		}
 
 		wp_send_json_success( [ 'message' => esc_html__( 'Subscription canceled successfully!', 'sureforms' ) ] );
+	}
+
+	/**
+	 * Process Stripe subscription cancellation via filter system.
+	 *
+	 * Filter callback for 'srfm_process_subscription_cancellation'.
+	 * Used by both admin and frontend to cancel Stripe subscriptions.
+	 *
+	 * @since 2.8.0
+	 * @param array<string,mixed> $result  Default result array.
+	 * @param array<string,mixed> $payment Payment record from database.
+	 * @return array<string,mixed> Result with success status and message.
+	 */
+	public function process_stripe_subscription_cancellation( $result, $payment ) {
+		// Only process Stripe payments.
+		if ( empty( $payment['gateway'] ) || 'stripe' !== $payment['gateway'] ) {
+			return $result;
+		}
+
+		if ( empty( $payment['subscription_id'] ) || ! is_string( $payment['subscription_id'] ) ) {
+			return [
+				'success' => false,
+				'message' => __( 'Subscription ID not found.', 'sureforms' ),
+			];
+		}
+
+		$subscription_id    = $payment['subscription_id'];
+		$this->payment_mode = ! empty( $payment['mode'] ) && is_string( $payment['mode'] ) ? $payment['mode'] : 'test';
+
+		$cancel_result = $this->cancel_subscription( $subscription_id );
+		if ( ! $cancel_result ) {
+			return [
+				'success' => false,
+				'message' => __( 'Subscription cancellation failed.', 'sureforms' ),
+			];
+		}
+
+		// Build log entry.
+		$current_logs = Helper::get_array_value( $payment['log'] );
+		$log_messages = [
+			sprintf(
+				/* translators: %s: Stripe subscription ID */
+				__( 'Subscription ID: %s', 'sureforms' ),
+				$subscription_id
+			),
+			sprintf(
+				/* translators: %s: payment gateway name */
+				__( 'Payment Gateway: %s', 'sureforms' ),
+				'Stripe'
+			),
+			sprintf(
+				/* translators: %s: subscription status */
+				__( 'Subscription Status: %s', 'sureforms' ),
+				__( 'Canceled', 'sureforms' )
+			),
+			sprintf(
+				/* translators: %s: user display name */
+				__( 'Canceled by: %s', 'sureforms' ),
+				wp_get_current_user()->display_name
+			),
+		];
+
+		$current_logs[] = [
+			'title'      => __( 'Subscription Canceled', 'sureforms' ),
+			'created_at' => current_time( 'mysql' ),
+			'messages'   => $log_messages,
+		];
+
+		$payment_id = isset( $payment['id'] ) && is_numeric( $payment['id'] ) ? absint( $payment['id'] ) : 0;
+		// Preserve the transaction `status` so the admin Refund option stays enabled
+		// after the customer cancels from the My Account page.
+		Payments::update(
+			$payment_id,
+			[
+				'subscription_status' => 'canceled',
+				'log'                 => $current_logs,
+			]
+		);
+
+		return [
+			'success' => true,
+			'message' => __( 'Subscription cancelled successfully.', 'sureforms' ),
+		];
 	}
 
 	/**
@@ -202,7 +287,7 @@ class Admin_Stripe_Handler {
 		}
 
 		try {
-			$this->payment_mode = $payment['payment_mode'] ?? 'test';
+			$this->payment_mode = ! empty( $payment['mode'] ) && is_string( $payment['mode'] ) ? $payment['mode'] : 'test';
 
 			// Detect subscription payments and route to specialized handler (following WPForms pattern).
 			if ( isset( $payment['type'], $payment['subscription_id'] ) && ! empty( $payment['type'] ) && ! empty( $payment['subscription_id'] ) ) {
@@ -394,7 +479,7 @@ class Admin_Stripe_Handler {
 			wp_send_json_error( [ 'message' => esc_html__( 'Payment not found in the database.', 'sureforms' ) ] );
 		}
 
-		$this->payment_mode = $payment['payment_mode'] ?? 'test';
+		$this->payment_mode = ! empty( $payment['mode'] ) && is_string( $payment['mode'] ) ? $payment['mode'] : 'test';
 
 		// Validate it's a subscription payment.
 		if ( empty( $payment['type'] ) || 'subscription' !== $payment['type'] ) {
@@ -767,7 +852,9 @@ class Admin_Stripe_Handler {
 
 			// Step 3: Verify subscription payment status.
 			// Note: 'active' status is used for subscription records, while 'succeeded' is used for one-time payments.
-			$refundable_statuses = [ 'active', 'succeeded', 'partially_refunded' ];
+			// 'canceled' is accepted because the initial charge on a canceled subscription is still refundable
+			// (and historical rows persisted with `status='canceled'` should remain refundable).
+			$refundable_statuses = [ 'active', 'succeeded', 'partially_refunded', 'canceled' ];
 			if ( empty( $payment['status'] ) || ! in_array( $payment['status'], $refundable_statuses, true ) ) {
 				return [
 					'success' => false,

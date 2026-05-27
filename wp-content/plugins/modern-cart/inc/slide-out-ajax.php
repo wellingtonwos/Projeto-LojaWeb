@@ -58,6 +58,25 @@ class Slide_Out_Ajax extends Slide_Out {
 			wp_send_json_error( [ 'message' => esc_html__( 'Product Data missing', 'modern-cart' ) ] );
 		}
 
+		// Extract form entries so third-party plugin data (add-ons, gift cards, etc.) is available in $_POST.
+		$form_entries = [];
+		if ( ! empty( $_POST['formEntries'] ) && is_array( $_POST['formEntries'] ) ) {
+			foreach ( $_POST['formEntries'] as $key => $value ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below per field.
+				$sanitized_key = sanitize_title( wp_unslash( $key ) );
+
+				if ( is_array( $value ) ) {
+					$form_entries[ $sanitized_key ] = array_map(
+						static function ( $item ) {
+							return is_array( $item ) ? array_map( 'sanitize_text_field', $item ) : sanitize_text_field( $item );
+						},
+						wp_unslash( $value )
+					);
+				} else {
+					$form_entries[ $sanitized_key ] = sanitize_text_field( wp_unslash( $value ) );
+				}
+			}
+		}
+
 		// Setting default for $url.
 		$url          = '';
 		$message      = '';
@@ -73,6 +92,10 @@ class Slide_Out_Ajax extends Slide_Out {
 					foreach ( $product['attributes'] as $key => $value ) {
 						$variations[ sanitize_title( wp_unslash( $key ) ) ] = sanitize_text_field( wp_unslash( $value ) );
 					}
+				}
+
+				if ( ! $product_id && isset( $form_entries['add-to-cart'] ) ) {
+					$product_id = absint( wp_unslash( $form_entries['add-to-cart'] ) );
 				}
 
 				if ( ! is_numeric( $product_id ) || $product_id < 0 || ! $product_id ) {
@@ -98,6 +121,11 @@ class Slide_Out_Ajax extends Slide_Out {
 							wp_send_json_error( [ 'message' => sprintf( esc_html__( 'You cannot add another "%s" to your cart.', 'modern-cart' ), esc_html( $product_to_add->get_name() ) ) ] );
 						}
 					}
+				}
+
+				// Merge form entries into $_POST so third-party plugins can read their custom fields.
+				if ( ! empty( $form_entries ) ) {
+					$_POST = array_merge( $product, $form_entries ); //phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verified above.
 				}
 
 				$message      = '';
@@ -163,6 +191,29 @@ class Slide_Out_Ajax extends Slide_Out {
 
 				if ( WC()->cart->apply_coupon( $coupon_code ) ) {
 					Order_Tracking::flag_session();
+
+					// Set flag for first_coupon_applied analytics event.
+					if ( ! get_option( 'mcw_first_coupon_applied', false ) ) {
+						update_option( 'mcw_first_coupon_applied', true, false );
+					}
+
+					// Increment daily coupon count for coupon_applied_count KPI.
+					$today         = current_time( 'Y-m-d' );
+					$coupon_counts = (array) get_option( 'mcw_daily_coupon_counts', array() );
+					if ( ! isset( $coupon_counts[ $today ] ) ) {
+						$coupon_counts[ $today ] = 0;
+					}
+					$coupon_counts[ $today ]++;
+
+					// Prune entries older than 3 days.
+					$cutoff = gmdate( 'Y-m-d', strtotime( '-3 days' ) );
+					foreach ( array_keys( $coupon_counts ) as $date_key ) {
+						if ( $date_key < $cutoff ) {
+							unset( $coupon_counts[ $date_key ] );
+						}
+					}
+					update_option( 'mcw_daily_coupon_counts', $coupon_counts, false );
+
 					$message      = esc_html__( 'Your coupon code was applied successfully.', 'modern-cart' );
 					$message_type = 'success';
 				} else {
@@ -378,6 +429,7 @@ class Slide_Out_Ajax extends Slide_Out {
 	 */
 	public function refresh_slide_out_cart(): void {
 		Helper::set_nocache_headers();
+
 		if ( ! isset( $_POST['moderncart_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['moderncart_nonce'] ) ), 'moderncart_ajax_nonce' ) ) {
 			wp_die();
 		}

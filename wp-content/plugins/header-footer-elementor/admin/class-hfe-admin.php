@@ -231,10 +231,13 @@ class HFE_Admin {
 			}
 		}
 
+		$unique_widgets_used = is_array( $widgets_usage ) ? count( array_filter( $widgets_usage ) ) : 0;
+
 		$snapshot = [
 			'numeric_values' => [
 				'total_templates'            => $total_templates,
 				'total_hfe_widget_instances' => $total_hfe_widget_instances,
+				'unique_widgets_used'        => $unique_widgets_used,
 			],
 		];
 

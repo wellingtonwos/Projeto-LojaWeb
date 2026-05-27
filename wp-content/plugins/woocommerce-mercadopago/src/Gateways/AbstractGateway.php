@@ -10,6 +10,7 @@ use MercadoPago\Woocommerce\Helpers\Numbers;
 use MercadoPago\Woocommerce\WoocommerceMercadoPago;
 use MercadoPago\Woocommerce\Interfaces\MercadoPagoGatewayInterface;
 use MercadoPago\Woocommerce\Notification\NotificationFactory;
+use MercadoPago\Woocommerce\Exceptions\InvalidCheckoutDataException;
 use MercadoPago\Woocommerce\Exceptions\RejectedPaymentException;
 use MercadoPago\Woocommerce\Libraries\Metrics\Datadog;
 use Mockery\Exception\MockeryExceptionInterface;
@@ -57,6 +58,8 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
     protected float $ratio;
 
     protected array $countryConfigs;
+
+    private static bool $amountCurrencyErrorSent = false;
 
     // TODO(PHP8.2): Change type hint from phpdoc to native
     /**
@@ -399,6 +402,11 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
                 'cust_id'           => $this->mercadopago->sellerConfig->getCustIdFromAT(),
             ]
         );
+
+        $this->mercadopago->hooks->scripts->registerCheckoutScript(
+            'wc_mercadopago_sdk_metrics',
+            $this->mercadopago->helpers->url->getJsAsset('checkouts/mp-sdk-metrics')
+        );
     }
 
     /**
@@ -606,11 +614,17 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
 
         $this->mercadopago->hooks->gateway->registerBeforeThankYou(function ($orderId) {
             $order         = wc_get_order($orderId);
+
+            if (!$order) {
+                return;
+            }
+
             $paymentMethod = $order->get_payment_method();
 
             foreach ($this->mercadopago->storeConfig->getAvailablePaymentGateways() as $gateway) {
                 if ($gateway::ID === $paymentMethod) {
                     $this->mercadopago->hooks->scripts->registerMelidataStoreScript('/thankyou', $paymentMethod);
+                    break;
                 }
             }
         });
@@ -639,7 +653,16 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
 
         $translatedMessage = $this->mercadopago->helpers->errorMessages->findErrorMessage($message);
 
-        $this->datadog->sendEvent('woo_checkout_error', $translatedMessage, $originalMessage, $this->paymentMethodName);
+        $exceptionType = (new \ReflectionClass($e))->getShortName();
+        $tagParts = ['exception_type : ' . strtolower($exceptionType)];
+        if ($e instanceof InvalidCheckoutDataException && !empty($e->getDetails())) {
+            foreach ($e->getDetails() as $key => $value) {
+                $tagParts[] = $key . ' : ' . $value;
+            }
+        }
+        $datadogMessage = $originalMessage . ' ' . implode(' ', $tagParts);
+
+        $this->datadog->sendEvent('woo_checkout_error', $translatedMessage, $datadogMessage, $this->paymentMethodName);
 
         if ($notice) {
             $this->mercadopago->helpers->notices->storeNotice($translatedMessage, 'error');
@@ -1013,12 +1036,42 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
             $amount        = $this->getAmount();
         } catch (Exception $e) {
             $this->mercadopago->logs->file->warning(
-                "Mercado pago gave error to call getRatio: {$e->getMessage()}",
+                "Error in getAmountAndCurrency: {$e->getMessage()}",
                 self::LOG_SOURCE
             );
+            $this->sendAmountCurrencyErrorMetric($amount, $currencyRatio, $e->getMessage());
         }
 
         return $key ? $$key : compact('currencyRatio', 'amount');
+    }
+
+    /**
+     * Send Datadog metric for getAmountAndCurrency errors, once per request
+     *
+     * @param mixed  $amount
+     * @param float  $currencyRatio
+     * @param string $errorMessage
+     *
+     * @return void
+     */
+    protected function sendAmountCurrencyErrorMetric($amount, float $currencyRatio, string $errorMessage): void
+    {
+        if (!self::$amountCurrencyErrorSent) {
+            self::$amountCurrencyErrorSent = true;
+            $this->datadog->sendEvent(
+                'mp_get_amount_and_currency_error',
+                "amount:" . ($amount ?? 'null') . "_ratio:{$currencyRatio}",
+                $errorMessage,
+                $this->paymentMethodName,
+                [
+                    'team'          => 'big',
+                    'site_id'       => $this->mercadopago->sellerConfig->getSiteId(),
+                    'environment'   => $this->mercadopago->storeConfig->isTestMode() ? 'homol' : 'prod',
+                    'cust_id'       => $this->mercadopago->sellerConfig->getCustIdFromAT(),
+                    'from_currency' => $this->mercadopago->helpers->currency->getWoocommerceCurrency(),
+                ]
+            );
+        }
     }
 
     /**
@@ -1139,5 +1192,10 @@ abstract class AbstractGateway extends WC_Payment_Gateway implements MercadoPago
     public function getEnabled(): bool
     {
         return $this->get_option(static::ENABLED_OPTION, static::ENABLED_DEFAULT) === "yes";
+    }
+
+    public function getPaymentMethodName(): string
+    {
+        return $this->paymentMethodName;
     }
 }

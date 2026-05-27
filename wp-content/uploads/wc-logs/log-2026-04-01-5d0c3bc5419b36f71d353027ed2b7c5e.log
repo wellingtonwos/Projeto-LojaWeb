@@ -1,7 +1,0 @@
-2026-04-01T00:04:23+00:00 ERROR Erro ao autenticar com cartão postagem nos correios, verifque as credenciais CONTEXT: {"message":"Erro ao enviar solicitação post."}
-2026-04-01T00:04:52+00:00 ERROR Erro ao autenticar com cartão postagem nos correios, verifque as credenciais CONTEXT: {"message":"Erro ao enviar solicitação post."}
-2026-04-01T00:05:06+00:00 ERROR Erro ao autenticar com cartão postagem nos correios, verifque as credenciais CONTEXT: {"message":"Erro ao enviar solicitação post."}
-2026-04-01T01:14:40+00:00 INFO Payment gateway enabled: "Mercado Pago - Checkout Transparente PIX"
-2026-04-01T01:15:15+00:00 INFO Payment gateway enabled: "Mercado Pago - Checkout Transparente Boleto e lotérica"
-2026-04-01T01:15:55+00:00 INFO Payment gateway enabled: "Mercado Pago - Checkout Pro"
-2026-04-01T01:16:06+00:00 INFO Payment gateway enabled: "Mercado Pago - Checkout Pro Linha de Crédito"

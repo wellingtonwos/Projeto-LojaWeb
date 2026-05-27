@@ -4,7 +4,7 @@ Tags: ecommerce, mercadopago, woocommerce
 Requires at least: 6.3
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 8.7.17
+Stable tag: 8.7.21
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,18 +134,14 @@ Set up both the plugin and the checkouts you want to activate on your payment av
 
 Check out our <a href="https://www.mercadopago.com.br/developers/pt/plugins_sdks/plugins/official/woo-commerce/">official documentation</a> for more information on the specific fields to configure.
 
-= v8.7.17 (25/03/2026) =
+= v8.7.21 (04/05/2026) =
 * Added
-- Add monitoring to detect if files in the assets folder have been modified
-- Add monitoring to detect if our scripts have been removed via dequeue
-- Add monitoring to detect if expected window variables are present
-- Add monitoring to detect if certain styles have been overridden
-- Add melidataReady promise to ensure tracking loading events are dispatched only after melidata client is ready
-- Add melidata load delay metrics for loading start and end events
+- Add structured error logging and monitoring for payment API calls
+- Preserve selected payment method and installments after a failed payment attempt
 
 * Fixed
-- Fix melidata client not loading on stores using Fluid Checkout plugin
-- Fix missing order key authorization check on PIX QR code image endpoint to prevent unauthorized access
-- Fix status sync metabox breaking order page when payment data is missing or invalid
+- Fix TypeError when processing fast payment installment selection in certain checkout layouts where the installments field is absent from the DOM
+- Fix fast payment initialization failing when a non-custom payment method is selected by default
+- Fix payment method icon styling interfering with other payment gateways in Blocks checkout
 
 [See changelog for all versions](https://github.com/mercadopago/cart-woocommerce/blob/main/CHANGELOG.md).

@@ -317,6 +317,43 @@ class Helper {
 	}
 
 	/**
+	 * Sanitize a value based on its PHP type.
+	 *
+	 * Recursively sanitizes arrays while preserving native PHP types (bool, int, float).
+	 * Use this for complex object metas with many properties where per-field callbacks are impractical.
+	 *
+	 * @param mixed $value The value to sanitize.
+	 * @param int   $depth Current recursion depth. Values nested beyond 10 levels are discarded.
+	 * @since 2.8.0
+	 * @return mixed The sanitized value.
+	 */
+	public static function sanitize_by_type( $value, int $depth = 0 ) {
+		if ( $depth > 10 ) {
+			return '';
+		}
+		if ( is_array( $value ) ) {
+			$sanitized = [];
+			foreach ( $value as $key => $val ) {
+				$sanitized[ sanitize_text_field( (string) $key ) ] = self::sanitize_by_type( $val, $depth + 1 );
+			}
+			return $sanitized;
+		}
+		if ( is_bool( $value ) ) {
+			return $value;
+		}
+		if ( is_int( $value ) ) {
+			return intval( $value );
+		}
+		if ( is_float( $value ) ) {
+			return floatval( $value );
+		}
+		if ( is_string( $value ) ) {
+			return sanitize_text_field( $value );
+		}
+		return '';
+	}
+
+	/**
 	 * This function performs array_map for multi dimensional array
 	 *
 	 * @param string       $function function name to be applied on each element on array.
@@ -1431,9 +1468,40 @@ class Helper {
 			$utm_args = [];
 		}
 
+		// SRFM-2709: deterministic UTM attribution — start.
+		// When the caller opts into UTM tracking by passing any utm_args, fill in
+		// SureForms' deterministic source/campaign defaults. Caller-provided keys
+		// (including the placement passed via utm_medium) always win.
+		if ( ! empty( $utm_args ) ) {
+			$utm_args = array_merge(
+				[
+					'utm_source'   => 'sureforms_plugin',
+					'utm_campaign' => 'core_plugin',
+				],
+				$utm_args
+			);
+		}
+		// SRFM-2709: deterministic UTM attribution — end.
+
 		if ( class_exists( 'BSF_UTM_Analytics' ) ) {
 			$url = \BSF_UTM_Analytics::get_utm_ready_link( $url, 'sureforms', $utm_args );
 		}
+
+		// SRFM-2709: post-BSF_UTM_Analytics fallback — start.
+		// BSF_UTM_Analytics returns the URL unchanged when no install referer is
+		// recorded. Merge any caller UTM keys still missing from the final URL.
+		if ( ! empty( $utm_args ) ) {
+			$existing = [];
+			$query    = wp_parse_url( $url, PHP_URL_QUERY );
+			if ( is_string( $query ) && '' !== $query ) {
+				parse_str( $query, $existing );
+			}
+			$missing = array_diff_key( $utm_args, $existing );
+			if ( ! empty( $missing ) ) {
+				$url = add_query_arg( $missing, $url );
+			}
+		}
+		// SRFM-2709: post-BSF_UTM_Analytics fallback — end.
 
 		return esc_url( $url );
 	}
@@ -2310,6 +2378,60 @@ class Helper {
 
 		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 		return base64_encode( $json );
+	}
+
+	/**
+	 * Get the visitor's IP address.
+	 *
+	 * Centralised IP detection that checks common proxy headers before
+	 * falling back to REMOTE_ADDR. Handles comma-separated IPs that
+	 * load-balancers / CDNs may append (takes the first, i.e. client IP).
+	 *
+	 * NOTE: Existing callers (Smart_Tags::get_the_user_ip, Front_End::get_user_ip,
+	 * inline reads in Form_Submit) can be migrated to this method in the future
+	 * to avoid duplicating the same header-chain logic.
+	 *
+	 * @since 2.8.0
+	 * @return string Validated IP address, or empty string if unavailable.
+	 */
+	public static function get_visitor_ip() {
+		$headers = [
+			'HTTP_CLIENT_IP',
+			'HTTP_X_FORWARDED_FOR',
+			'HTTP_X_REAL_IP',
+			'HTTP_X_FORWARDED',
+			'HTTP_FORWARDED_FOR',
+			'HTTP_FORWARDED',
+			'REMOTE_ADDR',
+		];
+
+		foreach ( $headers as $header ) {
+			if ( empty( $_SERVER[ $header ] ) ) {
+				continue;
+			}
+
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Validated by FILTER_VALIDATE_IP below.
+			$raw = wp_unslash( $_SERVER[ $header ] );
+
+			// Proxies may send comma-separated IPs; the first is the original client.
+			if ( false !== strpos( $raw, ',' ) ) {
+				$raw = trim( explode( ',', $raw )[0] );
+			}
+
+			$ip = filter_var( $raw, FILTER_VALIDATE_IP );
+			if ( false !== $ip ) {
+				/**
+				 * Filters the detected visitor IP address.
+				 *
+				 * @since 2.8.0
+				 *
+				 * @param string $ip Validated IP address.
+				 */
+				return apply_filters( 'srfm_visitor_ip', $ip );
+			}
+		}
+
+		return '';
 	}
 
 }

@@ -79,6 +79,11 @@ I've been happily developing Microthemer and supporting users of varying technic
 
 == Changelog ==
 
+= 7.5.3.9 (April 15th, 2026) =
+
+# Bugs Fixed (Microthemer)
+* Another animation shorthand parsing error.
+
 = 7.5.3.8 (March 16th, 2026) =
 
 # Bugs Fixed (Microthemer)

@@ -40,6 +40,15 @@ class ST_WXR_Importer {
 	private $wxr_import_progress_key = 'st_wxr_importer_progress';
 
 	/**
+	 * Set of post IDs present in the WXR file.
+	 * Used to detect orphaned attachments whose post_parent has no matching item.
+	 *
+	 * @since 1.1.31
+	 * @var array<int, true>
+	 */
+	private $wxr_post_ids = array();
+
+	/**
 	 * Initiator of this class.
 	 *
 	 * @since 1.0.0
@@ -103,12 +112,12 @@ class ST_WXR_Importer {
 			)
 		);
 
-		if ( in_array( $data['post_type'], [ 'post', 'page' ], true ) && 'ai' === get_option( 'astra_sites_current_import_template_type' ) ) {
+		if ( in_array( $data['post_type'], array( 'post', 'page' ), true ) && 'ai' === get_option( 'astra_sites_current_import_template_type' ) ) {
 			$imports                         = get_option(
 				'astra_sites_ai_imports',
 				array(
-					'post' => [],
-					'page' => [],
+					'post' => array(),
+					'page' => array(),
 				)
 			);
 			$imports[ $data['post_type'] ][] = $post_id;
@@ -345,7 +354,9 @@ class ST_WXR_Importer {
 		}
 
 		// Time to run the import!
-		set_time_limit( 0 ); // phpcs:ignore Generic.PHP.ForbiddenFunctions.FoundWithAlternative -- Required for long-running import process.
+		if ( function_exists( 'set_time_limit' ) ) {
+			\set_time_limit( 0 ); // phpcs:ignore Generic.PHP.ForbiddenFunctions.FoundWithAlternative -- Required for long-running import process.
+		}
 
 		// Ensure we're not buffered.
 		wp_ob_end_flush_all();
@@ -408,6 +419,12 @@ class ST_WXR_Importer {
 				'file_size' => filesize( $xml_url ),
 			)
 		);
+
+		// Pre-scan the WXR to collect valid post IDs for orphaned attachment filtering.
+		// Skip for AI imports -- their WXR files are dynamically generated and won't have orphans.
+		if ( 'ai' !== get_option( 'astra_sites_current_import_template_type' ) ) {
+			$this->wxr_post_ids = $this->prescan_wxr_post_ids( $xml_url );
+		}
 
 		try {
 			$response = $importer->import( $xml_url );
@@ -615,10 +632,67 @@ class ST_WXR_Importer {
 	 */
 	public function pre_post_data( $postdata, $data ) {
 
-		// Skip GUID field which point to the https://websitedemos.net.
-		$postdata['guid'] = '';
+		// Replace source GUID with a deterministic URL-based hash for duplicate detection on retry imports.
+		$hash             = md5( $data['post_title'] . '::' . $data['post_type'] . '::' . $data['post_name'] );
+		$postdata['guid'] = site_url( '/?st-import=' . $hash );
 
 		return $postdata;
+	}
+
+	/**
+	 * Pre-scan the WXR file to collect all post IDs present in it.
+	 *
+	 * Used to detect orphaned attachments whose post_parent references a post
+	 * that does not exist in the WXR (e.g. template catalog screenshots that
+	 * leaked into the demo site's media library from other templates).
+	 *
+	 * @since 1.1.31
+	 * @param string $file Absolute path to the WXR XML file.
+	 * @return array<int, true> Map of post IDs to true for O(1) lookups.
+	 */
+	private function prescan_wxr_post_ids( $file ) {
+		$post_ids = array();
+
+		$reader = new \XMLReader();
+		$status = $reader->open( $file, null, LIBXML_NONET );
+
+		if ( ! $status ) {
+			return $post_ids;
+		}
+
+		while ( $reader->read() ) {
+			if ( \XMLReader::ELEMENT !== $reader->nodeType || 'item' !== $reader->name ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMNode property.
+				continue;
+			}
+
+			$node = $reader->expand();
+			if ( false === $node ) {
+				$reader->next();
+				continue;
+			}
+
+			$post_id = 0;
+
+			foreach ( $node->childNodes as $child ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMNode property.
+				if ( XML_ELEMENT_NODE !== $child->nodeType ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMNode property.
+					continue;
+				}
+				if ( 'wp:post_id' === $child->tagName ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMNode property.
+					$post_id = (int) $child->textContent; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- DOMNode property.
+					break;
+				}
+			}
+
+			if ( $post_id > 0 ) {
+				$post_ids[ $post_id ] = true;
+			}
+
+			$reader->next();
+		}
+
+		$reader->close();
+
+		return $post_ids;
 	}
 
 	/**
@@ -632,6 +706,17 @@ class ST_WXR_Importer {
 	 * @param array $terms Terms on the post.
 	 */
 	public function pre_process_post( $data, $meta, $comments, $terms ) {
+
+		// Skip orphaned attachments whose post_parent references a post ID that
+		// does not exist in the WXR file. These are template catalog screenshots
+		// from other templates that leaked into the demo site's media library.
+		if ( ! empty( $this->wxr_post_ids )
+			&& isset( $data['post_type'] ) && 'attachment' === $data['post_type']
+			&& isset( $data['post_parent'] ) && (int) $data['post_parent'] > 0
+			&& ! isset( $this->wxr_post_ids[ (int) $data['post_parent'] ] )
+		) {
+			return array();
+		}
 
 		if ( isset( $data['post_content'] ) ) {
 

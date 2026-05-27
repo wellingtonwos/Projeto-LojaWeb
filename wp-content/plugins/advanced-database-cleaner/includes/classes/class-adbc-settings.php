@@ -205,9 +205,9 @@ class ADBC_Settings extends ADBC_Singleton {
 		// would each generate a different security_code, causing multiple upload folders to be created.
 		// The lock serializes initialization so only the first process generates and saves the settings;
 		// subsequent processes will read the already-persisted values.
-		$lock_name = 'adbc_settings_init';
-		$lock_timeout = 2; // 2 seconds
-		$got_lock = (bool) $wpdb->get_var( $wpdb->prepare( "SELECT GET_LOCK(%s, %d)", $lock_name, $lock_timeout ) );
+		// $lock_name = 'adbc_settings_init';
+		// $lock_timeout = 2; // 2 seconds
+		// $got_lock = (bool) $wpdb->get_var( $wpdb->prepare( "SELECT GET_LOCK(%s, %d)", $lock_name, $lock_timeout ) );
 
 		$stored_settings = get_option( 'adbc_plugin_settings', [] );
 		$stored_settings = is_array( $stored_settings ) ? $stored_settings : [];
@@ -268,8 +268,8 @@ class ADBC_Settings extends ADBC_Singleton {
 			$this->update_settings_in_db();
 
 		// Release the advisory lock now that settings are persisted.
-		if ( $got_lock )
-			$wpdb->query( $wpdb->prepare( "SELECT RELEASE_LOCK(%s)", $lock_name ) );
+		// if ( $got_lock )
+		// 	$wpdb->query( $wpdb->prepare( "SELECT RELEASE_LOCK(%s)", $lock_name ) );
 
 	}
 

@@ -945,7 +945,16 @@ class HFE_Learn_API extends WP_REST_Controller {
             }
 
             if ( $all_complete ) {
-                \HFE_Analytics_Events::track( 'learn_completed' );
+                $install_time       = get_option( 'uae_usage_installed_time', 0 );
+                $days_since_install = 0;
+                if ( $install_time > 0 ) {
+                    $days_since_install = (int) floor( ( time() - (int) $install_time ) / DAY_IN_SECONDS );
+                }
+                \HFE_Analytics_Events::track(
+                    'learn_completed',
+                    (string) count( $chapters ),
+                    [ 'days_since_install' => (string) $days_since_install ]
+                );
             }
         }
 

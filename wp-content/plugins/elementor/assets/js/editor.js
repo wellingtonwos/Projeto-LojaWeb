@@ -39727,6 +39727,16 @@ PanelElementsLayoutView = Marionette.LayoutView.extend({
         editable: false
       });
     });
+    jQuery.each(elementor.config.atomicFormPromotionWidgets || [], function (index, widget) {
+      elementsCollection.add({
+        name: widget.name,
+        title: widget.title,
+        icon: widget.icon,
+        categories: JSON.parse(widget.categories),
+        editable: false,
+        atomicFormPromotion: true
+      });
+    });
     if (elementor.config.integrationWidgets) {
       var injectionPoint = elementsCollection.findIndex({
         widgetType: 'image-carousel'
@@ -39961,7 +39971,8 @@ module.exports = PanelElementsCategoriesView;
 "use strict";
 
 
-var PanelElementsElementsCollection = __webpack_require__(/*! ../collections/elements */ "../assets/dev/js/editor/regions/panel/pages/elements/collections/elements.js"),
+var CREATE_WIDGET_PROMPT = (__webpack_require__(/*! ./widget-creation */ "../assets/dev/js/editor/regions/panel/pages/elements/views/widget-creation.js").CREATE_WIDGET_PROMPT),
+  PanelElementsElementsCollection = __webpack_require__(/*! ../collections/elements */ "../assets/dev/js/editor/regions/panel/pages/elements/collections/elements.js"),
   PanelElementsCategoryView;
 PanelElementsCategoryView = Marionette.CompositeView.extend({
   template: '#tmpl-elementor-panel-elements-category',
@@ -39973,7 +39984,8 @@ PanelElementsCategoryView = Marionette.CompositeView.extend({
   },
   events: {
     'click @ui.title': 'onTitleClick',
-    'click @ui.chip': 'onChipClick'
+    'click @ui.chip': 'onChipClick',
+    'click .elementor-panel-custom-widgets__cta': 'onCustomWidgetsCtaClick'
   },
   id: function id() {
     return 'elementor-panel-category-' + this.model.get('name');
@@ -40043,6 +40055,15 @@ PanelElementsCategoryView = Marionette.CompositeView.extend({
         target: this.$el
       }
     }));
+  },
+  onCustomWidgetsCtaClick: function onCustomWidgetsCtaClick(event) {
+    event.stopPropagation();
+    window.dispatchEvent(new CustomEvent('elementor/editor/create-widget', {
+      detail: {
+        prompt: CREATE_WIDGET_PROMPT,
+        entry_point: 'widgets_panel'
+      }
+    }));
   }
 });
 module.exports = PanelElementsCategoryView;
@@ -40069,7 +40090,7 @@ module.exports = Marionette.ItemView.extend({
   template: '#tmpl-elementor-element-library-element',
   className: function className() {
     var className = 'elementor-element-wrapper';
-    if (!this.isEditable()) {
+    if (!this.isEditable() && !this.isAtomicFormPromotion()) {
       className += ' elementor-element--promotion';
     }
     if (this.isIntegration()) {
@@ -40105,6 +40126,9 @@ module.exports = Marionette.ItemView.extend({
   isIntegration: function isIntegration() {
     return !!this.model.get('integration');
   },
+  isAtomicFormPromotion: function isAtomicFormPromotion() {
+    return !!this.model.get('atomicFormPromotion');
+  },
   onRender: function onRender() {
     var _this = this;
     if (!elementor.userCan('design') || !this.isEditable()) {
@@ -40125,7 +40149,16 @@ module.exports = Marionette.ItemView.extend({
       groups: ['elementor-element']
     });
   },
-  onMouseDown: function onMouseDown() {
+  onMouseDown: function onMouseDown(event) {
+    if (this.isAtomicFormPromotion()) {
+      event.stopPropagation();
+      document.dispatchEvent(new CustomEvent('atomic-form-promotion:open', {
+        detail: {
+          target: this.el
+        }
+      }));
+      return;
+    }
     var title = this.model.get('title'),
       widgetType = this.model.get('name') || this.model.get('widgetType'),
       isIntegration = this.isIntegration(),
@@ -40427,7 +40460,7 @@ var TEMPLATES = {
   EMPTY_STATE: '#tmpl-elementor-panel-elements-widget-creation-empty-state',
   SEARCH_FOOTER: '#tmpl-elementor-panel-elements-widget-creation-search-footer'
 };
-var prompt = "Create a widget for me.\nGoal: [What should this widget help me accomplish?]\nPlacement: [Where will I see it in the editor/UI?]\nHow it should work: ";
+var CREATE_WIDGET_PROMPT = "Create a widget for me.\nGoal: [What should this widget help me accomplish?]\nPlacement: [Where will I see it in the editor/UI?]\nHow it should work: ";
 PanelElementsWidgetCreationView = Marionette.ItemView.extend({
   getTemplate: function getTemplate() {
     return this.options.emptyResults ? TEMPLATES.EMPTY_STATE : TEMPLATES.SEARCH_FOOTER;
@@ -40451,13 +40484,14 @@ PanelElementsWidgetCreationView = Marionette.ItemView.extend({
   onCtaClick: function onCtaClick() {
     window.dispatchEvent(new CustomEvent('elementor/editor/create-widget', {
       detail: {
-        prompt: prompt,
+        prompt: CREATE_WIDGET_PROMPT,
         entry_point: 'search_widget'
       }
     }));
   }
 });
 module.exports = PanelElementsWidgetCreationView;
+module.exports.CREATE_WIDGET_PROMPT = CREATE_WIDGET_PROMPT;
 
 /***/ }),
 

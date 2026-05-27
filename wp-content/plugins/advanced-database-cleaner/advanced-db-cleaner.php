@@ -3,7 +3,7 @@
  * Plugin Name:       Advanced Database Cleaner
  * Plugin URI:        https://sigmaplugin.com/downloads/wordpress-advanced-database-cleaner
  * Description:       The most advanced Database Cleaner for WordPress. Clean database by deleting orphaned items such as old "revisions", "old drafts", optimize database, and more.
- * Version:           4.1.0
+ * Version:           4.1.1
  * Author:            SigmaPlugin
  * Author URI:        https://sigmaplugin.com
  * Contributors:      symptote
@@ -47,21 +47,36 @@ if ( ! defined( "ADBC_MAIN_PLUGIN_FILE_PATH" ) )
 	define( "ADBC_MAIN_PLUGIN_FILE_PATH", __FILE__ );
 
 if ( ! defined( 'ADBC_PLUGIN_VERSION' ) )
-	define( 'ADBC_PLUGIN_VERSION', '4.1.0' );
+	define( 'ADBC_PLUGIN_VERSION', '4.1.1' );
 
 class ADBC_Advanced_DB_Cleaner {
 
 	public function __construct() {
+
+		// Load the classes files on demand
+		spl_autoload_register( [ $this, 'loader' ] );
+
+		// Register activation hook
+		register_activation_hook( __FILE__, [ 'ADBC_Admin_Init', 'activate' ] );
+
+		// Bootstrap the plugin on plugins_loaded
+		add_action( 'plugins_loaded', [ $this, 'bootstrap' ], 0 );
+
+	}
+
+	/**
+	 * Run the actual plugin bootstrap (constants, hooks).
+	 *
+	 * @return void
+	 */
+	public function bootstrap() {
 
 		// This plugin operates in admin, WP-Cron, and REST API contexts only.
 		// Skip bootstrap on frontend requests to avoid unnecessary DB queries and file includes.
 		if ( ! is_admin() && ! wp_doing_cron() && ! self::is_rest_request() )
 			return;
 
-		// Load the classes files on demand
-		spl_autoload_register( [ $this, 'loader' ] );
-
-		// Load constants early so activation hooks have access to them
+		// Load constants early so deactivation hook have access to them
 		include_once 'constants.php';
 
 		// Menus, scripts and custom styles
@@ -77,8 +92,7 @@ class ADBC_Advanced_DB_Cleaner {
 		// Maybe schedule a conflict notice.
 		add_action( 'admin_init', [ 'ADBC_Admin_Init', 'maybe_schedule_conflict_notice' ] );
 
-		// Register activation and deactivation hooks
-		register_activation_hook( __FILE__, [ 'ADBC_Admin_Init', 'activate' ] );
+		// Register deactivation hook
 		register_deactivation_hook( __FILE__, [ 'ADBC_Admin_Init', 'deactivate' ] );
 
 		// Register all routes
@@ -181,12 +195,7 @@ class ADBC_Advanced_DB_Cleaner {
 	}
 
 	/**
-	 * Detect a REST API request before the REST_REQUEST constant is defined.
-	 *
-	 * Called at plugin load time (before parse_request), so REST_REQUEST is not
-	 * yet available. The URI and query-string checks act as early heuristics.
-	 * False positives are acceptable here (just an extra bootstrap); false negatives
-	 * could prevent the plugin's REST endpoints from loading correctly.
+	 * Detect a REST API request.
 	 *
 	 * @return bool
 	 */
@@ -225,43 +234,8 @@ class ADBC_Advanced_DB_Cleaner {
 		'ADBC_Automation_Endpoints' => 'includes/endpoints/class-adbc-automation-endpoints.php',
 		'ADBC_Automation_Events_Log' => 'includes/premium/classes/class-adbc-automation-events-log.php',
 		'ADBC_Automation_Validator' => 'includes/utils/validator/class-adbc-automation-validator.php',
-		'ADBC_Cleanup_Actionscheduler_Actions_Handler_Base' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-actions-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Canceled_Actions_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-actions-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Canceled_Logs_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-logs-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Completed_Actions_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-actions-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Completed_Logs_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-logs-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Failed_Actions_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-actions-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Failed_Logs_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-logs-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Logs_Handler_Base' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-logs-handler.php',
-		'ADBC_Cleanup_Actionscheduler_Orphan_Logs_Handler' => 'includes/premium/classes/general-cleanup/type-handlers/class-adbc-actionscheduler-logs-handler.php',
-		'ADBC_Cleanup_Auto_Drafts_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-posts-handler.php',
-		'ADBC_Cleanup_Comments_Handler_Base' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Duplicated_Commentmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-duplicated-meta-handler.php',
-		'ADBC_Cleanup_Duplicated_Meta_Handler_Base' => 'includes/classes/general-cleanup/type-handlers/class-adbc-duplicated-meta-handler.php',
-		'ADBC_Cleanup_Duplicated_Postmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-duplicated-meta-handler.php',
-		'ADBC_Cleanup_Duplicated_Termmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-duplicated-meta-handler.php',
-		'ADBC_Cleanup_Duplicated_Usermeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-duplicated-meta-handler.php',
-		'ADBC_Cleanup_Expired_Transients_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-expired-transients-handler.php',
-		'ADBC_Cleanup_Oembed_Cache_Meta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
-		'ADBC_Cleanup_Optimize_Tables_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-tables-handler.php',
-		'ADBC_Cleanup_Pingbacks_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Posts_Handler_Base' => 'includes/classes/general-cleanup/type-handlers/class-adbc-posts-handler.php',
-		'ADBC_Cleanup_Repair_Tables_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-tables-handler.php',
-		'ADBC_Cleanup_Revisions_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-posts-handler.php',
-		'ADBC_Cleanup_Spam_Comments_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Tables_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-tables-handler.php',
-		'ADBC_Cleanup_Trackbacks_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Trash_Comments_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Trashed_Posts_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-posts-handler.php',
 		'ADBC_Cleanup_Type_Handler' => 'includes/classes/general-cleanup/class-adbc-cleanup-type-handler.php',
 		'ADBC_Cleanup_Type_Registry' => 'includes/classes/general-cleanup/class-adbc-cleanup-type-registry.php',
-		'ADBC_Cleanup_Unapproved_Comments_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-comments-handler.php',
-		'ADBC_Cleanup_Unused_Commentmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
-		'ADBC_Cleanup_Unused_Meta_Handler_Base' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
-		'ADBC_Cleanup_Unused_Postmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
-		'ADBC_Cleanup_Unused_Relationships_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-relationships-handler.php',
-		'ADBC_Cleanup_Unused_Termmeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
-		'ADBC_Cleanup_Unused_Usermeta_Handler' => 'includes/classes/general-cleanup/type-handlers/class-adbc-unused-meta-handler.php',
 		'ADBC_Collect_Files' => 'includes/premium/classes/scan/process/steps/class-adbc-collect-files.php',
 		'ADBC_Common_Endpoints' => 'includes/endpoints/class-adbc-common-endpoints.php',
 		'ADBC_Common_Model' => 'includes/models/class-adbc-common-model.php',

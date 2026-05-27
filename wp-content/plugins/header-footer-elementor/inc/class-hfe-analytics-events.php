@@ -1,9 +1,11 @@
 <?php
 /**
- * HFE Analytics Events helper for one-time milestone tracking.
+ * HFE Analytics Events — thin static wrapper around BSF_Analytics_Events.
  *
- * Tracks events temporarily, sends them once via BSF Analytics,
- * then cleans up. Only a minimal dedup flag remains.
+ * Delegates to the shared library class while preserving HFE's existing
+ * option keys (`hfe_usage_events_pending`, `hfe_usage_events_pushed`)
+ * via the library's custom option resolver. This keeps all call sites
+ * unchanged and avoids any data migration.
  *
  * @package header-footer-elementor
  * @since 2.8.6
@@ -23,67 +25,84 @@ if ( ! class_exists( 'HFE_Analytics_Events' ) ) {
 	class HFE_Analytics_Events {
 
 		/**
-		 * Track a one-time event. Skips if already tracked or pending.
+		 * Cached BSF_Analytics_Events instance.
+		 *
+		 * @var \BSF_Analytics_Events|null
+		 */
+		private static $instance = null;
+
+		/**
+		 * Get the underlying BSF_Analytics_Events instance with HFE's option resolver.
+		 *
+		 * Resolver maps library keys (`usage_events_pending`, `usage_events_pushed`)
+		 * to HFE's existing option names (`hfe_usage_events_pending`, `hfe_usage_events_pushed`).
+		 * The pushed dedup flag is autoloaded since it's read on every admin page load.
+		 *
+		 * @return \BSF_Analytics_Events|null Instance, or null if library is unavailable.
+		 */
+		private static function instance() {
+			if ( null !== self::$instance ) {
+				return self::$instance;
+			}
+
+			if ( ! class_exists( 'BSF_Analytics_Events' ) ) {
+				$lib_path = defined( 'HFE_DIR' ) ? HFE_DIR . 'admin/bsf-analytics/class-bsf-analytics-events.php' : '';
+				if ( '' !== $lib_path && file_exists( $lib_path ) ) {
+					require_once $lib_path;
+				}
+			}
+
+			if ( ! class_exists( 'BSF_Analytics_Events' ) ) {
+				return null;
+			}
+
+			self::$instance = new \BSF_Analytics_Events(
+				'hfe',
+				[
+					'get'    => static function ( $key, $default ) {
+						return get_option( 'hfe_' . $key, $default );
+					},
+					'update' => static function ( $key, $value ) {
+						$autoload = ( 'usage_events_pushed' === $key );
+						update_option( 'hfe_' . $key, $value, $autoload );
+					},
+				]
+			);
+
+			return self::$instance;
+		}
+
+		/**
+		 * Track an event. See BSF_Analytics_Events::track() for behavior.
 		 *
 		 * @param string $event_name  Event identifier.
 		 * @param string $event_value Primary value (version, mode, etc.).
 		 * @param array  $properties  Additional context as key-value pairs.
+		 * @param bool   $force       When true, bypass pushed dedup and overwrite pending entry.
 		 * @since 2.8.6
+		 * @since 2.8.7 Added the $force parameter.
 		 * @return void
 		 */
-		public static function track( $event_name, $event_value = '', $properties = [] ) {
-			// Check dedup flag — already sent in a previous cycle.
-			$pushed = get_option( 'hfe_usage_events_pushed', [] );
-			$pushed = is_array( $pushed ) ? $pushed : [];
-			if ( in_array( $event_name, $pushed, true ) ) {
+		public static function track( $event_name, $event_value = '', $properties = [], $force = false ) {
+			$events = self::instance();
+			if ( null === $events ) {
 				return;
 			}
-
-			// Check if already queued in current cycle.
-			$pending = get_option( 'hfe_usage_events_pending', [] );
-			$pending = is_array( $pending ) ? $pending : [];
-			if ( in_array( $event_name, array_column( $pending, 'event_name' ), true ) ) {
-				return;
-			}
-
-			// Add to pending queue.
-			$pending[] = [
-				'event_name'  => sanitize_text_field( $event_name ),
-				'event_value' => sanitize_text_field( (string) $event_value ),
-				'properties'  => ! empty( $properties ) ? $properties : new \stdClass(),
-				'date'        => current_time( 'mysql' ),
-			];
-			update_option( 'hfe_usage_events_pending', $pending, false );
+			$events->track( $event_name, $event_value, $properties, $force );
 		}
 
 		/**
-		 * Flush pending events: returns them for the payload, then cleans up.
-		 *
-		 * After this call:
-		 * - hfe_usage_events_pending is EMPTY (full event data deleted).
-		 * - hfe_usage_events_pushed has event_name strings added (minimal dedup).
+		 * Flush pending events into payload, then clean up.
 		 *
 		 * @since 2.8.6
-		 * @return array Pending events to include in payload. Empty if none.
+		 * @return array Pending events. Empty array if none or library unavailable.
 		 */
 		public static function flush_pending() {
-			$pending = get_option( 'hfe_usage_events_pending', [] );
-			if ( empty( $pending ) || ! is_array( $pending ) ) {
+			$events = self::instance();
+			if ( null === $events ) {
 				return [];
 			}
-
-			// Add event names to dedup flag (minimal — just strings).
-			$pushed = get_option( 'hfe_usage_events_pushed', [] );
-			$pushed = is_array( $pushed ) ? $pushed : [];
-			$pushed = array_unique(
-				array_merge( $pushed, array_column( $pending, 'event_name' ) )
-			);
-			update_option( 'hfe_usage_events_pushed', $pushed, false );
-
-			// DELETE all temporary event data.
-			update_option( 'hfe_usage_events_pending', [], false );
-
-			return $pending;
+			return $events->flush_pending();
 		}
 
 		/**
@@ -94,15 +113,27 @@ if ( ! class_exists( 'HFE_Analytics_Events' ) ) {
 		 * @return bool
 		 */
 		public static function is_tracked( $event_name ) {
-			$pushed = get_option( 'hfe_usage_events_pushed', [] );
-			$pushed = is_array( $pushed ) ? $pushed : [];
-			if ( in_array( $event_name, $pushed, true ) ) {
-				return true;
+			$events = self::instance();
+			if ( null === $events ) {
+				return false;
 			}
+			return $events->is_tracked( $event_name );
+		}
 
-			$pending = get_option( 'hfe_usage_events_pending', [] );
-			$pending = is_array( $pending ) ? $pending : [];
-			return in_array( $event_name, array_column( $pending, 'event_name' ), true );
+		/**
+		 * Remove specific event names from the pushed dedup flag, allowing them to be re-tracked.
+		 * Empty array clears all pushed events.
+		 *
+		 * @param array<string> $event_names Event names to remove.
+		 * @since 2.8.7
+		 * @return void
+		 */
+		public static function flush_pushed( $event_names = [] ) {
+			$events = self::instance();
+			if ( null === $events ) {
+				return;
+			}
+			$events->flush_pushed( $event_names );
 		}
 	}
 }

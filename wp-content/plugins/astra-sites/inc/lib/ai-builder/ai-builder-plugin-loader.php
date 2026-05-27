@@ -425,8 +425,6 @@ class Ai_Builder_Plugin_Loader {
 
 		$plans = Ai_Builder_ZipWP_Api::Instance()->get_zip_plans();
 
-		$team_name    = is_array( $plans['data'] ) && isset( $plans['data']['team']['name'] ) ? $plans['data']['team']['name'] : '';
-		$plan_name    = is_array( $plans['data'] ) && isset( $plans['data']['active_plan']['slug'] ) ? $plans['data']['active_plan']['slug'] : '';
 		$support_link = 'https://wpastra.com/starter-templates-support/?ip=' . $this->get_client_ip();
 
 		return array(
@@ -441,7 +439,7 @@ class Ai_Builder_Plugin_Loader {
 			'reportError'              => $this->should_report_error(),
 			'zip_token_exists'         => Helper::get_token() !== '' ? true : false,
 			'themeStatus'              => $theme_status,
-			'firstImportStatus'        => get_option( 'astra_sites_import_complete', false ),
+			'firstImportStatus'        => $this->get_first_import_status(),
 			'analytics'                => get_site_option( 'astra_sites_usage_optin', false ),
 			'siteUrl'                  => site_url(),
 			'installed'                => __( 'Installed! Activating..', 'astra-sites' ),
@@ -466,22 +464,17 @@ class Ai_Builder_Plugin_Loader {
 			'filtered_data'            => apply_filters(
 				'ai_builder_limit_exceeded_popup_strings',
 				array(
-					'main_content'      => sprintf(
-						/* translators: %1$s: team name, %2$s: plan name */
-						__(
-							'Your current active organization is %1$s, which is on the %2$s plan. You have reached the maximum number of sites allowed to be created on %2$s plan.',
-							'astra-sites'
-						),
-						$team_name,
-						$plan_name
+					// Placeholders are interpolated in JS at render time using fresh ZipWP plan data.
+					/* translators: %1$s: team name, %2$s: plan name */
+					'main_content'      => __(
+						'Your current active organization is %1$s, which is on the %2$s plan. You have reached the maximum number of sites allowed to be created on %2$s plan.',
+						'astra-sites'
 					),
-					'secondary_content' => sprintf(
-						/* translators: %1$s: team name */
-						__(
-							'Please upgrade the plan for %s in order to create more sites.',
-							'astra-sites'
-						),
-						$team_name,
+					// Placeholder is interpolated in JS at render time using fresh ZipWP plan data.
+					/* translators: %s: team name */
+					'secondary_content' => __(
+						'Please upgrade the plan for %s in order to create more sites.',
+						'astra-sites'
 					),
 					'upgrade_text'      => __( 'Unlock Full Power', 'astra-sites' ),
 					'upgrade_url'       => 'https://app.zipwp.com/st-pricing?source=starter-templates',
@@ -504,6 +497,13 @@ class Ai_Builder_Plugin_Loader {
 			'isMultisite'              => is_multisite(),
 			'canInstallPlugins'        => current_user_can( 'install_plugins' ),
 			'canActivatePlugins'       => current_user_can( 'activate_plugins' ),
+			/**
+			 * Filter to determine if the AI Builder is a white-label version, which impacts certain features such as the images engine used for Russian clients.
+			 *
+			 * @param bool $is_white_label Default value indicating if this is a white-label version of AI Builder. Default is `false`.
+			 * @since 1.2.77
+			 */
+			'isWhiteLabelAIBuilder'    => (bool) apply_filters( 'ai_builder_is_white_label', false ),
 		);
 	}
 
@@ -527,6 +527,37 @@ class Ai_Builder_Plugin_Loader {
 		}
 
 		return $active_failed_sites;
+	}
+
+	/**
+	 * Determine if a previous import exists that requires site reset.
+	 *
+	 * Returns 'yes' if a previous import completed successfully, started but
+	 * never completed (failed mid-import), or leftover imported posts exist.
+	 *
+	 * @since 1.2.75
+	 * @return string|false 'yes' if reset needed, false otherwise.
+	 */
+	private function get_first_import_status() {
+		// Previous import completed successfully.
+		if ( 'yes' === get_option( 'astra_sites_import_complete', false ) ) {
+			return 'yes';
+		}
+
+		// Previous import started but never completed (failed mid-import).
+		if ( 'yes' === get_option( 'astra_sites_import_started', false ) ) {
+			return 'yes';
+		}
+
+		// Fallback: imported posts exist but import not marked complete.
+		if ( function_exists( 'astra_sites_get_reset_post_data' ) ) {
+			$imported_posts = astra_sites_get_reset_post_data();
+			if ( ! empty( $imported_posts ) ) {
+				return 'yes';
+			}
+		}
+
+		return false;
 	}
 
 	/**
