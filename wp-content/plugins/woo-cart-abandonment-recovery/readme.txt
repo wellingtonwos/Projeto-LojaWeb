@@ -3,7 +3,7 @@ Contributors: sujaypawar, wpcrafter
 Tags: woocommerce, cart abandonment, cart recovery
 Requires at least: 5.4
 Tested up to: 6.9
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -163,6 +163,11 @@ You can report the issue through our [Bug Bounty Program](https://brainstormforc
 4. General settings for Email, Webhook (Coupon Code), GDPR
 
 == Changelog ==
+
+= Version 2.1.2 - Thursday, 4th June 2026 =
+- New: Added per-template product table customization for email follow-ups.
+- Improvement: Moved the Dynamic Conditions rule builder into a modal for a cleaner editing experience.
+- Fix: Fixed an issue where onboarding displayed incorrect plugin installation status.
 
 = Version 2.1.1 - Wednesday, 18th March 2026 =
 - New: Added integration with the WordPress Abilities API.

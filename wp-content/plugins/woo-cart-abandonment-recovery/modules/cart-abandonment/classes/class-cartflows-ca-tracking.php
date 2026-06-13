@@ -612,7 +612,7 @@ class Cartflows_Ca_Tracking {
 			$trigger_details['coupon_code']      = $checkout_details->coupon_code;
 			$trigger_details['order_status']     = $order_status;
 			$trigger_details['cart_total']       = $checkout_details->cart_total;
-			$trigger_details['product_table']    = Cartflows_Ca_Email_Schedule::get_instance()->get_email_product_block( $checkout_details->cart_contents, $checkout_details->cart_total );
+			$trigger_details['product_table']    = Cartflows_Ca_Email_Schedule::get_instance()->get_email_product_block( $checkout_details->cart_contents, $checkout_details->cart_total, isset( $checkout_details->email_template_id ) ? (int) $checkout_details->email_template_id : 0 );
 
 			$trigger_details = apply_filters( 'woo_ca_webhook_trigger_details', $trigger_details );
 

@@ -1,3 +1,8 @@
+Version 2.1.2 - Thursday, 4th June 2026
+- New: Added per-template product table customization for email follow-ups.
+- Improvement: Moved the Dynamic Conditions rule builder into a modal for a cleaner editing experience.
+- Fix: Fixed an issue where onboarding displayed incorrect plugin installation status.
+
 Version 2.1.1 - Wednesday, 18th March 2026
 - New: Added integration with the WordPress Abilities API.
 - Improvement: Strengthened the plugin's security.

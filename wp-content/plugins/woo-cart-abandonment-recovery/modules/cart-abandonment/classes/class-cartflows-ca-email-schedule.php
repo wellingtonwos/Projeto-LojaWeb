@@ -180,7 +180,7 @@ class Cartflows_Ca_Email_Schedule {
 			$headers  = 'From: ' . $from_email_name . ' <' . $from_email_preview . '>' . "\r\n";
 			$headers .= 'Content-Type: text/html' . "\r\n";
 			$headers .= 'Reply-To:  ' . $reply_name_preview . ' ' . "\r\n";
-			$var      = $this->get_email_product_block( $email_data->cart_contents, $email_data->cart_total );
+			$var      = $this->get_email_product_block( $email_data->cart_contents, $email_data->cart_total, isset( $email_data->email_template_id ) ? (int) $email_data->email_template_id : 0 );
 
 			$body_email_preview = str_replace( '{{cart.product.table}}', $var, $body_email_preview );
 			$body_email_preview = wpautop( $body_email_preview );
@@ -316,11 +316,12 @@ class Cartflows_Ca_Email_Schedule {
 	/**
 	 * Generate the view for email product cart block.
 	 *
-	 * @param  string $cart_contents user cart contents details.
-	 * @param  float  $cart_total user cart total.
+	 * @param  string $cart_contents     User cart contents details.
+	 * @param  float  $cart_total        User cart total.
+	 * @param  int    $email_template_id Email template id used to look up per-template overrides.
 	 * @return string
 	 */
-	public function get_email_product_block( $cart_contents, $cart_total ) {
+	public function get_email_product_block( $cart_contents, $cart_total, $email_template_id = 0 ) {
 
 		$cart_items = maybe_unserialize( $cart_contents );
 
@@ -328,11 +329,56 @@ class Cartflows_Ca_Email_Schedule {
 			return;
 		}
 
+		// Defaults preserve the original hardcoded behaviour when the master toggle is off.
+		$default_columns = [ 'image', 'name', 'quantity', 'price', 'subtotal' ];
+		$px              = 42;
+		$with_tax        = false;
+		$modify_table    = false;
+		$visible         = $default_columns;
+
+		if ( $email_template_id ) {
+			$templates_obj = Cartflows_Ca_Email_Templates::get_instance();
+			$gate          = $templates_obj->get_email_template_meta_by_key( $email_template_id, 'modify_product_table' );
+
+			if ( ! empty( $gate->meta_value ) ) {
+				$modify_table = true;
+				$size_row     = $templates_obj->get_email_template_meta_by_key( $email_template_id, 'product_image_size' );
+				$tax_row      = $templates_obj->get_email_template_meta_by_key( $email_template_id, 'show_prices_with_tax' );
+				$columns_row  = $templates_obj->get_email_template_meta_by_key( $email_template_id, 'visible_columns' );
+
+				$size_map = [
+					'small'  => 32,
+					'medium' => 48,
+					'large'  => 64,
+				];
+				$size_key = ! empty( $size_row->meta_value ) ? $size_row->meta_value : 'medium';
+				$px       = isset( $size_map[ $size_key ] ) ? $size_map[ $size_key ] : 48;
+
+				$with_tax = ! empty( $tax_row->meta_value );
+
+				if ( ! empty( $columns_row->meta_value ) ) {
+					$parsed  = array_values( array_filter( array_map( 'trim', explode( ',', $columns_row->meta_value ) ) ) );
+					$visible = ! empty( $parsed ) ? $parsed : $default_columns;
+				}
+			}
+		}
+
+		$tax_suffix = '';
+		if ( $modify_table ) {
+			$tax_suffix = $with_tax
+				? ' <small>' . esc_html__( '(incl. tax)', 'woo-cart-abandonment-recovery' ) . '</small>'
+				: ' <small>' . esc_html__( '(excl. tax)', 'woo-cart-abandonment-recovery' ) . '</small>';
+		}
+
+		$show = static function ( $col ) use ( $visible ) {
+			return in_array( $col, $visible, true );
+		};
+
 		$tr    = '';
 		$style = [
 			'product_image' => [
-				'style'     => 'height: 42px; width: 42px;',
-				'attribute' => 'width=42 height=42',
+				'style'     => sprintf( 'height: %1$dpx; width: %1$dpx;', $px ),
+				'attribute' => sprintf( 'width=%1$d height=%1$d', $px ),
 			],
 			'table'         => [
 				'style'     => 'color: #636363; border: 1px solid #e5e5e5;',
@@ -357,13 +403,34 @@ class Cartflows_Ca_Email_Schedule {
 				if ( empty( $image_url ) ) {
 					$image_url = CARTFLOWS_CA_URL . 'admin/assets/images/image-placeholder.png';
 				}
-				$tr .= '<tr style=' . $style . ' align="center">
-                           <td style="' . $style . '"><img  class="demo_img" style="' . $product_image_style . '" src="' . esc_url( $image_url ) . '" ' . $style_filter['product_image']['attribute'] . '></td>
-                           <td style="' . $style . '">' . $product_name . '</td>
-                           <td style="' . $style . '"> ' . $cart_item['quantity'] . ' </td>
-                           <td style="' . $style . '">' . wc_price( $cart_item['line_total'] ) . '</td>
-                           <td style="' . $style . '" >' . wc_price( $cart_item['line_total'] ) . '</td>
-                        </tr> ';
+
+				$row_total = $cart_item['line_total'] + ( $with_tax ? floatval( $cart_item['line_tax'] ?? 0 ) : 0 );
+				$quantity  = ! empty( $cart_item['quantity'] ) ? $cart_item['quantity'] : 1;
+
+				// Price = per-unit; Subtotal = line total. Previously both cells
+				// rendered the line total, so the two columns showed the same value.
+				$unit_price = wc_price( $row_total / $quantity );
+				$row_price  = wc_price( $row_total );
+
+				$row = '<tr style=' . $style . ' align="center">';
+				if ( $show( 'image' ) ) {
+					$row .= '<td style="' . $style . '"><img  class="demo_img" style="' . $product_image_style . '" src="' . esc_url( $image_url ) . '" ' . $style_filter['product_image']['attribute'] . '></td>';
+				}
+				if ( $show( 'name' ) ) {
+					$row .= '<td style="' . $style . '">' . wp_kses_post( $product_name ) . '</td>';
+				}
+				if ( $show( 'quantity' ) ) {
+					$row .= '<td style="' . $style . '"> ' . $cart_item['quantity'] . ' </td>';
+				}
+				if ( $show( 'price' ) ) {
+					$row .= '<td style="' . $style . '">' . $unit_price . $tax_suffix . '</td>';
+				}
+				if ( $show( 'subtotal' ) ) {
+					$row .= '<td style="' . $style . '" >' . $row_price . $tax_suffix . '</td>';
+				}
+				$row .= '</tr> ';
+
+				$tr .= $row;
 			}
 		}
 
@@ -372,20 +439,33 @@ class Cartflows_Ca_Email_Schedule {
 		 */
 		$enable_cart_total = apply_filters( 'woo_ca_recovery_enable_cart_total', false );
 		if ( $enable_cart_total ) {
-			$tr .= '<tr style="' . $style . '" align="center">
-                           <td colspan="4" style="' . $style . '"> ' . __( 'Cart Total ( Cart Total + Shipping + Tax )', 'woo-cart-abandonment-recovery' ) . ' </td>
+			$total_colspan = max( 1, count( $visible ) - 1 );
+			$tr           .= '<tr style="' . $style . '" align="center">
+                           <td colspan="' . esc_attr( $total_colspan ) . '" style="' . $style . '"> ' . __( 'Cart Total ( Cart Total + Shipping + Tax )', 'woo-cart-abandonment-recovery' ) . ' </td>
                            <td style="' . $style . '" >' . wc_price( $cart_total ) . '</td>
                         </tr> ';
 		}
 
+		$header = '<tr align="center">';
+		if ( $show( 'image' ) ) {
+			$header .= '<th  style="' . $style . '">' . __( 'Item', 'woo-cart-abandonment-recovery' ) . '</th>';
+		}
+		if ( $show( 'name' ) ) {
+			$header .= '<th  style="' . $style . '">' . __( 'Name', 'woo-cart-abandonment-recovery' ) . '</th>';
+		}
+		if ( $show( 'quantity' ) ) {
+			$header .= '<th  style="' . $style . '">' . __( 'Quantity', 'woo-cart-abandonment-recovery' ) . '</th>';
+		}
+		if ( $show( 'price' ) ) {
+			$header .= '<th  style="' . $style . '">' . __( 'Price', 'woo-cart-abandonment-recovery' ) . '</th>';
+		}
+		if ( $show( 'subtotal' ) ) {
+			$header .= '<th  style="' . $style . '">' . __( 'Line Subtotal', 'woo-cart-abandonment-recovery' ) . '</th>';
+		}
+		$header .= '</tr> ';
+
 		return '<table ' . $style_filter['table']['attribute'] . ' cellpadding="10" cellspacing="0" style="float: none; border: 1px solid #e5e5e5;">
-	                <tr align="center">
-	                   <th  style="' . $style . '">' . __( 'Item', 'woo-cart-abandonment-recovery' ) . '</th>
-	                   <th  style="' . $style . '">' . __( 'Name', 'woo-cart-abandonment-recovery' ) . '</th>
-	                   <th  style="' . $style . '">' . __( 'Quantity', 'woo-cart-abandonment-recovery' ) . '</th>
-	                   <th  style="' . $style . '">' . __( 'Price', 'woo-cart-abandonment-recovery' ) . '</th>
-	                   <th  style="' . $style . '">' . __( 'Line Subtotal', 'woo-cart-abandonment-recovery' ) . '</th>
-	                </tr> ' . $tr . '
+	                ' . $header . $tr . '
 	        </table>';
 	}
 

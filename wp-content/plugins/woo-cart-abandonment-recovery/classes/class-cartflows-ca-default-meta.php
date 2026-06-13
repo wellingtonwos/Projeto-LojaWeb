@@ -83,6 +83,10 @@ class Cartflows_Ca_Default_Meta {
 			'auto_coupon'            => false,
 			'free_shipping_coupon'   => false,
 			'individual_use_only'    => false,
+			'modify_product_table'   => false,
+			'product_image_size'     => 'medium',
+			'show_prices_with_tax'   => false,
+			'visible_columns'        => 'image,name,quantity,price,subtotal',
 		];
 
 		/**
@@ -499,6 +503,22 @@ class Cartflows_Ca_Default_Meta {
 			],
 			'wcf_use_woo_email_style'     => [
 				'default'  => '',
+				'sanitize' => 'FILTER_SANITIZE_STRING',
+			],
+			'wcf_modify_product_table'    => [
+				'default'  => '',
+				'sanitize' => 'FILTER_SANITIZE_STRING',
+			],
+			'wcf_product_image_size'      => [
+				'default'  => 'medium',
+				'sanitize' => 'FILTER_SANITIZE_STRING',
+			],
+			'wcf_show_prices_with_tax'    => [
+				'default'  => '',
+				'sanitize' => 'FILTER_SANITIZE_STRING',
+			],
+			'wcf_visible_columns'         => [
+				'default'  => 'image,name,quantity,price,subtotal',
 				'sanitize' => 'FILTER_SANITIZE_STRING',
 			],
 			'id'                          => [

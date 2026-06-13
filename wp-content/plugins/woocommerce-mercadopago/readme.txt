@@ -4,7 +4,7 @@ Tags: ecommerce, mercadopago, woocommerce
 Requires at least: 6.3
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 8.7.21
+Stable tag: 8.7.24
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,14 +134,8 @@ Set up both the plugin and the checkouts you want to activate on your payment av
 
 Check out our <a href="https://www.mercadopago.com.br/developers/pt/plugins_sdks/plugins/official/woo-commerce/">official documentation</a> for more information on the specific fields to configure.
 
-= v8.7.21 (04/05/2026) =
-* Added
-- Add structured error logging and monitoring for payment API calls
-- Preserve selected payment method and installments after a failed payment attempt
-
-* Fixed
-- Fix TypeError when processing fast payment installment selection in certain checkout layouts where the installments field is absent from the DOM
-- Fix fast payment initialization failing when a non-custom payment method is selected by default
-- Fix payment method icon styling interfering with other payment gateways in Blocks checkout
+= v8.7.24 (10/06/2026) =
+### Fixed
+- Fixed credit and debit card checkout fields not displaying (blank space) after updating to 8.7.23
 
 [See changelog for all versions](https://github.com/mercadopago/cart-woocommerce/blob/main/CHANGELOG.md).

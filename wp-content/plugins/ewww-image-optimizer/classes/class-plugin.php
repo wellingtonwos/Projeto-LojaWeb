@@ -713,6 +713,7 @@ final class Plugin extends Base {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		// Set defaults for all options that need to be autoloaded.
 		\add_option( 'ewww_image_optimizer_background_optimization', false, '', true );
+		\add_option( 'ewww_image_optimizer_async_test_success', '', '', true );
 		\add_option( 'ewww_image_optimizer_noauto', false, '', true ); // Disables auto-opt.
 		\add_option( 'ewww_image_optimizer_auto', false, '', true ); // Scheduled opt (I know, poor naming).
 		\add_option( 'ewww_image_optimizer_ludicrous_mode', false, '', true );
@@ -735,6 +736,7 @@ final class Plugin extends Base {
 		\add_option( 'ewww_image_optimizer_webp', false, '', true );
 		\add_option( 'ewww_image_optimizer_jpg_quality', '', '', true );
 		\add_option( 'ewww_image_optimizer_webp_quality', '', '', true );
+		\add_option( 'ewww_image_optimizer_sharpen', false, '', true );
 		\add_option( 'ewww_image_optimizer_backup_files', '', '', true );
 		\add_option( 'ewww_image_optimizer_resize_existing', true, '', true );
 		\add_option( 'ewww_image_optimizer_exactdn', false, '', true );
@@ -765,10 +767,13 @@ final class Plugin extends Base {
 		\add_option( 'ewww_image_optimizer_webp_rewrite_exclude', '', '', true );
 		\add_option( 'ewww_image_optimizer_webp_naming_mode', 'append', '', true );
 		\add_option( 'ewww_image_optimizer_allow_tracking', '', '', true );
+		\add_option( 'ewww_image_optimizer_620_upgrade_needed', false, '', true );
+		\add_option( 'ewww_image_optimizer_webp_enabled', false, '', true );
 
 		// Then make sure they are all actually autoloaded.
 		$autoload_options = array(
 			'ewww_image_optimizer_background_optimization' => true,
+			'ewww_image_optimizer_async_test_success'      => true,
 			'ewww_image_optimizer_noauto'                  => true,
 			'ewww_image_optimizer_auto'                    => true,
 			'ewww_image_optimizer_ludicrous_mode'          => true,
@@ -801,6 +806,7 @@ final class Plugin extends Base {
 			'exactdn_exclude'                              => true,
 			'exactdn_sub_folder'                           => true,
 			'exactdn_prevent_db_queries'                   => true,
+			'ewww_image_optimizer_sharpen'                 => true,
 			'ewww_image_optimizer_lazy_load'               => true,
 			'ewww_image_optimizer_add_missing_dims'        => true,
 			'ewww_image_optimizer_use_siip'                => true,
@@ -820,12 +826,17 @@ final class Plugin extends Base {
 			'ewww_image_optimizer_picture_webp'            => true,
 			'ewww_image_optimizer_webp_rewrite_exclude'    => true,
 			'ewww_image_optimizer_webp_naming_mode'        => true,
+			'ewww_image_optimizer_webp_enabled'            => true,
 			'ewww_image_optimizer_allow_tracking'          => true,
+			'ewww_image_optimizer_620_upgrade_needed'      => true,
+			'ewww_image_optimizer_review_time'             => true,
+			'ewww_image_optimizer_dismiss_review_notice'   => true,
 		);
-		wp_set_option_autoload_values( $autoload_options );
+		\wp_set_option_autoload_values( $autoload_options );
 
 		// Set network defaults.
 		\add_site_option( 'ewww_image_optimizer_background_optimization', false );
+		\add_site_option( 'ewww_image_optimizer_async_test_success', '' );
 		\add_site_option( 'ewww_image_optimizer_metadata_remove', true );
 		\add_site_option( 'ewww_image_optimizer_maxmediawidth', 2560 );
 		\add_site_option( 'ewww_image_optimizer_maxmediaheight', 2560 );
@@ -858,11 +869,11 @@ final class Plugin extends Base {
 	 * Removes EWWW IO settings errors from the global $wp_settings_errors to suppress standard error handling.
 	 */
 	public function get_settings_errors() {
-		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		global $wp_settings_errors;
 		if ( empty( $wp_settings_errors ) || ! is_array( $wp_settings_errors ) ) {
 			$stored_errors = get_settings_errors();
 			if ( ! empty( $stored_errors ) && is_array( $stored_errors ) ) {
+				$this->debug_message( 'loading up stored errors' );
 				$this->settings_errors = $stored_errors;
 			}
 			return;
@@ -880,7 +891,6 @@ final class Plugin extends Base {
 	 * Display any settings errors inside a div similar to the core settings_errors() function.
 	 */
 	public function settings_errors() {
-		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( empty( $this->settings_errors ) || ! is_array( $this->settings_errors ) ) {
 			$this->debug_message( 'no errors!' );
 			return;

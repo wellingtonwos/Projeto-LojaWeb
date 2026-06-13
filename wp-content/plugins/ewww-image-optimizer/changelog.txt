@@ -1,3 +1,17 @@
+= 8.7.2 =
+*Release Date - June 10, 2026*
+
+* changed: re-test mechanism for background optimization only runs on settings, and improved error reporting for re-testing
+* fixed: cross-site image collisions in remote_push/remote_fetch on multisite with S3 Offload plugin, props @earthlingdavey
+* fixed: bulk JS enqueued twice
+
+= 8.7.1 =
+*Release Date - June 4, 2026*
+
+* fixed: JS/CSS URLs created by WP Rocket are not delivered via Easy IO CDN
+* fixed: docs/help links for Image Detective and Max Image Dimensions
+* fixed: search during bulk optimization does not pause table updates
+
 = 8.7.0 =
 *Release Date - May 21, 2026*
 

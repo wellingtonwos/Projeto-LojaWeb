@@ -8,6 +8,8 @@
 
 namespace SRFM\Inc;
 
+use SRFM\Inc\Compatibility\Multilingual\Multilingual_Manager;
+use SRFM\Inc\Compatibility\Multilingual\String_Translator;
 use SRFM\Inc\Traits\Get_Instance;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -101,7 +103,8 @@ class Generate_Form_Markup {
 		do_action( 'srfm_localize_conditional_logic_data', $id );
 		$post = get_post( Helper::get_integer_value( $id ) );
 
-		$content = '';
+		$content     = '';
+		$form_blocks = [];
 
 		$active_plugins      = Helper::get_array_value( get_option( 'active_plugins', [] ) );
 		$is_learndash_active = in_array( 'sfwd-lms/sfwd_lms.php', $active_plugins, true );
@@ -114,6 +117,12 @@ class Generate_Form_Markup {
 			// Filter to get the post content for the form.
 			$post_content = apply_filters( 'srfm_get_form_post_content', $post->post_content, $id );
 
+			// Pre-translate block-attribute strings (labels, placeholders, options, etc.)
+			// before rendering, so the visitor's chosen language is honoured. Returns the
+			// translated markup plus the parsed top-level blocks so we can derive the block
+			// count without re-parsing the rendered HTML. No-op when no provider is active.
+			[ $post_content, $form_blocks ] = String_Translator::get_instance()->translate_form_content_with_blocks( (int) $id, Helper::get_string_value( $post_content ), $post );
+
 			if ( ! empty( $do_blocks ) ) {
 				$content = do_blocks( $post_content );
 			} else {
@@ -121,8 +130,10 @@ class Generate_Form_Markup {
 			}
 		}
 
-		$blocks            = parse_blocks( $content );
-		$block_count       = count( $blocks );
+		// Reuse the translator's parse on the multilingual path; otherwise parse once here
+		// (single-language path). Either way the content is parsed exactly once, never three times.
+		$form_blocks       = ! empty( $form_blocks ) ? $form_blocks : parse_blocks( $content );
+		$block_count       = count( $form_blocks );
 		$current_post_type = get_post_type();
 
 		// load all the frontend assets.
@@ -267,6 +278,7 @@ class Generate_Form_Markup {
 
 			// Submit button.
 			$button_text             = Helper::get_meta_value( $id, '_srfm_submit_button_text' );
+			$button_text             = String_Translator::get_instance()->translate_submit_button( (int) $id, Helper::get_string_value( $button_text ) );
 			$submit_button_alignment = ! empty( $form_styling['submit_button_alignment'] ) ? $form_styling['submit_button_alignment'] : 'left';
 
 			if ( is_rtl() && ( 'left' === $submit_button_alignment || 'right' === $submit_button_alignment ) ) {
@@ -576,6 +588,19 @@ class Generate_Form_Markup {
 				?>
 
 				<input type="hidden" value="<?php echo esc_attr( Helper::get_string_value( $id ) ); ?>" name="form-id">
+				<?php
+				/*
+				 * Submission language. Captured client-side because the REST submit endpoint
+				 * loses WPML's URL-based language context. The value is baked into the markup
+				 * at render time, so accurate entry-language tagging requires the page cache to
+				 * be language-aware (the default for WPML's language-per-URL modes). At submit
+				 * time the server re-validates this value against the active language list and
+				 * falls back to its own current_language() when it can't be confirmed
+				 * (see Form_Submit::is_known_language()), so a stale/forged value is never
+				 * trusted blindly.
+				 */
+				?>
+				<input type="hidden" value="<?php echo esc_attr( Multilingual_Manager::get_instance()->provider()->current_language() ); ?>" name="srfm-form-language">
 				<input type="hidden" value="" name="srfm-sender-email-field" id="srfm-sender-email">
 				<input type="hidden" value="<?php echo esc_attr( Helper::get_string_value( $is_page_break ) ); ?>" id="srfm-page-break">
 				<?php if ( $honeypot_spam ) { ?>
@@ -788,7 +813,7 @@ class Generate_Form_Markup {
 		$icon    = Helper::fetch_svg( 'info_circle', '', 'aria-hidden="true"' );
 		$classes = "srfm-common-error-message srfm-error-message srfm-{$position}-error";
 		?>
-		<p id="srfm-error-message" class="<?php echo esc_attr( $classes ); ?>" hidden><?php echo wp_kses( $icon, Helper::$allowed_tags_svg ); ?><span class="srfm-error-content"><?php echo esc_html__( 'There was an error trying to submit your form. Please try again.', 'sureforms' ); ?></span></p>
+		<p id="srfm-error-message" class="<?php echo esc_attr( $classes ); ?>" hidden><?php echo wp_kses( $icon, Helper::$allowed_tags_svg ); ?><span class="srfm-error-content"><?php echo esc_html( String_Translator::get_instance()->translate_validation_message( 'srfm_submit_error', __( 'There was an error trying to submit your form. Please try again.', 'sureforms' ) ) ); ?></span></p>
 		<?php
 	}
 
@@ -869,6 +894,7 @@ class Generate_Form_Markup {
 
 		if ( is_array( $form_confirmation ) && isset( $confirmation_data['message'] ) && is_string( $confirmation_data['message'] ) ) {
 			$confirmation_message = $confirmation_data['message'];
+			$confirmation_message = String_Translator::get_instance()->translate_confirmation_message( (int) $form_id, 0, $confirmation_message );
 		}
 		if ( empty( $submission_data ) ) {
 			return $confirmation_message;
@@ -974,7 +1000,30 @@ class Generate_Form_Markup {
 			$form_data['upload_format_type'] = 'raw';
 			// Skip auto-linking URLs in smart tag values — redirect query params need raw values, not HTML.
 			$form_data['smart_tag_context'] = 'redirect';
-			$redirect_url                   = html_entity_decode( Helper::get_string_value( $smart_tags->process_smart_tags( $redirect_url, $submission_data, $form_data ) ) );
+
+			/*
+			 * Resolve smart tags in the URL, normalize the multi-value delimiters
+			 * left behind by the substitution, then decode any HTML entities.
+			 *
+			 * Multi-select dropdown values are packed as "Red | Blue" by the frontend
+			 * (srfmUtility.prepareValue in assets/js/unminified/frontend.js), and
+			 * checkbox multi-choice values are rendered as "Red<br>Blue" by
+			 * Smart_Tags::parse_form_input. Neither delimiter is URL-friendly as-is:
+			 * " | " leaks whitespace into the query string and "<br>" gets mangled
+			 * by esc_url_raw below. Normalize both to a plain "|" so the final
+			 * redirect URL carries a clean, URL-safe list that the receiver can
+			 * split on "|".
+			 *
+			 * The str_replace runs before html_entity_decode so that any literal
+			 * "<br>" character sequence inside an option label — which
+			 * Smart_Tags::parse_form_input escapes to "&lt;br&gt;" before joining
+			 * — survives intact. Only the actual delimiter (the unescaped "<br>"
+			 * emitted by the implode) is converted to a pipe; html_entity_decode
+			 * then restores the option's original text.
+			 */
+			$resolved_redirect_url  = Helper::get_string_value( $smart_tags->process_smart_tags( $redirect_url, $submission_data, $form_data ) );
+			$multi_value_delimiters = [ '<br>', ' | ' ];
+			$redirect_url           = html_entity_decode( str_replace( $multi_value_delimiters, '|', $resolved_redirect_url ) );
 		}
 
 		return esc_url_raw( apply_filters( 'srfm_after_submit_redirect_url', $redirect_url ) );

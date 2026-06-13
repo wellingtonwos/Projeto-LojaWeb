@@ -282,15 +282,6 @@ class Meta_Options {
 						'options'      => $rollback_options,
 						'is_fullwidth' => true,
 					],
-					// TODO: Remove this after new UI is enabled by default.
-					'cartflows_ca_use_new_ui'   => [
-						'type'         => 'ui_switch',
-						'label'        => __( 'Use Legacy Interface', 'woo-cart-abandonment-recovery' ),
-						'name'         => 'cartflows_ca_use_new_ui',
-						'value'        => wcf_ca()->utils->wcar_get_option( 'cartflows_ca_use_new_ui' ),
-						'desc'         => __( 'Switch back to legacy user interface.', 'woo-cart-abandonment-recovery' ),
-						'is_fullwidth' => true,
-					],
 					'wcf-ca-delete-plugin-data' => [
 						'type'         => 'toggle',
 						'label'        => __( 'Delete Plugin Data', 'woo-cart-abandonment-recovery' ),
@@ -601,6 +592,105 @@ class Meta_Options {
 				'is_fullwidth' => true,
 				'group'        => 'woo_style',
 				'priority'     => 60,
+			],
+			'modify_product_table'      => [
+				'type'         => 'toggle',
+				'label'        => __( 'Modify Product Table', 'woo-cart-abandonment-recovery' ),
+				'name'         => 'modify_product_table',
+				'desc'         => __( 'Customize how the abandoned products table renders in this email.', 'woo-cart-abandonment-recovery' ),
+				'is_fullwidth' => true,
+				'group'        => 'product_table',
+				'priority'     => 61,
+			],
+			'product_image_size'        => [
+				'type'         => 'select',
+				'label'        => __( 'Product Image Size', 'woo-cart-abandonment-recovery' ),
+				'name'         => 'product_image_size',
+				'desc'         => __( 'Image size in the abandoned products table.', 'woo-cart-abandonment-recovery' ),
+				'options'      => [
+					[
+						'id'   => 'small',
+						'name' => __( 'Small (32px)', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'medium',
+						'name' => __( 'Medium (48px)', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'large',
+						'name' => __( 'Large (64px)', 'woo-cart-abandonment-recovery' ),
+					],
+				],
+				'is_fullwidth' => true,
+				'group'        => 'product_table',
+				'conditions'   => [
+					'fields' => [
+						[
+							'name'     => 'modify_product_table',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+				],
+				'priority'     => 62,
+			],
+			'show_prices_with_tax'      => [
+				'type'         => 'toggle',
+				'label'        => __( 'Show Prices With Tax', 'woo-cart-abandonment-recovery' ),
+				'name'         => 'show_prices_with_tax',
+				'desc'         => __( 'Include tax in prices shown in the abandoned products table.', 'woo-cart-abandonment-recovery' ),
+				'is_fullwidth' => true,
+				'group'        => 'product_table',
+				'conditions'   => [
+					'fields' => [
+						[
+							'name'     => 'modify_product_table',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+				],
+				'priority'     => 64,
+			],
+			'visible_columns'           => [
+				'type'         => 'multi-select',
+				'label'        => __( 'Visible Columns', 'woo-cart-abandonment-recovery' ),
+				'name'         => 'visible_columns',
+				'desc'         => __( 'Choose which columns appear in the products table.', 'woo-cart-abandonment-recovery' ),
+				'options'      => [
+					[
+						'id'   => 'image',
+						'name' => __( 'Image', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'name',
+						'name' => __( 'Name', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'quantity',
+						'name' => __( 'Quantity', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'price',
+						'name' => __( 'Price', 'woo-cart-abandonment-recovery' ),
+					],
+					[
+						'id'   => 'subtotal',
+						'name' => __( 'Subtotal', 'woo-cart-abandonment-recovery' ),
+					],
+				],
+				'is_fullwidth' => true,
+				'group'        => 'product_table',
+				'conditions'   => [
+					'fields' => [
+						[
+							'name'     => 'modify_product_table',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+				],
+				'priority'     => 66,
 			],
 			'send_test_email'           => [
 				'type'         => 'test_email',
